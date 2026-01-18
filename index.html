@@ -778,29 +778,18 @@
     </footer>
 
     <script>
-        function scrollToPrice() {
-            document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
-        }
+    function scrollToPrice() {
+        document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+    }
 
-        function scrollToTestimonial() {
-            document.getElementById('testimonial').scrollIntoView({ behavior: 'smooth' });
-        }
+    function scrollToTestimonial() {
+        document.getElementById('testimonial').scrollIntoView({ behavior: 'smooth' });
+    }
 
-        function comprarAgora() {
-            // SUBSTITUA ESTE LINK PELO SEU LINK DE PAGAMENTO
-            // Exemplos:
-            // Kiwify: https://kiwify.com.br/seu-link
-            // Hotmart: https://hotmart.com/seu-link
-            // Eduzz: https://eduzz.com/seu-link
-            
-            const linkPagamento = "https://pay.kiwify.com.br/HrgKQhM";
-            
-            if (linkPagamento === "https://pay.kiwify.com.br/HrgKQhM") {
-                alert('⚠️ Link de pagamento não configurado!\n\nPara ativar as compras:\n1. Crie seu produto na plataforma (Kiwify, Hotmart, Eduzz, etc)\n2. Copie o link de pagamento\n3. Substitua "https://pay.kiwify.com.br/HrgKQhM" pelo seu link\n4. Salve o arquivo\n\nDepois suas vendas começam! 💜');
-            } else {
-                window.location.href = linkPagamento;
-            }
-        }
-    </script>
+    function comprarAgora() {
+        window.location.href = "https://pay.kiwify.com.br/HrgKQhM";
+    }
+</script>
+
 </body>
-</html>
+</html> 
