@@ -1,795 +1,604 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7 Dias para Reconstrução Consciente | Tarot Terapêutico para Mulheres</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1a1f3a 100%);
-            color: #e8e6f0;
-            line-height: 1.6;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* STICKY HEADER */
-        .sticky-header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(15, 23, 42, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 20px;
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .sticky-header-title {
-            font-size: 1.1rem;
-            color: #fbbf24;
-            font-weight: 700;
-        }
-
-        .sticky-cta {
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #1a1f3a;
-            padding: 10px 25px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 5px 15px rgba(251, 191, 36, 0.3);
-        }
-
-        .sticky-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 20px rgba(251, 191, 36, 0.5);
-        }
-
-        /* HERO SECTION */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(26, 31, 58, 0.9) 100%),
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="%23a855f7" stroke-width="0.5" opacity="0.1"/></pattern></defs><rect width="1200" height="800" fill="url(%23grid)"/></svg>');
-            background-attachment: fixed;
-            text-align: center;
-            padding: 60px 20px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 750px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: rgba(251, 191, 36, 0.1);
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            color: #fbbf24;
-            padding: 10px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero h1 {
-            font-size: 3.8rem;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #ffffff 0%, #fbbf24 50%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1.1;
-            font-weight: 800;
-        }
-
-        .hero-subheading {
-            font-size: 1.4rem;
-            color: #fbbf24;
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #d1d5db;
-            margin-bottom: 40px;
-            font-weight: 300;
-            line-height: 1.8;
-        }
-
-        .hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-bottom: 40px;
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-            color: #fbbf24;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: #9ca3af;
-            margin-top: 5px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-            color: #1a1f3a;
-            padding: 20px 60px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.15rem;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.4);
-            border: none;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(251, 191, 36, 0.6);
-        }
-
-        .cta-button-secondary {
-            display: inline-block;
-            background: transparent;
-            color: #fbbf24;
-            padding: 15px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 2px solid #fbbf24;
-            cursor: pointer;
-            margin-left: 15px;
-        }
-
-        .cta-button-secondary:hover {
-            background: rgba(251, 191, 36, 0.1);
-        }
-
-        /* SECTION */
-        section {
-            padding: 80px 20px;
-        }
-
-        .section-title {
-            font-size: 2.8rem;
-            text-align: center;
-            margin-bottom: 60px;
-            background: linear-gradient(135deg, #fbbf24 0%, #a855f7 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 800;
-        }
-
-        /* TESTIMONIAL SECTION */
-        .testimonial-section {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
-            border-top: 1px solid rgba(251, 191, 36, 0.2);
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-        }
-
-        .testimonial-card {
-            background: rgba(26, 31, 58, 0.6);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            margin-bottom: 30px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .testimonial-text {
-            font-size: 1.1rem;
-            color: #e8e6f0;
-            margin-bottom: 20px;
-            font-style: italic;
-            line-height: 1.8;
-        }
-
-        .testimonial-author {
-            color: #fbbf24;
-            font-weight: 700;
-        }
-
-        /* PROBLEM SECTION */
-        .problem {
-            background: rgba(26, 31, 58, 0.5);
-            border-top: 1px solid rgba(251, 191, 36, 0.2);
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-        }
-
-        .problem-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .problem-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #fbbf24;
-            font-weight: 800;
-        }
-
-        .problem-list {
-            list-style: none;
-        }
-
-        .problem-list li {
-            margin-bottom: 20px;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1.05rem;
-            color: #d1d5db;
-        }
-
-        .problem-list li::before {
-            content: '✗';
-            position: absolute;
-            left: 0;
-            color: #ef4444;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        .problem-image {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(251, 191, 36, 0.1) 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            text-align: center;
-            font-size: 4rem;
-        }
-
-        /* SOLUTION SECTION */
-        .solution {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.05) 0%, rgba(251, 191, 36, 0.05) 100%);
-        }
-
-        .solution-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .solution-image {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.2) 0%, rgba(168, 85, 247, 0.2) 100%);
-            padding: 40px;
-            border-radius: 15px;
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            text-align: center;
-            font-size: 4rem;
-        }
-
-        .solution-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
-            color: #fbbf24;
-            font-weight: 800;
-        }
-
-        .solution-list {
-            list-style: none;
-        }
-
-        .solution-list li {
-            margin-bottom: 20px;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1.05rem;
-            color: #d1d5db;
-        }
-
-        .solution-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #10b981;
-            font-weight: bold;
-            font-size: 1.3rem;
-        }
-
-        /* DAYS SECTION */
-        .days {
-            background: rgba(26, 31, 58, 0.5);
-            border-top: 1px solid rgba(251, 191, 36, 0.2);
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-        }
-
-        .days-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .day-card {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(251, 191, 36, 0.05) 100%);
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid rgba(251, 191, 36, 0.2);
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .day-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(251, 191, 36, 0.5);
-            box-shadow: 0 10px 30px rgba(251, 191, 36, 0.1);
-        }
-
-        .day-number {
-            font-size: 2.5rem;
-            color: #fbbf24;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .day-title {
-            font-size: 1.3rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            font-weight: 700;
-        }
-
-        .day-description {
-            font-size: 0.95rem;
-            color: #9ca3af;
-        }
-
-        /* INCLUDES SECTION */
-        .includes {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
-        }
-
-        .includes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .include-item {
-            text-align: center;
-            padding: 30px;
-            background: rgba(26, 31, 58, 0.5);
-            border-radius: 15px;
-            border: 1px solid rgba(251, 191, 36, 0.2);
-        }
-
-        .include-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        .include-title {
-            font-size: 1.1rem;
-            color: #fbbf24;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .include-description {
-            font-size: 0.9rem;
-            color: #9ca3af;
-        }
-
-        /* GUARANTEE SECTION */
-        .guarantee {
-            background: linear-gradient(135deg, rgba(168, 85, 247, 0.15) 0%, rgba(251, 191, 36, 0.1) 100%);
-            border: 3px solid rgba(251, 191, 36, 0.4);
-            padding: 50px;
-            border-radius: 15px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .guarantee h3 {
-            font-size: 2rem;
-            color: #fbbf24;
-            margin-bottom: 15px;
-            font-weight: 800;
-        }
-
-        .guarantee p {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            line-height: 1.8;
-        }
-
-        /* PRICING SECTION */
-        .pricing {
-            background: rgba(26, 31, 58, 0.5);
-            border-top: 1px solid rgba(251, 191, 36, 0.2);
-            border-bottom: 1px solid rgba(251, 191, 36, 0.2);
-            text-align: center;
-        }
-
-        .price-box {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(168, 85, 247, 0.15) 100%);
-            padding: 60px;
-            border-radius: 15px;
-            border: 3px solid rgba(251, 191, 36, 0.4);
-            margin-bottom: 40px;
-            max-width: 550px;
-            margin-left: auto;
-            margin-right: auto;
-            box-shadow: 0 20px 50px rgba(251, 191, 36, 0.15);
-        }
-
-        .price-label {
-            font-size: 1.1rem;
-            color: #9ca3af;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 4.5rem;
-            color: #fbbf24;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-
-        .price-description {
-            font-size: 1.05rem;
-            color: #d1d5db;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .urgency-banner {
-            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 50px;
-            margin-bottom: 30px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            display: inline-block;
-        }
-
-        /* FOOTER */
-        footer {
-            background: rgba(15, 23, 42, 0.8);
-            border-top: 1px solid rgba(251, 191, 36, 0.2);
-            padding: 40px 20px;
-            text-align: center;
-            color: #9ca3af;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-subheading {
-                font-size: 1.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-stats {
-                gap: 20px;
-            }
-
-            .problem-content,
-            .solution-content {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .price {
-                font-size: 3.5rem;
-            }
-
-            .cta-button-secondary {
-                display: block;
-                margin-left: 0;
-                margin-top: 15px;
-            }
-
-            .sticky-header {
-                flex-direction: column;
-                gap: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>VNN Serralheria | Estruturas Metálicas e Construção Civil</title>
+
+<meta name="description" content="Serralheria profissional em São Paulo. Portões, corrimãos, estruturas metálicas e construção civil com qualidade e rapidez."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#0f0f0f;
+color:#fff;
+overflow-x:hidden;
+}
+
+header{
+width:100%;
+padding:20px 8%;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:32px;
+font-weight:800;
+color:#ff0000;
+letter-spacing:2px;
+}
+
+.logo span{
+color:#2ba8ff;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:25px;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff0000;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:140px 8% 80px;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+url('1000179336.jpg') center/cover;
+}
+
+.hero-content{
+max-width:700px;
+animation:fadeUp 1s ease;
+}
+
+.hero h1{
+font-size:60px;
+line-height:1.1;
+margin-bottom:20px;
+font-weight:800;
+}
+
+.hero h1 span{
+color:#ff0000;
+}
+
+.hero p{
+font-size:18px;
+line-height:1.8;
+color:#d9d9d9;
+margin-bottom:35px;
+}
+
+.btns{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:700;
+transition:0.4s;
+display:inline-block;
+}
+
+.btn-whats{
+background:#25d366;
+color:#fff;
+box-shadow:0 0 20px rgba(37,211,102,0.5);
+}
+
+.btn-whats:hover{
+transform:translateY(-5px);
+}
+
+.btn-service{
+border:2px solid #2ba8ff;
+color:#2ba8ff;
+}
+
+.btn-service:hover{
+background:#2ba8ff;
+color:#fff;
+}
+
+section{
+padding:90px 8%;
+}
+
+.section-title{
+font-size:42px;
+text-align:center;
+margin-bottom:60px;
+font-weight:800;
+}
+
+.section-title span{
+color:#ff0000;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:#171717;
+padding:35px;
+border-radius:20px;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ff0000;
+}
+
+.card h3{
+font-size:24px;
+margin-bottom:15px;
+color:#2ba8ff;
+}
+
+.card p{
+color:#cfcfcf;
+line-height:1.7;
+}
+
+.about{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:40px;
+align-items:center;
+}
+
+.about-box{
+background:#171717;
+padding:40px;
+border-radius:20px;
+}
+
+.about-box h2{
+font-size:40px;
+margin-bottom:20px;
+}
+
+.about-box h2 span{
+color:#ff0000;
+}
+
+.about-box p{
+line-height:1.9;
+color:#d8d8d8;
+margin-bottom:20px;
+}
+
+.stats{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.stat{
+flex:1;
+min-width:140px;
+background:#101010;
+padding:25px;
+border-radius:15px;
+text-align:center;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+.stat h3{
+font-size:30px;
+color:#ff0000;
+}
+
+.cta{
+background:
+linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
+url('1000179336.jpg') center/cover;
+text-align:center;
+padding:100px 8%;
+}
+
+.cta h2{
+font-size:48px;
+margin-bottom:20px;
+}
+
+.cta p{
+max-width:700px;
+margin:auto;
+line-height:1.8;
+color:#d7d7d7;
+margin-bottom:35px;
+}
+
+.contact{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.contact-box{
+background:#171717;
+padding:35px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact-box h3{
+margin-bottom:15px;
+font-size:24px;
+color:#2ba8ff;
+}
+
+.contact-box p,
+.contact-box a{
+color:#d6d6d6;
+text-decoration:none;
+line-height:1.8;
+}
+
+footer{
+padding:30px;
+text-align:center;
+background:#080808;
+color:#999;
+}
+
+.whatsapp-float{
+position:fixed;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:34px;
+text-decoration:none;
+color:#fff;
+box-shadow:0 0 25px rgba(37,211,102,0.6);
+z-index:999;
+animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:42px;
+}
+
+.section-title{
+font-size:34px;
+}
+
+.cta h2{
+font-size:35px;
+}
+
+header{
+padding:20px;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
 </head>
+
 <body>
-    <!-- STICKY HEADER -->
-    <div class="sticky-header">
-        <div class="sticky-header-title">🌙 Reconstrução Consciente</div>
-        <button class="sticky-cta" onclick="scrollToPrice()">Comprar Agora</button>
-    </div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="hero-content">
-            <div class="badge">⭐ Tarot Terapêutico para Mulheres</div>
-            <h1>Pare de se Anular e Reconstrua sua Vida em 7 Dias</h1>
-            <div class="hero-subheading">Volte ao seu poder. Ouça a si mesma. Viva com dignidade.</div>
-            <p>Um curso profundo e transformador que combina tarot, psicologia emocional e práticas conscientes. 7 minutos por dia. Resultados reais.</p>
-            
-            <div class="hero-stats">
-                <div class="stat">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Dias de Transformação</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">Minutos por Dia</div>
-                </div>
-                <div class="stat">
-                    <div class="stat-number">∞</div>
-                    <div class="stat-label">Acesso Vitalício</div>
-                </div>
-            </div>
+<header>
 
-            <button class="cta-button" onclick="scrollToPrice()">Sim, Quero Reconstruir Minha Vida</button>
-            <button class="cta-button-secondary" onclick="scrollToTestimonial()">Ver Depoimentos</button>
-        </div>
-    </section>
+<div class="logo">
+VNN <span>SERRALHERIA</span>
+</div>
 
-    <!-- TESTIMONIAL SECTION -->
-    <section class="testimonial-section" id="testimonial">
-        <div class="container">
-            <h2 class="section-title">O Que Mulheres Reais Dizem</h2>
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "Fiz os 7 dias e mudou minha vida. Não é exagero. Eu chorei, senti, e pela primeira vez em anos ouvi a minha própria voz. Recomendo para toda mulher que sofre em silêncio."
-                </div>
-                <div class="testimonial-author">— Marina S., 34 anos</div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-text">
-                    "Achei que seria mais um curso genérico. Mas não. É profundo, real, e os exercícios funcionam mesmo. Cada dia eu sentia alívio. Vale muito mais que o preço."
-                </div>
-                <div class="testimonial-author">— Juliana P., 28 anos</div>
-            </div>
-        </div>
-    </section>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#servicos">Serviços</a>
+<a href="#sobre">Sobre</a>
+<a href="#contato">Contato</a>
+</nav>
 
-    <!-- PROBLEM SECTION -->
-    <section class="problem">
-        <div class="container">
-            <h2 class="section-title">Você Se Reconhece Aqui?</h2>
-            <div class="problem-content">
-                <div class="problem-text">
-                    <h3>A Dor do Silêncio</h3>
-                    <ul class="problem-list">
-                        <li>Você se anula para agradar os outros</li>
-                        <li>Não ouve a si mesma há muito tempo</li>
-                        <li>Carrega emoções guardadas que machucam</li>
-                        <li>Não sabe o que realmente quer</li>
-                        <li>Sofre em silêncio, sem pedir ajuda</li>
-                        <li>Confusa sobre seu próprio caminho</li>
-                    </ul>
-                </div>
-                <div class="problem-image">
-                    💔
-                </div>
-            </div>
-        </div>
-    </section>
+</header>
 
-    <!-- SOLUTION SECTION -->
-    <section class="solution">
-        <div class="container">
-            <h2 class="section-title">Sua Transformação Começa Aqui</h2>
-            <div class="solution-content">
-                <div class="solution-image">
-                    ✨
-                </div>
-                <div class="solution-text">
-                    <h3>O Que Você Vai Receber</h3>
-                    <ul class="solution-list">
-                        <li>Clareza sobre o que você realmente sente</li>
-                        <li>Permissão para cuidar de si mesma</li>
-                        <li>Coragem para escolher seu próprio caminho</li>
-                        <li>Libertação de emoções guardadas</li>
-                        <li>Paz através do perdão (deles e seu)</li>
-                        <li>Reconstrução com dignidade e força</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="inicio">
 
-    <!-- DAYS SECTION -->
-    <section class="days">
-        <div class="container">
-            <h2 class="section-title">Sua Jornada de 7 Dias</h2>
-            <div class="days-grid">
-                <div class="day-card">
-                    <div class="day-number">1</div>
-                    <div class="day-title">O Silêncio</div>
-                    <div class="day-description">Aprenda a ouvir a si mesma e descubra o poder do silêncio consciente</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">2</div>
-                    <div class="day-title">A Aceitação</div>
-                    <div class="day-description">Entenda o que você pode mudar e o que precisa aceitar</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">3</div>
-                    <div class="day-title">Autocuidado</div>
-                    <div class="day-description">Volte ao seu corpo e cuide de si como merece</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">4</div>
-                    <div class="day-title">A Clareza</div>
-                    <div class="day-description">Descubra o que você realmente quer e tenha coragem para escolher</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">5</div>
-                    <div class="day-title">Libertação</div>
-                    <div class="day-description">Liberte emoções guardadas sem culpa, com coragem</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">6</div>
-                    <div class="day-title">O Perdão</div>
-                    <div class="day-description">Perdoe (eles e você) e solte o peso que carrega</div>
-                </div>
-                <div class="day-card">
-                    <div class="day-number">7</div>
-                    <div class="day-title">Reconstrução</div>
-                    <div class="day-description">Integre tudo e feche o ciclo como uma mulher inteira</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="hero-content">
 
-    <!-- INCLUDES SECTION -->
-    <section class="includes">
-        <div class="container">
-            <h2 class="section-title">O Que Está Incluído</h2>
-            <div class="includes-grid">
-                <div class="include-item">
-                    <div class="include-icon">📄</div>
-                    <div class="include-title">7 PDFs Completos</div>
-                    <div class="include-description">Um exercício prático e profundo para cada dia</div>
-                </div>
-                <div class="include-item">
-                    <div class="include-icon">🎧</div>
-                    <div class="include-title">7 Áudios Guiados</div>
-                    <div class="include-description">Você ouvindo cada dia explicado com profundidade</div>
-                </div>
-                <div class="include-item">
-                    <div class="include-icon">🎴</div>
-                    <div class="include-title">7 Cartas de Tarot</div>
-                    <div class="include-description">Cartas autênticas para cada etapa da jornada</div>
-                </div>
-                <div class="include-item">
-                    <div class="include-icon">♾️</div>
-                    <div class="include-title">Acesso Vitalício</div>
-                    <div class="include-description">Revise quantas vezes precisar, para sempre</div>
-                </div>
-            </div>
+<h1>
+Estruturas Metálicas e <span>Serralheria Profissional</span> em São Paulo
+</h1>
 
-            <div class="guarantee">
-                <h3>🛡️ Garantia de 100% de Satisfação</h3>
-                <p>Se depois de 7 dias você não sentir a transformação que prometi, devolvemos 100% do seu dinheiro. Sem perguntas. Sem burocracia. Você merece confiar em quem compra.</p>
-            </div>
-        </div>
-    </section>
+<p>
+Transformamos projetos em realidade com qualidade, resistência e acabamento profissional. Trabalhamos com portões, corrimãos, estruturas metálicas e construção civil com atendimento rápido e orçamento sem compromisso.
+</p>
 
-    <!-- PRICING SECTION -->
-    <section class="pricing" id="pricing">
-        <div class="container">
-            <h2 class="section-title">Investimento em Você Mesma</h2>
-            
-            <div class="price-box">
-                <div class="urgency-banner">⏰ Promoção por Tempo Limitado</div>
-                <div class="price-label">Apenas</div>
-                <div class="price">R$ 97</div>
-                <div class="price-description">
-                    Acesso completo aos 7 dias<br>
-                    + 7 PDFs com exercícios<br>
-                    + 7 Áudios guiados<br>
-                    + 7 Cartas de tarot<br>
-                    + Acesso vitalício
-                </div>
-                <button class="cta-button" onclick="comprarAgora()">Comprar Agora</button>
-            </div>
-            <p style="color: #9ca3af; margin-top: 30px; font-size: 1.05rem;">✅ Pagamento seguro<br>✅ Entrega automática após pagamento<br>✅ Acesso imediato ao conteúdo</p>
-        </div>
-    </section>
+<div class="btns">
 
-    <!-- FOOTER -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Diário de Reconstrução Consciente. Todos os direitos reservados.</p>
-            <p style="margin-top: 15px; font-size: 0.9rem;">📧 Contato: izabellakatariana12345@outlook.com</p>
-        </div>
-    </footer>
+<a class="btn btn-whats"
+href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
+SOLICITAR ORÇAMENTO
+</a>
 
-    <script>
-    function scrollToPrice() {
-        document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
-    }
+<a class="btn btn-service" href="#servicos">
+VER SERVIÇOS
+</a>
 
-    function scrollToTestimonial() {
-        document.getElementById('testimonial').scrollIntoView({ behavior: 'smooth' });
-    }
+</div>
 
-    function comprarAgora() {
-        window.location.href = "https://pay.kiwify.com.br/HrgKQhM";
-    }
-</script>
+</div>
+
+</section>
+
+<section id="servicos">
+
+<h2 class="section-title">
+Nossos <span>Serviços</span>
+</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Portões</h3>
+<p>
+Portões resistentes e modernos com acabamento profissional para residências, empresas e comércios.
+</p>
+</div>
+
+<div class="card">
+<h3>Corrimãos</h3>
+<p>
+Corrimãos metálicos personalizados com segurança, elegância e alta durabilidade.
+</p>
+</div>
+
+<div class="card">
+<h3>Estruturas Metálicas</h3>
+<p>
+Projetos metálicos sob medida para galpões, coberturas, escadas e construções em geral.
+</p>
+</div>
+
+<div class="card">
+<h3>Portão Basculante</h3>
+<p>
+Fabricação e instalação de portões basculantes reforçados com excelente acabamento.
+</p>
+</div>
+
+<div class="card">
+<h3>Construção Civil</h3>
+<p>
+Serviços profissionais para obras, reformas e estruturas com qualidade e compromisso.
+</p>
+</div>
+
+<div class="card">
+<h3>Atendimento Rápido</h3>
+<p>
+Orçamento rápido no WhatsApp com atendimento direto e suporte personalizado.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="sobre">
+
+<div class="about">
+
+<div class="about-box">
+
+<h2>
+Sobre a <span>VNN Serralheria</span>
+</h2>
+
+<p>
+A VNN Serralheria atua em São Paulo oferecendo serviços profissionais em serralheria e construção civil. Trabalhamos com qualidade, compromisso e foco total na satisfação dos clientes.
+</p>
+
+<p>
+Cada projeto é feito com atenção aos detalhes, materiais resistentes e acabamento profissional para garantir segurança e durabilidade.
+</p>
+
+<div class="stats">
+
+<div class="stat">
+<h3>100%</h3>
+<p>Qualidade</p>
+</div>
+
+<div class="stat">
+<h3>+500</h3>
+<p>Projetos</p>
+</div>
+
+<div class="stat">
+<h3>24h</h3>
+<p>Resposta</p>
+</div>
+
+</div>
+
+</div>
+
+<div class="about-box">
+
+<h2>
+Por que escolher a gente?
+</h2>
+
+<p>
+✔ Atendimento rápido no WhatsApp
+</p>
+
+<p>
+✔ Estruturas reforçadas e acabamento premium
+</p>
+
+<p>
+✔ Profissionais experientes
+</p>
+
+<p>
+✔ Orçamento sem compromisso
+</p>
+
+<p>
+✔ Atendimento em São Paulo e região
+</p>
+
+<p>
+✔ Compromisso com prazo e qualidade
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<h2>
+Solicite Seu Orçamento Agora
+</h2>
+
+<p>
+Clique no botão abaixo e fale diretamente com a VNN Serralheria no WhatsApp. Atendimento rápido e orçamento sem compromisso.
+</p>
+
+<a class="btn btn-whats"
+href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
+CHAMAR NO WHATSAPP
+</a>
+
+</section>
+
+<section id="contato">
+
+<h2 class="section-title">
+Entre em <span>Contato</span>
+</h2>
+
+<div class="contact">
+
+<div class="contact-box">
+<h3>WhatsApp</h3>
+<p>
+<a href="https://wa.me/5511959066043">
+(11) 95906-6043
+</a>
+</p>
+</div>
+
+<div class="contact-box">
+<h3>Instagram</h3>
+<p>
+<a href="https://instagram.com/v.n.n.oficial_" target="_blank">
+@v.n.n.oficial_
+</a>
+</p>
+</div>
+
+<div class="contact-box">
+<h3>E-mail</h3>
+<p>
+<a href="mailto:zdaniel.za@gmail.com">
+zdaniel.za@gmail.com
+</a>
+</p>
+</div>
+
+<div class="contact-box">
+<h3>Localização</h3>
+<p>
+São Paulo - SP
+</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 VNN Serralheria — Todos os direitos reservados.
+
+</footer>
+
+<a class="whatsapp-float"
+href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
+☎
+</a>
 
 </body>
-</html> 
+</html>
