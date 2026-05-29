@@ -1,604 +1,328 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V.N.N Serralharia & Construção Civil | Estruturas de Elite</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Especialistas em serralharia e construção civil. Estruturas metálicas, reformas e projetos sob medida com qualidade premium em São Paulo.">
+    <meta name="keywords" content="serralharia, construção civil, estruturas metálicas, vnn serralharia, reforma sp, serralheiro profissional">
+    <meta property="og:title" content="V.N.N Serralharia - Deixe sua obra nas mãos de especialistas">
+    <meta property="og:description" content="Do projeto à execução, entregamos a segurança e o acabamento que sua obra exige.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<title>VNN Serralheria | Estruturas Metálicas e Construção Civil</title>
+    <style>
+        :root {
+            --primary-orange: #FF5F1F; /* Neon Safety Orange */
+            --dark-metal: #0A0A0B;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
+        }
 
-<meta name="description" content="Serralheria profissional em São Paulo. Portões, corrimãos, estruturas metálicas e construção civil com qualidade e rapidez."/>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        h1, h2, h3, .font-sync {
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
+        }
 
-<style>
+        body {
+            background-color: var(--dark-metal);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+        /* Industrial Background */
+        .bg-industrial {
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 95, 31, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(255, 95, 31, 0.05) 0%, transparent 40%);
+        }
 
-body{
-background:#0f0f0f;
-color:#fff;
-overflow-x:hidden;
-}
+        .grid-pattern {
+            background-image: linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
 
-header{
-width:100%;
-padding:20px 8%;
-position:fixed;
-top:0;
-left:0;
-z-index:1000;
-background:rgba(0,0,0,0.8);
-backdrop-filter:blur(10px);
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
+        /* Glassmorphism */
+        .glass {
+            background: var(--glass);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid var(--border);
+        }
 
-.logo{
-font-size:32px;
-font-weight:800;
-color:#ff0000;
-letter-spacing:2px;
-}
+        .card-premium {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid var(--border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
 
-.logo span{
-color:#2ba8ff;
-}
+        .card-premium:hover {
+            border-color: var(--primary-orange);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 95, 31, 0.1);
+            background: rgba(255, 95, 31, 0.02);
+        }
 
-nav a{
-color:#fff;
-text-decoration:none;
-margin-left:25px;
-font-weight:500;
-transition:0.3s;
-}
+        /* Neon Glow */
+        .text-neon {
+            color: var(--primary-orange);
+            text-shadow: 0 0 15px rgba(255, 95, 31, 0.4);
+        }
 
-nav a:hover{
-color:#ff0000;
-}
+        .btn-industrial {
+            background: var(--primary-orange);
+            color: #000;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(255, 95, 31, 0.3);
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-padding:140px 8% 80px;
-background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-url('1000179336.jpg') center/cover;
-}
+        .btn-industrial:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(255, 95, 31, 0.6);
+            background: #fff;
+        }
 
-.hero-content{
-max-width:700px;
-animation:fadeUp 1s ease;
-}
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+            animation: pulse 2s infinite;
+        }
 
-.hero h1{
-font-size:60px;
-line-height:1.1;
-margin-bottom:20px;
-font-weight:800;
-}
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
 
-.hero h1 span{
-color:#ff0000;
-}
+        .badge {
+            background: rgba(255, 95, 31, 0.1);
+            color: var(--primary-orange);
+            border: 1px solid rgba(255, 95, 31, 0.2);
+            padding: 4px 12px;
+            border-radius: 99px;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.hero p{
-font-size:18px;
-line-height:1.8;
-color:#d9d9d9;
-margin-bottom:35px;
-}
-
-.btns{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:16px 35px;
-border-radius:50px;
-text-decoration:none;
-font-weight:700;
-transition:0.4s;
-display:inline-block;
-}
-
-.btn-whats{
-background:#25d366;
-color:#fff;
-box-shadow:0 0 20px rgba(37,211,102,0.5);
-}
-
-.btn-whats:hover{
-transform:translateY(-5px);
-}
-
-.btn-service{
-border:2px solid #2ba8ff;
-color:#2ba8ff;
-}
-
-.btn-service:hover{
-background:#2ba8ff;
-color:#fff;
-}
-
-section{
-padding:90px 8%;
-}
-
-.section-title{
-font-size:42px;
-text-align:center;
-margin-bottom:60px;
-font-weight:800;
-}
-
-.section-title span{
-color:#ff0000;
-}
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
-
-.card{
-background:#171717;
-padding:35px;
-border-radius:20px;
-transition:0.4s;
-border:1px solid rgba(255,255,255,0.05);
-}
-
-.card:hover{
-transform:translateY(-10px);
-border-color:#ff0000;
-}
-
-.card h3{
-font-size:24px;
-margin-bottom:15px;
-color:#2ba8ff;
-}
-
-.card p{
-color:#cfcfcf;
-line-height:1.7;
-}
-
-.about{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:40px;
-align-items:center;
-}
-
-.about-box{
-background:#171717;
-padding:40px;
-border-radius:20px;
-}
-
-.about-box h2{
-font-size:40px;
-margin-bottom:20px;
-}
-
-.about-box h2 span{
-color:#ff0000;
-}
-
-.about-box p{
-line-height:1.9;
-color:#d8d8d8;
-margin-bottom:20px;
-}
-
-.stats{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-margin-top:30px;
-}
-
-.stat{
-flex:1;
-min-width:140px;
-background:#101010;
-padding:25px;
-border-radius:15px;
-text-align:center;
-border:1px solid rgba(255,255,255,0.06);
-}
-
-.stat h3{
-font-size:30px;
-color:#ff0000;
-}
-
-.cta{
-background:
-linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.9)),
-url('1000179336.jpg') center/cover;
-text-align:center;
-padding:100px 8%;
-}
-
-.cta h2{
-font-size:48px;
-margin-bottom:20px;
-}
-
-.cta p{
-max-width:700px;
-margin:auto;
-line-height:1.8;
-color:#d7d7d7;
-margin-bottom:35px;
-}
-
-.contact{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-
-.contact-box{
-background:#171717;
-padding:35px;
-border-radius:20px;
-text-align:center;
-}
-
-.contact-box h3{
-margin-bottom:15px;
-font-size:24px;
-color:#2ba8ff;
-}
-
-.contact-box p,
-.contact-box a{
-color:#d6d6d6;
-text-decoration:none;
-line-height:1.8;
-}
-
-footer{
-padding:30px;
-text-align:center;
-background:#080808;
-color:#999;
-}
-
-.whatsapp-float{
-position:fixed;
-right:20px;
-bottom:20px;
-width:70px;
-height:70px;
-background:#25d366;
-border-radius:50%;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:34px;
-text-decoration:none;
-color:#fff;
-box-shadow:0 0 25px rgba(37,211,102,0.6);
-z-index:999;
-animation:pulse 1.8s infinite;
-}
-
-@keyframes pulse{
-0%{
-transform:scale(1);
-}
-50%{
-transform:scale(1.08);
-}
-100%{
-transform:scale(1);
-}
-}
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(40px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-@media(max-width:900px){
-
-.hero h1{
-font-size:42px;
-}
-
-.section-title{
-font-size:34px;
-}
-
-.cta h2{
-font-size:35px;
-}
-
-header{
-padding:20px;
-}
-
-nav{
-display:none;
-}
-
-}
-
-</style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: var(--dark-metal); }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-orange); }
+    </style>
 </head>
-
-<body>
-
-<header>
-
-<div class="logo">
-VNN <span>SERRALHERIA</span>
-</div>
-
-<nav>
-<a href="#inicio">Início</a>
-<a href="#servicos">Serviços</a>
-<a href="#sobre">Sobre</a>
-<a href="#contato">Contato</a>
-</nav>
-
-</header>
-
-<section class="hero" id="inicio">
-
-<div class="hero-content">
-
-<h1>
-Estruturas Metálicas e <span>Serralheria Profissional</span> em São Paulo
-</h1>
-
-<p>
-Transformamos projetos em realidade com qualidade, resistência e acabamento profissional. Trabalhamos com portões, corrimãos, estruturas metálicas e construção civil com atendimento rápido e orçamento sem compromisso.
-</p>
-
-<div class="btns">
-
-<a class="btn btn-whats"
-href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
-SOLICITAR ORÇAMENTO
-</a>
-
-<a class="btn btn-service" href="#servicos">
-VER SERVIÇOS
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section id="servicos">
-
-<h2 class="section-title">
-Nossos <span>Serviços</span>
-</h2>
-
-<div class="services">
-
-<div class="card">
-<h3>Portões</h3>
-<p>
-Portões resistentes e modernos com acabamento profissional para residências, empresas e comércios.
-</p>
-</div>
-
-<div class="card">
-<h3>Corrimãos</h3>
-<p>
-Corrimãos metálicos personalizados com segurança, elegância e alta durabilidade.
-</p>
-</div>
-
-<div class="card">
-<h3>Estruturas Metálicas</h3>
-<p>
-Projetos metálicos sob medida para galpões, coberturas, escadas e construções em geral.
-</p>
-</div>
-
-<div class="card">
-<h3>Portão Basculante</h3>
-<p>
-Fabricação e instalação de portões basculantes reforçados com excelente acabamento.
-</p>
-</div>
-
-<div class="card">
-<h3>Construção Civil</h3>
-<p>
-Serviços profissionais para obras, reformas e estruturas com qualidade e compromisso.
-</p>
-</div>
-
-<div class="card">
-<h3>Atendimento Rápido</h3>
-<p>
-Orçamento rápido no WhatsApp com atendimento direto e suporte personalizado.
-</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="sobre">
-
-<div class="about">
-
-<div class="about-box">
-
-<h2>
-Sobre a <span>VNN Serralheria</span>
-</h2>
-
-<p>
-A VNN Serralheria atua em São Paulo oferecendo serviços profissionais em serralheria e construção civil. Trabalhamos com qualidade, compromisso e foco total na satisfação dos clientes.
-</p>
-
-<p>
-Cada projeto é feito com atenção aos detalhes, materiais resistentes e acabamento profissional para garantir segurança e durabilidade.
-</p>
-
-<div class="stats">
-
-<div class="stat">
-<h3>100%</h3>
-<p>Qualidade</p>
-</div>
-
-<div class="stat">
-<h3>+500</h3>
-<p>Projetos</p>
-</div>
-
-<div class="stat">
-<h3>24h</h3>
-<p>Resposta</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="about-box">
-
-<h2>
-Por que escolher a gente?
-</h2>
-
-<p>
-✔ Atendimento rápido no WhatsApp
-</p>
-
-<p>
-✔ Estruturas reforçadas e acabamento premium
-</p>
-
-<p>
-✔ Profissionais experientes
-</p>
-
-<p>
-✔ Orçamento sem compromisso
-</p>
-
-<p>
-✔ Atendimento em São Paulo e região
-</p>
-
-<p>
-✔ Compromisso com prazo e qualidade
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="cta">
-
-<h2>
-Solicite Seu Orçamento Agora
-</h2>
-
-<p>
-Clique no botão abaixo e fale diretamente com a VNN Serralheria no WhatsApp. Atendimento rápido e orçamento sem compromisso.
-</p>
-
-<a class="btn btn-whats"
-href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
-CHAMAR NO WHATSAPP
-</a>
-
-</section>
-
-<section id="contato">
-
-<h2 class="section-title">
-Entre em <span>Contato</span>
-</h2>
-
-<div class="contact">
-
-<div class="contact-box">
-<h3>WhatsApp</h3>
-<p>
-<a href="https://wa.me/5511959066043">
-(11) 95906-6043
-</a>
-</p>
-</div>
-
-<div class="contact-box">
-<h3>Instagram</h3>
-<p>
-<a href="https://instagram.com/v.n.n.oficial_" target="_blank">
-@v.n.n.oficial_
-</a>
-</p>
-</div>
-
-<div class="contact-box">
-<h3>E-mail</h3>
-<p>
-<a href="mailto:zdaniel.za@gmail.com">
-zdaniel.za@gmail.com
-</a>
-</p>
-</div>
-
-<div class="contact-box">
-<h3>Localização</h3>
-<p>
-São Paulo - SP
-</p>
-</div>
-
-</div>
-
-</section>
-
-<footer>
-
-© 2026 VNN Serralheria — Todos os direitos reservados.
-
-</footer>
-
-<a class="whatsapp-float"
-href="https://wa.me/5511959066043?text=Olá%20vim%20pelo%20site%20e%20quero%20um%20orçamento">
-☎
-</a>
-
+<body class="bg-industrial">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass py-4 px-6 md:px-12 flex justify-between items-center">
+        <div class="text-lg md:text-xl font-bold tracking-tighter font-sync">
+            V.N.N <span class="text-neon">SERRALHARIA</span>
+        </div>
+        <a href="https://wa.me/5511959066043" class="btn-industrial px-6 py-2 rounded-lg text-xs">
+            ORÇAMENTO RÁPIDO
+        </a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex flex-col justify-center items-center pt-24 px-6 grid-pattern">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <div class="badge mb-6">Excelência em Ferro e Concreto</div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Sua obra exige <span class="text-neon">precisão industrial</span> e acabamento de elite.
+                </h1>
+                <p class="text-lg text-gray-400 mb-10 max-w-xl">
+                    Da serralharia pesada à construção civil completa. Entregamos a segurança que sua família merece e o design que sua empresa precisa.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/5511959066043" class="btn-industrial px-10 py-5 rounded-xl text-center text-sm">
+                        FALAR COM ESPECIALISTA
+                    </a>
+                    <a href="#servicos" class="glass px-10 py-5 rounded-xl text-center font-bold hover:bg-white/5 transition text-sm">
+                        NOSSOS SERVIÇOS
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-4 text-sm text-gray-500">
+                    <div class="flex gap-1 text-neon">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <span>+10 anos de tradição e confiança</span>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="zoom-in">
+                <div class="relative z-10 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1000" alt="Obra de Construção" class="w-full h-full object-cover">
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -top-6 -right-6 w-32 h-32 bg-neon/20 blur-3xl -z-10"></div>
+                <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-neon/20 blur-3xl -z-10"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Section -->
+    <section class="py-24 px-6 bg-black/50">
+        <div class="container mx-auto">
+            <div class="max-w-3xl mx-auto text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 italic">Obra parada é <span class="text-red-500">dinheiro jogado fora.</span></h2>
+                <p class="text-gray-400 text-lg">Não arrisque o seu sonho com amadores. Infiltrações, estruturas fracas e atrasos custam caro. Escolha quem entende de verdade.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card-premium p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-neon text-3xl mb-6"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Segurança Total</h3>
+                    <p class="text-gray-400">Cálculos estruturais precisos para garantir que sua obra dure gerações.</p>
+                </div>
+                <div class="card-premium p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-neon text-3xl mb-6"><i class="fas fa-tools"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Acabamento Fino</h3>
+                    <p class="text-gray-400">Serralharia com solda impecável e construção com alinhamento perfeito.</p>
+                </div>
+                <div class="card-premium p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-neon text-3xl mb-6"><i class="fas fa-calendar-check"></i></div>
+                    <h3 class="text-xl font-bold mb-4">Prazo é Sagrado</h3>
+                    <p class="text-gray-400">Cronograma levado a sério. Entregamos sua obra no tempo combinado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 px-6 relative">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div class="max-w-2xl" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-6xl font-bold mb-4">Soluções <span class="text-neon">Integradas</span></h2>
+                    <p class="text-gray-400">Do alicerce ao telhado, cuidamos de cada detalhe do seu projeto.</p>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card-premium p-10 rounded-3xl" data-aos="zoom-in">
+                    <h3 class="text-2xl font-bold mb-4">Serralharia</h3>
+                    <p class="text-gray-400 mb-6">Portões, grades, corrimãos e estruturas metálicas sob medida.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-neon mr-2"></i> Portões Automáticos</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Mezaninos</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Escadas Metálicas</li>
+                    </ul>
+                </div>
+                <div class="card-premium p-10 rounded-3xl" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold mb-4">Construção Civil</h3>
+                    <p class="text-gray-400 mb-6">Obras residenciais e comerciais do zero com gestão profissional.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-neon mr-2"></i> Fundação e Estrutura</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Alvenaria e Reboco</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Telhados</li>
+                    </ul>
+                </div>
+                <div class="card-premium p-10 rounded-3xl" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="text-2xl font-bold mb-4">Reformas</h3>
+                    <p class="text-gray-400 mb-6">Transforme seu ambiente com rapidez e sem dor de cabeça.</p>
+                    <ul class="text-sm space-y-2 text-gray-500">
+                        <li><i class="fas fa-check text-neon mr-2"></i> Revestimentos</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Pintura Industrial</li>
+                        <li><i class="fas fa-check text-neon mr-2"></i> Hidráulica e Elétrica</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="glass p-12 md:p-20 rounded-[40px] text-center relative overflow-hidden" data-aos="zoom-in">
+                <div class="absolute top-0 left-0 w-full h-full bg-neon/5 -z-10"></div>
+                
+                <h2 class="text-3xl md:text-5xl font-bold mb-8 font-sync">Pronto para tirar seu projeto do <span class="text-neon">papel?</span></h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">Solicite hoje mesmo um orçamento sem compromisso e garanta a melhor equipe de SP na sua obra.</p>
+                
+                <a href="https://wa.me/5511959066043" class="btn-industrial px-12 py-6 rounded-2xl text-lg inline-block">
+                    CHAMAR NO WHATSAPP
+                </a>
+                
+                <div class="mt-12 flex flex-wrap justify-center gap-8 text-gray-500 text-xs font-bold uppercase tracking-widest">
+                    <span><i class="fas fa-map-marker-alt text-neon mr-2"></i> Atendimento em Toda SP</span>
+                    <span><i class="fas fa-clock text-neon mr-2"></i> Orçamento em até 24h</span>
+                    <span><i class="fas fa-hard-hat text-neon mr-2"></i> Equipe Qualificada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-6 border-t border-white/10">
+        <div class="container mx-auto grid md:grid-cols-3 gap-12 items-center">
+            <div class="text-center md:text-left">
+                <div class="text-xl font-bold font-sync mb-4">V.N.N <span class="text-neon">SERRALHARIA</span></div>
+                <p class="text-gray-500 text-sm">Especialistas em transformar ferro e concreto em obras de arte estruturais.</p>
+            </div>
+            
+            <div class="text-center">
+                <div class="flex justify-center gap-6 text-2xl mb-4">
+                    <a href="https://instagram.com/v.n.n.oficial_" class="hover:text-neon transition"><i class="fab fa-instagram"></i></a>
+                    <a href="mailto:zdaniel.za@gmail.com" class="hover:text-neon transition"><i class="fas fa-envelope"></i></a>
+                </div>
+                <p class="text-xs text-gray-600">@v.n.n.oficial_</p>
+            </div>
+
+            <div class="text-center md:text-right">
+                <p class="text-neon font-bold mb-2">(11) 95906-6043</p>
+                <p class="text-xs text-gray-600">&copy; 2024 V.N.N Serralharia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511959066043" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
