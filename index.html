@@ -1,465 +1,508 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V.N.N Serralheria & Construção Civil | Engenharia de Alta Performance</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="V.N.N Serralheria e Construção Civil. Especialistas em estruturas metálicas, reformas residenciais e comerciais com acabamento premium em São Paulo.">
+    <meta name="keywords" content="serralheria sp, construção civil, estruturas metálicas, reformas, vnn serralheria, serralheiro profissional, engenharia">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-<title>RenovaFios Beauty | Progressiva Premium e Transformação Capilar</title>
+    <style>
+        :root {
+            --primary: #EAB308; /* Gold/Yellow for professional construction look */
+            --secondary: #1E293B; /* Slate 800 */
+            --accent: #F59E0B; /* Amber 500 */
+            --dark: #0F172A; /* Slate 900 */
+            --light: #F8FAFC;
+        }
 
-<meta name="description" content="Transforme seus cabelos com progressiva premium, atendimento acolhedor e resultados incríveis. Agende agora pelo WhatsApp.">
-<meta name="keywords" content="salão de beleza, progressiva, cabelos lisos, transformação capilar, beleza feminina">
-<meta name="author" content="RenovaFios Beauty">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+            scroll-behavior: smooth;
+        }
 
-<script src="https://cdn.tailwindcss.com"></script>
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+        }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        /* Glassmorphism Navigation */
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
-<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+        /* Hero Section Styling */
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(30, 41, 59, 0.8) 100%), 
+                        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+        /* Buttons */
+        .btn-primary {
+            background-color: var(--primary);
+            color: var(--dark);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(234, 179, 8, 0.3);
+        }
 
-body{
-background:#fff7fa;
-overflow-x:hidden;
-color:#2d1b24;
-}
+        .btn-primary:hover {
+            background-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(234, 179, 8, 0.4);
+        }
 
-.gradient-bg{
-background:
-radial-gradient(circle at top left,#ffd7eb 0%,transparent 40%),
-radial-gradient(circle at bottom right,#ffc7d8 0%,transparent 40%),
-linear-gradient(135deg,#fff7fa,#ffeef4);
-}
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
 
-.glass{
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.3);
-}
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
 
-.glow{
-box-shadow:
-0 0 25px rgba(255,105,180,.25),
-0 0 50px rgba(255,182,193,.15);
-}
+        /* Floating WhatsApp Button */
+        .whatsapp-fixed {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            width: 65px;
+            height: 65px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            animation: pulse-green 2s infinite;
+        }
 
-.hero-title{
-background:linear-gradient(135deg,#ff4f9a,#ff7db4,#ff4f9a);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
 
-.card-hover{
-transition:.4s;
-}
+        /* Card Effects */
+        .service-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
 
-.card-hover:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 50px rgba(255,105,180,.2);
-}
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary);
+        }
 
-.btn-premium{
-background:linear-gradient(135deg,#ff4f9a,#ff8ac0);
-transition:.4s;
-}
+        /* Custom Section Dividers */
+        .section-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(234, 179, 8, 0.1);
+            color: var(--accent);
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
 
-.btn-premium:hover{
-transform:translateY(-3px) scale(1.03);
-box-shadow:0 15px 35px rgba(255,105,180,.4);
-}
+        /* Portfolio Image Overlay */
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+        }
 
-.nav-blur{
-background:rgba(255,255,255,.12);
-backdrop-filter:blur(18px);
-}
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
 
-.floating-whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-width:65px;
-height:65px;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:50%;
-background:#25D366;
-color:white;
-font-size:30px;
-z-index:999;
-box-shadow:0 0 25px rgba(37,211,102,.5);
-animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-0%{transform:scale(1);}
-50%{transform:scale(1.08);}
-100%{transform:scale(1);}
-}
-
-.section-title{
-font-size:clamp(2rem,5vw,3.5rem);
-font-weight:800;
-line-height:1.1;
-}
-
-.decor-circle{
-position:absolute;
-border-radius:50%;
-filter:blur(80px);
-opacity:.4;
-z-index:-1;
-}
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:#ff7db4;
-border-radius:20px;
-}
-</style>
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+    </style>
 </head>
-
 <body>
 
-<!-- WhatsApp Flutuante -->
-<a href="https://wa.me/5599999909999" class="floating-whatsapp" target="_blank">
-<i class="fab fa-whatsapp"></i>
-</a>
-
-<!-- Navbar -->
-<nav class="fixed w-full top-0 z-50">
-<div class="container mx-auto px-5 py-4">
-<div class="nav-blur glass rounded-full px-6 py-4 flex justify-between items-center">
-
-<div class="font-extrabold text-xl text-pink-600">
-RenovaFios Beauty
-</div>
-
-<a href="https://wa.me/5599999909999" target="_blank"
-class="btn-premium text-white px-5 py-2 rounded-full font-semibold">
-Agendar
-</a>
-
-</div>
-</div>
-</nav>
-
-<!-- Hero -->
-<section class="gradient-bg min-h-screen flex items-center relative overflow-hidden">
-
-<div class="decor-circle bg-pink-300 w-72 h-72 top-0 left-0"></div>
-<div class="decor-circle bg-rose-300 w-96 h-96 bottom-0 right-0"></div>
-
-<div class="container mx-auto px-6 pt-24">
-
-<div class="grid lg:grid-cols-2 gap-12 items-center">
-
-<div data-aos="fade-right">
-
-<span class="glass px-4 py-2 rounded-full text-pink-600 font-semibold inline-block mb-5">
-✨ Especialistas em Progressiva Premium
-</span>
-
-<h1 class="hero-title text-5xl md:text-7xl font-extrabold leading-tight mb-6">
-Chega de cabelos armados e sem vida.
-</h1>
-
-<p class="text-xl text-gray-700 mb-8">
-Descubra a transformação que faz você se olhar no espelho e se sentir ainda mais linda, confiante e poderosa todos os dias.
-</p>
-
-<div class="flex flex-col sm:flex-row gap-4">
-
-<a href="https://wa.me/5599999909999" target="_blank"
-class="btn-premium text-white text-center px-8 py-4 rounded-2xl font-bold">
-Quero Minha Transformação
-</a>
-
-<a href="#servicos"
-class="glass px-8 py-4 rounded-2xl font-semibold text-center">
-Ver Serviços
-</a>
-
-</div>
-
-</div>
-
-<div data-aos="fade-left">
-
-<div class="glass glow rounded-[40px] p-8">
-
-<img
-src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=900&q=80"
-class="rounded-[30px] w-full"
-alt="Salão de Beleza">
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-</section>
-
-<!-- Dor -->
-<section class="py-24 px-6">
-
-<div class="container mx-auto max-w-6xl">
-
-<div class="text-center mb-16" data-aos="fade-up">
-
-<h2 class="section-title mb-6">
-Você evita tirar fotos por causa do seu cabelo?
-</h2>
-
-<p class="max-w-3xl mx-auto text-lg text-gray-600">
-Cabelos armados, ressecados, difíceis de cuidar e sem brilho afetam a autoestima de milhares de mulheres todos os dias. Você merece sentir orgulho da sua aparência.
-</p>
-
-</div>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="glass card-hover p-8 rounded-3xl text-center">
-<i class="fas fa-face-sad-tear text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Baixa Autoestima</h3>
-<p>Sentir que o cabelo não combina com a mulher incrível que você é.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl text-center">
-<i class="fas fa-clock text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Perda de Tempo</h3>
-<p>Horas tentando arrumar um cabelo que nunca fica como você deseja.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl text-center">
-<i class="fas fa-triangle-exclamation text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Frustração Diária</h3>
-<p>Investir em produtos e continuar sem alcançar o resultado esperado.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Benefícios -->
-<section class="py-24 bg-white">
-
-<div class="container mx-auto px-6">
-
-<div class="text-center mb-16">
-
-<h2 class="section-title">
-A Transformação Que Você Merece
-</h2>
-
-</div>
-
-<div class="grid lg:grid-cols-4 gap-8">
-
-<div class="glass card-hover p-8 rounded-3xl">
-<i class="fas fa-gem text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Mais Brilho</h3>
-<p>Cabelos com aparência saudável e luxuosa.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<i class="fas fa-heart text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Autoestima Elevada</h3>
-<p>Sentir-se bonita em qualquer ocasião.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<i class="fas fa-wind text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Menos Frizz</h3>
-<p>Resultado elegante e disciplinado.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<i class="fas fa-star text-4xl text-pink-500 mb-4"></i>
-<h3 class="font-bold text-xl mb-3">Visual Renovado</h3>
-<p>Uma nova versão de você mesma.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Serviços -->
-<section id="servicos" class="py-24 px-6">
-
-<div class="container mx-auto">
-
-<div class="text-center mb-16">
-<h2 class="section-title">Nossos Serviços</h2>
-</div>
-
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Progressiva Premium</h3>
-<p>Alinhamento perfeito e brilho intenso.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Escova Modeladora</h3>
-<p>Finalização impecável para qualquer ocasião.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Hidratação Profunda</h3>
-<p>Recuperação da maciez e vitalidade.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Reconstrução Capilar</h3>
-<p>Força e resistência para os fios.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Cronograma Capilar</h3>
-<p>Tratamento completo e personalizado.</p>
-</div>
-
-<div class="glass card-hover p-8 rounded-3xl">
-<h3 class="font-bold text-2xl mb-3">Corte Feminino</h3>
-<p>Valorizando sua beleza natural.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Depoimentos -->
-<section class="py-24 bg-white">
-
-<div class="container mx-auto px-6">
-
-<div class="text-center mb-16">
-<h2 class="section-title">O Que Nossas Clientes Dizem</h2>
-</div>
-
-<div class="grid lg:grid-cols-3 gap-8">
-
-<div class="glass p-8 rounded-3xl">
-⭐⭐⭐⭐⭐
-<p class="mt-4">
-"Meu cabelo ficou maravilhoso. Nunca me senti tão bonita."
-</p>
-</div>
-
-<div class="glass p-8 rounded-3xl">
-⭐⭐⭐⭐⭐
-<p class="mt-4">
-"Atendimento incrível e resultado perfeito."
-</p>
-</div>
-
-<div class="glass p-8 rounded-3xl">
-⭐⭐⭐⭐⭐
-<p class="mt-4">
-"Me senti acolhida do começo ao fim."
-</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- Diferencial -->
-<section class="py-24 px-6">
-
-<div class="container mx-auto max-w-5xl text-center">
-
-<h2 class="section-title mb-8">
-Mais Que Um Salão, Uma Experiência De Transformação
-</h2>
-
-<p class="text-xl text-gray-600 mb-10">
-Na RenovaFios Beauty cada cliente é recebida com carinho, atenção e acolhimento. Nosso foco não é apenas alisar cabelos, mas devolver confiança, autoestima e bem-estar.
-</p>
-
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="glass p-8 rounded-3xl">
-💖 Atendimento Humanizado
-</div>
-
-<div class="glass p-8 rounded-3xl">
-✨ Técnicas Atualizadas
-</div>
-
-<div class="glass p-8 rounded-3xl">
-🌷 Ambiente Acolhedor
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CTA -->
-<section class="py-24">
-
-<div class="container mx-auto px-6">
-
-<div class="glass glow rounded-[40px] p-12 text-center">
-
-<h2 class="text-4xl md:text-6xl font-extrabold mb-6">
-Pronta Para Se Apaixonar Pelo Seu Cabelo?
-</h2>
-
-<p class="text-xl mb-8 text-gray-700">
-Agende agora sua avaliação e descubra a transformação que está esperando por você.
-</p>
-
-<a href="https://wa.me/5599999909999" target="_blank"
-class="btn-premium inline-block text-white px-10 py-5 rounded-2xl text-xl font-bold">
-💬 Falar no WhatsApp
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<footer class="py-10 text-center text-gray-500">
-© 2026 RenovaFios Beauty • Todos os direitos reservados.
-</footer>
-
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
-<script>
-AOS.init({
-duration:1000,
-once:true
-});
-</script>
-
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511959066043" class="whatsapp-fixed" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] glass-nav py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-10 h-10 bg-slate-900 flex items-center justify-center rounded-lg">
+                    <span class="text-yellow-500 font-bold text-xl">V</span>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-xl font-bold tracking-tight text-slate-900 leading-none">V.N.N</span>
+                    <span class="text-[10px] font-bold text-yellow-600 uppercase tracking-widest">Serralheria & Construção</span>
+                </div>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 font-semibold text-slate-700">
+                <a href="#inicio" class="hover:text-yellow-600 transition">Início</a>
+                <a href="#servicos" class="hover:text-yellow-600 transition">Serviços</a>
+                <a href="#diferenciais" class="hover:text-yellow-600 transition">Diferenciais</a>
+                <a href="#contato" class="hover:text-yellow-600 transition">Contato</a>
+            </div>
+
+            <a href="https://wa.me/5511959066043" class="btn-whatsapp px-6 py-2.5 rounded-full font-bold text-sm flex items-center gap-2">
+                <i class="fab fa-whatsapp text-lg"></i>
+                ORÇAMENTO GRÁTIS
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-gradient min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl" data-aos="fade-up">
+                <span class="section-tag bg-yellow-500/20 text-yellow-400">Engenharia e Precisão em São Paulo</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+                    Transformamos <span class="text-yellow-500">Aço e Concreto</span> em Realidade Profissional.
+                </h1>
+                <p class="text-xl text-slate-300 mb-10 max-w-2xl leading-relaxed">
+                    A V.N.N entrega soluções definitivas em serralheria pesada e construção civil. Do alicerce ao acabamento fino, garantimos segurança estrutural e design impecável para sua obra.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://wa.me/5511959066043" class="btn-primary px-10 py-5 rounded-xl font-bold text-lg flex items-center gap-3">
+                        <i class="fas fa-hammer"></i>
+                        SOLICITAR PROJETO AGORA
+                    </a>
+                    <a href="#servicos" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-10 py-5 rounded-xl font-bold text-lg transition border border-white/20">
+                        VER NOSSOS SERVIÇOS
+                    </a>
+                </div>
+                
+                <div class="mt-12 flex items-center gap-6">
+                    <div class="flex -space-x-3">
+                        <img class="w-12 h-12 rounded-full border-4 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Cliente">
+                        <img class="w-12 h-12 rounded-full border-4 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Cliente">
+                        <img class="w-12 h-12 rounded-full border-4 border-slate-900 object-cover" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Cliente">
+                    </div>
+                    <div class="text-white">
+                        <div class="flex text-yellow-500 text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <p class="text-sm font-semibold text-slate-400">+500 Obras entregues com 100% de satisfação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Stats -->
+    <section class="py-12 bg-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div data-aos="zoom-in">
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">10+</h3>
+                    <p class="text-slate-400 font-medium">Anos de Experiência</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">100%</h3>
+                    <p class="text-slate-400 font-medium">Projetos no Prazo</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">50t+</h3>
+                    <p class="text-slate-400 font-medium">Aço Estruturado</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-delay="300">
+                    <h3 class="text-4xl font-bold text-yellow-500 mb-2">24h</h3>
+                    <p class="text-slate-400 font-medium">Orçamento Ágil</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
+                <span class="section-tag">Nossa Expertise</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Soluções Completas para sua <span class="text-yellow-600">Obra</span></h2>
+                <p class="text-lg text-slate-600">Unimos a robustez da serralheria industrial com a precisão da engenharia civil moderna.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-8 bg-slate-50 rounded-3xl" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-slate-900 text-3xl mb-8">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Construção Civil</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Execução completa de obras residenciais e comerciais. Da fundação ao telhado, com gestão rigorosa de materiais e prazos.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-slate-700 font-medium">
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Fundações e Lajes</li>
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Alvenaria Estrutural</li>
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Elétrica e Hidráulica</li>
+                    </ul>
+                    <a href="https://wa.me/5511959066043" class="text-yellow-700 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                        SAIBA MAIS <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card p-8 bg-slate-900 text-white rounded-3xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-slate-900 text-3xl mb-8">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Serralheria de Elite</h3>
+                    <p class="text-slate-400 mb-6 leading-relaxed">
+                        Projetos personalizados em ferro e aço. Solda profissional com acabamento industrial para máxima durabilidade.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-slate-300 font-medium">
+                        <li><i class="fas fa-check-circle text-yellow-500 mr-2"></i> Estruturas Metálicas</li>
+                        <li><i class="fas fa-check-circle text-yellow-500 mr-2"></i> Mezaninos e Escadas</li>
+                        <li><i class="fas fa-check-circle text-yellow-500 mr-2"></i> Portões Automáticos</li>
+                    </ul>
+                    <a href="https://wa.me/5511959066043" class="text-yellow-500 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                        SAIBA MAIS <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card p-8 bg-slate-50 rounded-3xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-yellow-500 rounded-2xl flex items-center justify-center text-slate-900 text-3xl mb-8">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Reformas Premium</h3>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        Modernização de ambientes com foco em estética e funcionalidade. Acabamento fino que valoriza seu imóvel.
+                    </p>
+                    <ul class="space-y-3 mb-8 text-slate-700 font-medium">
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Revestimentos e Pisos</li>
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Pintura Profissional</li>
+                        <li><i class="fas fa-check-circle text-yellow-600 mr-2"></i> Drywall e Gesso</li>
+                    </ul>
+                    <a href="https://wa.me/5511959066043" class="text-yellow-700 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                        SAIBA MAIS <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="diferenciais" class="py-24 bg-slate-50 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800" alt="Equipe de Trabalho" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-10 -right-10 bg-yellow-500 p-8 rounded-3xl shadow-xl z-20 hidden md:block">
+                        <p class="text-slate-900 font-black text-4xl mb-1">GARANTIA</p>
+                        <p class="text-slate-800 font-bold uppercase tracking-widest">DE QUALIDADE V.N.N</p>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <span class="section-tag">Por que nos escolher?</span>
+                    <h2 class="text-4xl font-bold text-slate-900 mb-8 leading-tight">A Confiança que sua Obra <span class="text-yellow-600">Exige</span>.</h2>
+                    
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-yellow-600 text-xl">
+                                <i class="fas fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Segurança Estrutural</h4>
+                                <p class="text-slate-600">Utilizamos apenas materiais certificados e seguimos rigorosamente as normas técnicas (ABNT) para garantir que sua estrutura dure gerações.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-yellow-600 text-xl">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Compromisso com o Prazo</h4>
+                                <p class="text-slate-600">Sabemos que tempo é dinheiro. Nosso cronograma é levado a sério, com atualizações constantes sobre o progresso da sua obra.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-6">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white rounded-xl shadow-md flex items-center justify-center text-yellow-600 text-xl">
+                                <i class="fas fa-hand-holding-dollar"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-slate-900 mb-2">Transparência Total</h4>
+                                <p class="text-slate-600">Orçamentos detalhados sem taxas escondidas. Você sabe exatamente onde cada centavo do seu investimento está sendo aplicado.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <a href="https://wa.me/5511959066043" class="btn-whatsapp px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-3 w-full md:w-max">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                            QUERO UM ORÇAMENTO SEM COMPROMISSO
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio/Visual Proof -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <span class="section-tag">Portfólio</span>
+                <h2 class="text-4xl font-bold text-slate-900 mb-4">Nossas <span class="text-yellow-600">Obras</span></h2>
+                <p class="text-slate-600">Confira alguns dos projetos entregues com o selo de qualidade V.N.N.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="portfolio-item aspect-video" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" alt="Estrutura Metálica" class="w-full h-full object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-white font-bold text-xl">Estrutura Industrial</h4>
+                        <p class="text-yellow-500 font-medium">Galpão Logístico</p>
+                    </div>
+                </div>
+                <div class="portfolio-item aspect-video" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1621905252507-b354bcadcabc?auto=format&fit=crop&q=80&w=800" alt="Reforma Residencial" class="w-full h-full object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-white font-bold text-xl">Reforma Residencial</h4>
+                        <p class="text-yellow-500 font-medium">Acabamento Premium</p>
+                    </div>
+                </div>
+                <div class="portfolio-item aspect-video" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800" alt="Mezanino" class="w-full h-full object-cover">
+                    <div class="portfolio-overlay">
+                        <h4 class="text-white font-bold text-xl">Mezanino em Aço</h4>
+                        <p class="text-yellow-500 font-medium">Otimização de Espaço</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="contato" class="py-24 bg-slate-900 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-yellow-500/5 -skew-x-12 translate-x-1/2"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-slate-800 p-12 md:p-20 rounded-[40px] border border-slate-700 shadow-2xl text-center">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-8" data-aos="fade-up">Pronto para dar o próximo passo na sua <span class="text-yellow-500">obra?</span></h2>
+                <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Não deixe seu sonho nas mãos de amadores. Fale agora com um especialista e receba um orçamento detalhado em menos de 24 horas.
+                </p>
+                
+                <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
+                    <a href="https://wa.me/5511959066043" class="btn-whatsapp px-12 py-6 rounded-2xl text-xl font-bold flex items-center justify-center gap-4">
+                        <i class="fab fa-whatsapp text-3xl"></i>
+                        CHAMAR NO WHATSAPP
+                    </a>
+                    <a href="mailto:zdaniel.za@gmail.com" class="bg-white/5 hover:bg-white/10 text-white px-12 py-6 rounded-2xl text-xl font-bold transition border border-slate-600 flex items-center justify-center gap-4">
+                        <i class="fas fa-envelope text-2xl"></i>
+                        ENVIAR E-MAIL
+                    </a>
+                </div>
+
+                <div class="mt-16 pt-16 border-t border-slate-700 grid md:grid-cols-3 gap-8 text-slate-400">
+                    <div class="flex items-center justify-center gap-3">
+                        <i class="fas fa-map-marker-alt text-yellow-500 text-xl"></i>
+                        <span>Atendimento em toda Grande SP</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3">
+                        <i class="fas fa-clock text-yellow-500 text-xl"></i>
+                        <span>Segunda a Sábado: 08h às 18h</span>
+                    </div>
+                    <div class="flex items-center justify-center gap-3">
+                        <i class="fab fa-instagram text-yellow-500 text-xl"></i>
+                        <span>@v.n.n.oficial_</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-950 border-t border-slate-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-yellow-500 flex items-center justify-center rounded-md">
+                        <span class="text-slate-900 font-bold text-lg">V</span>
+                    </div>
+                    <span class="text-xl font-bold text-white">V.N.N SERRALHERIA</span>
+                </div>
+                
+                <p class="text-slate-500 text-sm text-center">
+                    &copy; 2026 V.N.N Serralheria & Construção Civil. Todos os direitos reservados.
+                </p>
+
+                <div class="flex gap-6 text-slate-400">
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="hover:text-yellow-500 transition"><i class="fab fa-linkedin text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
