@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio de Beleza Premium | Especialista em Transformação</title>
+    <title>Rei do Óleo | Troca de Óleo e Lubrificantes na Vila</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Especialista em cortes, coloração e tratamentos capilares de luxo. Agende seu horário no melhor Studio de Beleza da região.">
+    <meta name="description" content="Rei do Óleo: A melhor troca de óleo e lubrificantes da vila. Atendimento rápido, produtos de qualidade e o melhor preço para o seu carro.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,10 +22,10 @@
 
     <style>
         :root {
-            --gold: #C5A059;
-            --dark: #121212;
-            --light: #F9F7F2;
-            --gray: #4A4A4A;
+            --primary-yellow: #FFD700;
+            --primary-black: #1A1A1A;
+            --accent-red: #E63946;
+            --oil-gold: #DAA520;
         }
 
         * {
@@ -36,23 +36,22 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .font-serif {
-            font-family: 'Cormorant Garamond', serif;
+        h1, h2, h3, .font-bebas {
+            font-family: 'Bebas Neue', cursive;
+            letter-spacing: 1px;
         }
 
         body {
-            background-color: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
+            background-color: #f4f4f4;
+            color: var(--primary-black);
         }
 
-        /* Luxury Header Overlay */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1486006396193-c7a33a3a138a?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            height: 90vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -60,301 +59,236 @@
             color: white;
         }
 
-        /* Buttons */
-        .btn-gold {
-            background-color: var(--gold);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 0;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid var(--gold);
-        }
-
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--gold);
-            transform: scale(1.05);
-        }
-
-        .btn-outline {
-            border: 1px solid white;
-            padding: 16px 40px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: black;
-        }
-
-        /* Service Cards */
-        .service-card {
-            background: white;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
-        }
-
-        .service-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
-        }
-
-        .service-img-container {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .service-img-container img {
-            transition: transform 0.8s ease;
-        }
-
-        .service-card:hover .service-img-container img {
-            transform: scale(1.1);
-        }
-
-        /* Floating WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
+        .btn-whatsapp {
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            background-color: #128C7E;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .card-service {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border-bottom: 5px solid var(--primary-yellow);
             transition: all 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
+        .card-service:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
 
-        /* Decorative Elements */
-        .gold-divider {
-            width: 80px;
-            height: 2px;
-            background-color: var(--gold);
-            margin: 20px auto;
-        }
-
-        .nav-link {
-            position: relative;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
+        .price-tag {
+            background: var(--accent-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 5px;
+            font-weight: 800;
+            display: inline-block;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/551198765409" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/SEU_NUMERO_AQUI" class="floating-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md py-6 px-10 border-b border-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-black text-white py-4 px-6 fixed w-full z-50 shadow-lg">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-serif font-bold tracking-[4px] uppercase">
-                Studio <span class="text-[#C5A059]">Premium</span>
+            <div class="flex items-center gap-2">
+                <i class="fas fa-crown text-yellow-400 text-3xl"></i>
+                <span class="text-2xl font-bebas tracking-wider">REI DO <span class="text-yellow-400">ÓLEO</span></span>
             </div>
-            
-            <div class="hidden lg:flex items-center gap-10 font-medium">
-                <a href="#inicio" class="nav-link">Início</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#sobre" class="nav-link">O Studio</a>
-                <a href="#contato" class="nav-link">Contato</a>
+            <div class="hidden md:flex gap-8 font-semibold">
+                <a href="#inicio" class="hover:text-yellow-400 transition">Início</a>
+                <a href="#servicos" class="hover:text-yellow-400 transition">Serviços</a>
+                <a href="#sobre" class="hover:text-yellow-400 transition">Sobre Nós</a>
+                <a href="#contato" class="hover:text-yellow-400 transition">Localização</a>
             </div>
-
-            <a href="https://wa.me/551198765409" class="bg-black text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-[#C5A059] transition-colors uppercase">
-                Agendar Horário
+            <a href="https://wa.me/SEU_NUMERO_AQUI" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition">
+                FALAR COM VENDEDOR
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
+        <div class="container mx-auto px-6" data-aos="zoom-in">
+            <h1 class="text-6xl md:text-8xl font-bebas mb-4">O Tratamendo Real que seu <span class="text-yellow-400">Motor Merece!</span></h1>
+            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">A melhor troca de óleo da vila. Rápido, limpo e com preço de amigo. Não deixe seu motor sofrer!</p>
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="https://wa.me/SEU_NUMERO_AQUI" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> CONSULTAR PREÇO AGORA
+                </a>
+                <a href="#servicos" class="bg-white text-black px-10 py-4 rounded-full font-extrabold text-lg hover:bg-yellow-400 transition">
+                    VER SERVIÇOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="py-16 bg-yellow-400">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div data-aos="fade-up">
+                    <i class="fas fa-bolt text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">TROCA RÁPIDA</h3>
+                    <p class="font-medium">Troca feita em até 20 minutos para você não perder tempo.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-check-double text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">MARCAS LÍDERES</h3>
+                    <p class="font-medium">Trabalhamos apenas com as melhores marcas do mercado.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-handshake text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">PREÇO JUSTO</h3>
+                    <p class="font-medium">O melhor custo-benefício da vila, garantido!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bebas text-gray-900">Nossos <span class="text-yellow-600">Serviços</span></h2>
+                <p class="text-gray-600 mt-2">Cuidamos de cada detalhe do seu veículo</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <!-- Serviço 1 -->
+                <div class="card-service" data-aos="fade-up">
+                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-oil-can"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Troca de Óleo</h3>
+                    <p class="text-gray-600">Sintético, Semi-sintético e Mineral para todos os modelos de carros e motos.</p>
+                    <span class="price-tag">A partir de R$ 99,00</span>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="card-service" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Filtros em Geral</h3>
+                    <p class="text-gray-600">Filtro de óleo, ar, combustível e cabine (ar-condicionado).</p>
+                    <span class="price-tag">Melhores Marcas</span>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="card-service" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Aditivos e Fluidos</h3>
+                    <p class="text-gray-600">Fluidos de freio, arrefecimento e aditivos para combustível.</p>
+                    <span class="price-tag">Proteção Total</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-20 bg-black text-white text-center">
         <div class="container mx-auto px-6" data-aos="fade-up">
-            <span class="text-sm tracking-[5px] uppercase mb-4 block">Beleza & Sofisticação</span>
-            <h1 class="text-6xl md:text-8xl font-serif mb-8 leading-tight">
-                Sua melhor versão <br> <span class="italic text-[#C5A059]">começa aqui.</span>
-            </h1>
-            <div class="gold-divider"></div>
-            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light tracking-wide">
-                Cortes exclusivos, coloração artística e tratamentos de alta performance em um ambiente projetado para o seu bem-estar.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://wa.me/551198765409" class="btn-gold">
-                    <i class="fab fa-whatsapp"></i> AGENDAR PELO WHATSAPP
-                </a>
-                <a href="#servicos" class="btn-outline">VER SERVIÇOS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Intro Section -->
-    <section class="py-24 bg-white">
-        <div class="container mx-auto px-6 flex flex-col lg:flex-row items-center gap-20">
-            <div class="lg:w-1/2" data-aos="fade-right">
-                <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800" alt="Studio Interior" class="w-full shadow-2xl">
-                    <div class="absolute -bottom-10 -right-10 w-64 h-64 border-[15px] border-[#C5A059]/10 -z-10"></div>
-                </div>
-            </div>
-            <div class="lg:w-1/2" data-aos="fade-left">
-                <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">O Conceito</span>
-                <h2 class="text-5xl font-serif mt-4 mb-8">Excelência em cada detalhe, <br> <span class="italic">estilo em cada fio.</span></h2>
-                <p class="text-gray-600 text-lg leading-relaxed mb-8">
-                    Com anos de experiência no mercado de luxo, nosso studio une técnica avançada e os melhores produtos do mundo para entregar resultados extraordinários. Não entregamos apenas um corte, entregamos uma nova autoconfiança.
-                </p>
-                <div class="grid grid-cols-2 gap-8 mb-10">
-                    <div>
-                        <h4 class="font-bold text-2xl font-serif mb-2">Atendimento</h4>
-                        <p class="text-sm text-gray-500">Personalizado e exclusivo para cada cliente.</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-2xl font-serif mb-2">Produtos</h4>
-                        <p class="text-sm text-gray-500">As marcas mais renomadas do mercado mundial.</p>
-                    </div>
-                </div>
-                <a href="https://wa.me/551198765409" class="text-black font-bold border-b-2 border-[#C5A059] pb-2 hover:text-[#C5A059] transition-colors">
-                    CONHEÇA NOSSA TRAJETÓRIA
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="servicos" class="py-32 bg-[#F9F7F2]">
-        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
-            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Menu de Luxo</span>
-            <h2 class="text-5xl font-serif mt-4">Nossos Serviços</h2>
-            <div class="gold-divider"></div>
-        </div>
-
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-            <!-- Service 1 -->
-            <div class="service-card" data-aos="fade-up">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800" alt="Corte Feminino" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Cortes Exclusivos</h3>
-                    <p class="text-gray-500 mb-6">Visagismo aplicado para criar o corte perfeito que valoriza os traços do seu rosto.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">A partir de R$ 120</span>
-                        <a href="https://wa.me/551198765409" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service 2 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1620331311520-246422ff82f9?auto=format&fit=crop&q=80&w=800" alt="Coloração" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Coloração Artística</h3>
-                    <p class="text-gray-500 mb-6">Mechas, luzes e colorações globais com técnicas que preservam a saúde da fibra capilar.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">Consultar Valor</span>
-                        <a href="https://wa.me/551198765409" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service 3 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800" alt="Tratamentos" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Terapia Capilar</h3>
-                    <p class="text-gray-500 mb-6">Tratamentos profundos de reconstrução e nutrição com as melhores linhas profissionais.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">A partir de R$ 180</span>
-                        <a href="https://wa.me/551198765409" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section id="contato" class="py-32 bg-black text-white relative overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
-            <h2 class="text-5xl md:text-7xl font-serif mb-10">Pronta para brilhar?</h2>
-            <p class="text-xl mb-14 max-w-2xl mx-auto font-light text-gray-400">
-                Garanta seu horário com o especialista e receba um atendimento digno de uma estrela.
-            </p>
-            <a href="https://wa.me/551198765409" class="btn-gold">
-                <i class="fab fa-whatsapp"></i> AGENDAR AGORA PELO WHATSAPP
+            <h2 class="text-5xl font-bebas mb-6">Seu carro está pedindo <span class="text-yellow-400">óleo novo?</span></h2>
+            <p class="text-xl mb-10 text-gray-400">Clique no botão abaixo e fale agora mesmo com o nosso vendedor via WhatsApp.</p>
+            <a href="https://wa.me/SEU_NUMERO_AQUI" class="btn-whatsapp">
+                <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
             </a>
-            
-            <div class="mt-24 grid md:grid-cols-3 gap-12 text-sm tracking-[2px] uppercase text-gray-500">
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-map-marker-alt text-[#C5A059] text-2xl"></i>
-                    <span>Av. Principal da Moda, 1000 - SP</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-phone-alt text-[#C5A059] text-2xl"></i>
-                    <span>(11) 98765-409</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-clock text-[#C5A059] text-2xl"></i>
-                    <span>Terça a Sábado: 09h às 19h</span>
+        </div>
+    </section>
+
+    <!-- Localização -->
+    <section id="contato" class="py-24">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2" data-aos="fade-right">
+                <h2 class="text-5xl font-bebas mb-6">Onde <span class="text-yellow-600">Estamos</span></h2>
+                <p class="text-xl mb-8">Venha tomar um café conosco enquanto cuidamos do seu carro!</p>
+                <div class="space-y-4">
+                    <div class="flex items-center gap-4 text-lg">
+                        <i class="fas fa-map-marker-alt text-yellow-600"></i>
+                        <span>Rua Principal da Vila, 123 - Centro</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-lg">
+                        <i class="fas fa-phone text-yellow-600"></i>
+                        <span>(11) 99999-9999</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-lg">
+                        <i class="fas fa-clock text-yellow-600"></i>
+                        <span>Segunda a Sábado: 08h às 18h</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Background Text -->
-        <div class="absolute -bottom-10 left-0 w-full opacity-5 pointer-events-none">
-            <span class="text-[15vw] font-serif font-bold uppercase whitespace-nowrap">EXCLUSIVIDADE</span>
+            <div class="md:w-1/2 w-full h-80 bg-gray-300 rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-left">
+                <!-- Simulação de Mapa -->
+                <div class="w-full h-full flex items-center justify-center bg-gray-200">
+                    <div class="text-center">
+                        <i class="fas fa-map-marked-alt text-5xl text-gray-400 mb-2"></i>
+                        <p class="text-gray-500 font-bold">MAPA DA LOJA NA VILA</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-xl font-serif font-bold tracking-[4px] uppercase">
-                Studio <span class="text-[#C5A059]">Premium</span>
+    <footer class="bg-black text-white py-12 border-t border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <i class="fas fa-crown text-yellow-400 text-2xl"></i>
+                <span class="text-xl font-bebas tracking-wider">REI DO ÓLEO</span>
             </div>
-            <p class="text-gray-400 text-xs tracking-widest uppercase">
-                &copy; 2026 Studio Premium. Todos os direitos reservados.
-            </p>
-            <div class="flex gap-8">
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-pinterest text-xl"></i></a>
+            <p class="text-gray-500">&copy; 2026 Rei do Óleo Automotivo. Todos os direitos reservados.</p>
+            <div class="flex justify-center gap-6 mt-6">
+                <a href="#" class="text-2xl hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-2xl hover:text-yellow-400 transition"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
     </footer>
@@ -364,8 +298,7 @@
     <script>
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
     </script>
 </body>
