@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Montador de Móveis Profissional | Precisão e Confiança</title>
+    <title>Diogo Montador | Montagem de Móveis Profissional</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Montador de móveis profissional em São Paulo. Montagem de móveis convencionais e planejados com ferramentas modernas e acabamento impecável.">
+    <meta name="description" content="Diogo Montador: Especialista em montagem de móveis convencionais e planejados. Serviço rápido, limpo e com garantia. Atendimento em toda a região.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Lexend:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,294 +22,262 @@
 
     <style>
         :root {
-            --brand-blue: #0F172A;
-            --brand-orange: #F97316;
-            --brand-gray: #64748B;
-            --brand-light: #F8FAFC;
+            --primary: #2563EB; /* Azul Profissional */
+            --secondary: #F59E0B; /* Amarelo Alerta/Ferramenta */
+            --dark: #0F172A;
+            --light: #F8FAFC;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .font-lexend {
-            font-family: 'Lexend', sans-serif;
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
         }
 
         body {
-            background-color: var(--brand-light);
-            color: var(--brand-blue);
+            background-color: var(--light);
+            color: var(--dark);
         }
 
         .glass-nav {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .hero-section {
-            background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.8) 100%), 
-                        url('https://images.unsplash.com/photo-1581850518616-bcb81f0cb89b?auto=format&fit=crop&q=80&w=1920');
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            height: 90vh;
+            display: flex;
+            align-items: center;
+            color: white;
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: white;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 10px 15px -3px rgba(37, 211, 102, 0.3);
+            padding: 18px 40px;
+            border-radius: 15px;
+            font-weight: 800;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
-            transform: translateY(-3px);
+            transform: translateY(-5px);
             background-color: #128C7E;
-            box-shadow: 0 20px 25px -5px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
         }
 
-        .btn-primary {
-            background-color: var(--brand-orange);
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #EA580C;
-            transform: translateY(-2px);
-        }
-
-        .floating-contact {
+        .floating-whatsapp {
             position: fixed;
             bottom: 30px;
             right: 30px;
+            background-color: #25D366;
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             z-index: 1000;
-            animation: bounce 2s infinite;
+            animation: pulse 2s infinite;
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         .service-card {
             background: white;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            border-color: var(--brand-orange);
-            transform: translateY(-12px);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
-        }
-
-        .stat-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
         .section-tag {
-            display: inline-block;
-            padding: 6px 16px;
-            background: rgba(249, 115, 22, 0.1);
-            color: var(--brand-orange);
-            border-radius: 99px;
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 50px;
             font-weight: 700;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1.5rem;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <!-- WhatsApp Floating Button -->
-    <div class="floating-contact">
-        <a href="https://wa.me/551198765409" class="w-16 h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-[#128C7E] transition-colors" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
-    </div>
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/551198765409" class="floating-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-[100] glass-nav py-4">
-        <div class="container mx-auto px-6 flex justify-between items-center">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass-nav py-4 px-6">
+        <div class="container mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 bg-orange-600 flex items-center justify-center rounded-xl shadow-lg">
-                    <i class="fas fa-tools text-white"></i>
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-hammer text-white text-xl"></i>
                 </div>
-                <div class="flex flex-col">
-                    <span class="text-xl font-extrabold tracking-tight text-slate-900 leading-none">PROFISSIONAL</span>
-                    <span class="text-[10px] font-bold text-orange-600 uppercase tracking-widest">Montagem de Móveis</span>
-                </div>
+                <span class="text-2xl font-heading tracking-tighter">DIOGO <span class="text-blue-600">MONTADOR</span></span>
             </div>
-            
-            <div class="hidden lg:flex items-center gap-10 font-semibold text-slate-600">
-                <a href="#inicio" class="hover:text-orange-600 transition">Início</a>
-                <a href="#servicos" class="hover:text-orange-600 transition">Serviços</a>
-                <a href="#diferenciais" class="hover:text-orange-600 transition">Diferenciais</a>
-                <a href="#contato" class="hover:text-orange-600 transition">Contato</a>
+            <div class="hidden md:flex gap-8 font-bold text-gray-600">
+                <a href="#inicio" class="hover:text-blue-600 transition">Início</a>
+                <a href="#servicos" class="hover:text-blue-600 transition">Serviços</a>
+                <a href="#contato" class="hover:text-blue-600 transition">Contato</a>
             </div>
-
-            <a href="https://wa.me/551198765409" class="btn-whatsapp px-7 py-3 rounded-full font-bold text-sm flex items-center gap-2">
-                <i class="fab fa-whatsapp text-lg"></i>
-                SOLICITAR ORÇAMENTO
+            <a href="https://wa.me/551198765409" class="bg-blue-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-700 transition">
+                ORÇAMENTO RÁPIDO
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero-section min-h-screen flex items-center pt-20">
+    <section id="inicio" class="hero-section">
         <div class="container mx-auto px-6">
-            <div class="max-w-4xl" data-aos="fade-right">
-                <span class="section-tag">Montador de Móveis Especialista</span>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-8 leading-[1.1]">
-                    Sua casa merece uma <span class="text-orange-500">Montagem Impecável.</span>
-                </h1>
-                <p class="text-xl text-slate-300 mb-12 max-w-2xl leading-relaxed">
-                    Evite dores de cabeça com amadores. Ofereço montagem profissional para móveis convencionais, planejados e de escritório com ferramentas de precisão e garantia de serviço.
-                </p>
-                <div class="flex flex-wrap gap-5">
-                    <a href="https://wa.me/551198765409" class="btn-whatsapp px-10 py-5 rounded-2xl font-bold text-lg flex items-center gap-3">
-                        <i class="fab fa-whatsapp text-2xl"></i>
-                        CHAMAR NO WHATSAPP AGORA
+            <div class="max-w-3xl" data-aos="fade-up">
+                <span class="section-tag mb-6 inline-block">Montador de Móveis Profissional</span>
+                <h1 class="text-5xl md:text-7xl mb-8 leading-tight">Móveis Montados com <span class="text-blue-500">Perfeição e Rapidez.</span></h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed">Não arrisque seus móveis com curiosos. Diogo Montador oferece montagem técnica, limpa e com garantia total para sua casa ou escritório.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/551198765409" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp text-2xl"></i> CHAMAR NO WHATSAPP AGORA
                     </a>
-                    <a href="#servicos" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-10 py-5 rounded-2xl font-bold text-lg transition border border-white/20">
-                        VER MEUS SERVIÇOS
-                    </a>
-                </div>
-                
-                <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="stat-card p-4 rounded-2xl text-center">
-                        <p class="text-3xl font-bold text-orange-500">100%</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Garantia</p>
-                    </div>
-                    <div class="stat-card p-4 rounded-2xl text-center">
-                        <p class="text-3xl font-bold text-orange-500">8 anos</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Experiência</p>
-                    </div>
-                    <div class="stat-card p-4 rounded-2xl text-center">
-                        <p class="text-3xl font-bold text-orange-500">+2k</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Móveis Montados</p>
-                    </div>
-                    <div class="stat-card p-4 rounded-2xl text-center">
-                        <p class="text-3xl font-bold text-orange-500">4.9/5</p>
-                        <p class="text-xs text-slate-400 uppercase tracking-widest mt-1">Avaliação</p>
+                    <div class="flex items-center gap-4 px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="font-bold">Nota 5.0 no Google</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="py-32 bg-white">
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-20" data-aos="fade-up">
-                <span class="section-tag">O que eu faço</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Serviços de <span class="text-orange-600">Alta Precisão</span></h2>
-                <p class="text-lg text-slate-600">Montagem técnica que preserva a vida útil dos seus móveis e garante a segurança da sua família.</p>
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="section-tag">O Que Eu Faço</span>
+                <h2 class="text-4xl md:text-5xl font-heading mt-6">Soluções em <span class="text-blue-600">Montagem</span></h2>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Service 1 -->
-                <div class="service-card p-10 rounded-[32px]" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 text-3xl mb-8">
-                        <i class="fas fa-couch"></i>
+            <div class="grid md:grid-cols-3 gap-10">
+                <!-- Serviço 1 -->
+                <div class="service-card" data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800" alt="Guarda-roupa" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Móveis Convencionais</h3>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        Montagem ágil e precisa de guarda-roupas, camas, cômodas e mesas compradas em lojas de varejo (Casas Bahia, Magazine Luiza, etc).
-                    </p>
-                    <a href="https://wa.me/551198765409" class="text-orange-600 font-bold flex items-center gap-2 group">
-                        SOLICITAR PREÇO <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Móveis de Quarto</h3>
+                        <p class="text-gray-600 mb-6">Montagem de guarda-roupas, camas, criados-mudos e cômodas de todas as marcas.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Service 2 -->
-                <div class="service-card p-10 rounded-[32px] bg-slate-900 text-white" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-orange-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg shadow-orange-600/30">
-                        <i class="fas fa-pencil-ruler"></i>
+                <!-- Serviço 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800" alt="Cozinha" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Móveis Planejados</h3>
-                    <p class="text-slate-400 mb-8 leading-relaxed">
-                        Instalação técnica de cozinhas, dormitórios e painéis planejados. Ajustes finos e furações precisas para um acabamento de luxo.
-                    </p>
-                    <a href="https://wa.me/551198765409" class="text-orange-500 font-bold flex items-center gap-2 group">
-                        SOLICITAR PREÇO <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Cozinhas e Painéis</h3>
+                        <p class="text-gray-600 mb-6">Instalação de armários de cozinha, painéis de TV e racks com furação precisa.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Service 3 -->
-                <div class="service-card p-10 rounded-[32px]" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center text-orange-600 text-3xl mb-8">
-                        <i class="fas fa-briefcase"></i>
+                <!-- Serviço 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800" alt="Escritório" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold text-slate-900 mb-4">Móveis de Escritório</h3>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        Montagem de estações de trabalho, cadeiras ergonômicas e armários corporativos. Organização e agilidade para sua empresa.
-                    </p>
-                    <a href="https://wa.me/551198765409" class="text-orange-600 font-bold flex items-center gap-2 group">
-                        SOLICITAR PREÇO <i class="fas fa-arrow-right group-hover:translate-x-2 transition-transform"></i>
-                    </a>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Escritório e Corporativo</h3>
+                        <p class="text-gray-600 mb-6">Montagem de mesas, cadeiras e estações de trabalho para empresas e home office.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Me Section -->
-    <section id="diferenciais" class="py-32 bg-slate-50 overflow-hidden">
+    <!-- Por Que Escolher -->
+    <section class="py-24 bg-blue-600 text-white overflow-hidden">
         <div class="container mx-auto px-6">
-            <div class="flex flex-col lg:flex-row items-center gap-20">
-                <div class="lg:w-1/2 relative" data-aos="zoom-out">
-                    <div class="relative z-10 rounded-[40px] overflow-hidden shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1594904351111-a072f80b1a71?auto=format&fit=crop&q=80&w=800" alt="Ferramentas Profissionais" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-8 -left-8 bg-white p-10 rounded-3xl shadow-xl z-20 border-l-8 border-orange-600">
-                        <p class="text-slate-900 font-black text-5xl mb-1">PRO</p>
-                        <p class="text-slate-500 font-bold uppercase tracking-[0.2em] text-xs">Qualidade Superior</p>
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-heading mb-8">Por Que Contratar o <span class="text-yellow-400">Diogo?</span></h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-tools text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Ferramentas de Ponta</h4>
+                                <p class="text-blue-100">Uso parafusadeiras e níveis de precisão para garantir que nada fique torto ou frouxo.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-broom text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Serviço Limpo</h4>
+                                <p class="text-blue-100">Respeito sua casa. Termino a montagem e deixo tudo organizado e limpo.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-shield-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Garantia de 90 Dias</h4>
+                                <p class="text-blue-100">Confio no meu trabalho. Se algo der problema, eu volto e resolvo sem custo.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="lg:w-1/2" data-aos="fade-left">
-                    <span class="section-tag">Meus Diferenciais</span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-slate-900 mb-10 leading-tight">Por que me contratar é o <span class="text-orange-600">melhor investimento?</span></h2>
-                    
-                    <div class="grid gap-10">
-                        <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-600 text-2xl border border-slate-100">
-                                <i class="fas fa-shield-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-2">Cuidado e Proteção</h4>
-                                <p class="text-slate-600">Uso de tapetes protetores e cuidado extremo com o seu piso e paredes durante toda a montagem.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-600 text-2xl border border-slate-100">
-                                <i class="fas fa-screwdriver-wrench"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-2">Ferramental Moderno</h4>
-                                <p class="text-slate-600">Parafusadeiras de precisão e ferramentas de nível laser para garantir que tudo fique perfeitamente alinhado.</p>
-                            </div>
-                        </div>
-
-                        <div class="flex gap-6">
-                            <div class="flex-shrink-0 w-14 h-14 bg-white rounded-2xl shadow-sm flex items-center justify-center text-orange-600 text-2xl border border-slate-100">
-                                <i class="fas fa-user-check"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-bold text-slate-900 mb-2">Postura Profissional</h4>
-                                <p class="text-slate-600">Pontualidade, educação e limpeza. Deixo o ambiente pronto para uso, sem sujeira ou embalagens espalhadas.</p>
-                            </div>
+                <div class="lg:w-1/2" data-aos="zoom-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581141849291-1125c7b692b5?auto=format&fit=crop&q=80&w=800" alt="Montagem Real" class="rounded-[40px] shadow-2xl">
+                        <div class="absolute -bottom-10 -left-10 bg-yellow-400 text-black p-8 rounded-3xl shadow-xl hidden md:block">
+                            <p class="text-4xl font-black">+2.000</p>
+                            <p class="font-bold uppercase text-sm tracking-widest">Móveis Montados</p>
                         </div>
                     </div>
                 </div>
@@ -317,59 +285,42 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section id="contato" class="py-32 bg-slate-900 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-            <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0 100 L100 0 L100 100 Z" fill="white"></path>
-            </svg>
-        </div>
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl md:text-6xl font-extrabold text-white mb-8" data-aos="fade-up">Não arrisque seus móveis novos. Contrate um <span class="text-orange-500">especialista.</span></h2>
-                <p class="text-xl text-slate-400 mb-14 leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                    Mande uma foto do móvel ou o manual pelo WhatsApp e receba seu orçamento em poucos minutos. Atendimento rápido em toda a região.
-                </p>
-                
-                <div class="flex flex-col md:flex-row justify-center gap-6" data-aos="fade-up" data-aos-delay="200">
-                    <a href="https://wa.me/551198765409" class="btn-whatsapp px-12 py-7 rounded-[24px] text-2xl font-bold flex items-center justify-center gap-4">
-                        <i class="fab fa-whatsapp text-4xl"></i>
-                        CHAMAR NO WHATSAPP
-                    </a>
+    <!-- CTA Final -->
+    <section id="contato" class="py-32 bg-white text-center">
+        <div class="container mx-auto px-6" data-aos="fade-up">
+            <h2 class="text-5xl md:text-6xl font-heading mb-8">Pronto para montar seus <span class="text-blue-600">móveis?</span></h2>
+            <p class="text-xl text-gray-500 mb-12 max-w-2xl mx-auto">Mande uma foto do móvel agora e receba seu orçamento em menos de 5 minutos!</p>
+            <a href="https://wa.me/551198765409" class="btn-whatsapp">
+                <i class="fab fa-whatsapp text-3xl"></i> FALAR COM DIOGO MONTADOR
+            </a>
+            
+            <div class="mt-20 grid md:grid-cols-3 gap-8 text-gray-400 font-bold uppercase tracking-widest text-sm">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                    <span>Atendimento em toda a Região</span>
                 </div>
-
-                <div class="mt-20 pt-16 border-t border-white/10 grid md:grid-cols-3 gap-10 text-slate-400 font-medium">
-                    <div class="flex items-center justify-center gap-3">
-                        <i class="fas fa-map-pin text-orange-500"></i>
-                        <span>Atendimento em São Paulo e Região</span>
-                    </div>
-                    <div class="flex items-center justify-center gap-3">
-                        <i class="fas fa-clock text-orange-500"></i>
-                        <span>Segunda a Domingo: 08h às 20h</span>
-                    </div>
-                    <div class="flex items-center justify-center gap-3">
-                        <i class="fas fa-check-circle text-orange-500"></i>
-                        <span>Pagamento Facilitado</span>
-                    </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-calendar-check text-blue-600"></i>
+                    <span>Segunda a Sábado: 08h às 19h</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-credit-card text-blue-600"></i>
+                    <span>Aceito Cartão e PIX</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-slate-950 text-slate-500 text-sm border-t border-white/5">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2">
-                <div class="w-6 h-6 bg-orange-600 rounded flex items-center justify-center text-[10px] text-white">
-                    <i class="fas fa-tools"></i>
+    <footer class="py-12 bg-gray-950 text-gray-500 text-center border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <div class="bg-blue-600 p-1 rounded">
+                    <i class="fas fa-hammer text-white text-sm"></i>
                 </div>
-                <span class="font-bold text-white tracking-widest uppercase">Montagem Profissional</span>
+                <span class="text-xl font-heading text-white tracking-tighter">DIOGO MONTADOR</span>
             </div>
-            <p>&copy; 2026 Todos os direitos reservados. Design de Alta Performance.</p>
-            <div class="flex gap-6">
-                <a href="#" class="hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="hover:text-white transition"><i class="fab fa-facebook text-xl"></i></a>
-            </div>
+            <p>&copy; 2026 Diogo Montador Profissional. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -378,8 +329,7 @@
     <script>
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
     </script>
 </body>
