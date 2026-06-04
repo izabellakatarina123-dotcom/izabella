@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rei do Óleo | Troca de Óleo e Lubrificantes na Vila</title>
+    <title>Diogo Montador | Montagem de Móveis Profissional</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Rei do Óleo: A melhor troca de óleo e lubrificantes da vila. Atendimento rápido, produtos de qualidade e o melhor preço para o seu carro.">
+    <meta name="description" content="Diogo Montador: Especialista em montagem de móveis convencionais e planejados. Serviço rápido, limpo e com garantia. Atendimento em toda a região.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -22,59 +22,63 @@
 
     <style>
         :root {
-            --primary-yellow: #FFD700;
-            --primary-black: #1A1A1A;
-            --accent-red: #E63946;
-            --oil-gold: #DAA520;
+            --primary: #2563EB; /* Azul Profissional */
+            --secondary: #F59E0B; /* Amarelo Alerta/Ferramenta */
+            --dark: #0F172A;
+            --light: #F8FAFC;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Outfit', sans-serif;
             scroll-behavior: smooth;
         }
 
-        h1, h2, h3, .font-bebas {
-            font-family: 'Bebas Neue', cursive;
-            letter-spacing: 1px;
+        h1, h2, h3, .font-heading {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
         }
 
         body {
-            background-color: #f4f4f4;
-            color: var(--primary-black);
+            background-color: var(--light);
+            color: var(--dark);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
         }
 
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
-                        url('https://images.unsplash.com/photo-1486006396193-c7a33a3a138a?auto=format&fit=crop&q=80&w=1920');
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
             height: 90vh;
             display: flex;
             align-items: center;
-            justify-content: center;
-            text-align: center;
             color: white;
         }
 
         .btn-whatsapp {
             background-color: #25D366;
             color: white;
-            padding: 15px 35px;
-            border-radius: 50px;
+            padding: 18px 40px;
+            border-radius: 15px;
             font-weight: 800;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             transition: all 0.3s ease;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
         }
 
         .btn-whatsapp:hover {
-            transform: scale(1.05);
+            transform: translateY(-5px);
             background-color: #128C7E;
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.5);
         }
@@ -92,7 +96,7 @@
             align-items: center;
             justify-content: center;
             font-size: 35px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
             z-index: 1000;
             animation: pulse 2s infinite;
         }
@@ -103,193 +107,220 @@
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        .card-service {
+        .service-card {
             background: white;
-            padding: 30px;
-            border-radius: 20px;
-            border-bottom: 5px solid var(--primary-yellow);
+            border-radius: 25px;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
             transition: all 0.3s ease;
         }
 
-        .card-service:hover {
+        .service-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
 
-        .price-tag {
-            background: var(--accent-red);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 5px;
-            font-weight: 800;
-            display: inline-block;
-            margin-top: 10px;
+        .section-tag {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--primary);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
     <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/SEU_NUMERO_AQUI" class="floating-whatsapp" target="_blank">
+    <a href="https://wa.me/551198765409" class="floating-whatsapp" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Navbar -->
-    <nav class="bg-black text-white py-4 px-6 fixed w-full z-50 shadow-lg">
+    <nav class="fixed top-0 w-full z-50 glass-nav py-4 px-6">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fas fa-crown text-yellow-400 text-3xl"></i>
-                <span class="text-2xl font-bebas tracking-wider">REI DO <span class="text-yellow-400">ÓLEO</span></span>
+            <div class="flex items-center gap-3">
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-hammer text-white text-xl"></i>
+                </div>
+                <span class="text-2xl font-heading tracking-tighter">DIOGO <span class="text-blue-600">MONTADOR</span></span>
             </div>
-            <div class="hidden md:flex gap-8 font-semibold">
-                <a href="#inicio" class="hover:text-yellow-400 transition">Início</a>
-                <a href="#servicos" class="hover:text-yellow-400 transition">Serviços</a>
-                <a href="#sobre" class="hover:text-yellow-400 transition">Sobre Nós</a>
-                <a href="#contato" class="hover:text-yellow-400 transition">Localização</a>
+            <div class="hidden md:flex gap-8 font-bold text-gray-600">
+                <a href="#inicio" class="hover:text-blue-600 transition">Início</a>
+                <a href="#servicos" class="hover:text-blue-600 transition">Serviços</a>
+                <a href="#contato" class="hover:text-blue-600 transition">Contato</a>
             </div>
-            <a href="https://wa.me/SEU_NUMERO_AQUI" class="bg-yellow-400 text-black px-6 py-2 rounded-full font-bold text-sm hover:bg-white transition">
-                FALAR COM VENDEDOR
+            <a href="https://wa.me/551198765409" class="bg-blue-600 text-white px-6 py-2 rounded-xl font-bold hover:bg-blue-700 transition">
+                ORÇAMENTO RÁPIDO
             </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
-        <div class="container mx-auto px-6" data-aos="zoom-in">
-            <h1 class="text-6xl md:text-8xl font-bebas mb-4">O Tratamendo Real que seu <span class="text-yellow-400">Motor Merece!</span></h1>
-            <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light">A melhor troca de óleo da vila. Rápido, limpo e com preço de amigo. Não deixe seu motor sofrer!</p>
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <a href="https://wa.me/SEU_NUMERO_AQUI" class="btn-whatsapp">
-                    <i class="fab fa-whatsapp"></i> CONSULTAR PREÇO AGORA
-                </a>
-                <a href="#servicos" class="bg-white text-black px-10 py-4 rounded-full font-extrabold text-lg hover:bg-yellow-400 transition">
-                    VER SERVIÇOS
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Diferenciais -->
-    <section class="py-16 bg-yellow-400">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div data-aos="fade-up">
-                    <i class="fas fa-bolt text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">TROCA RÁPIDA</h3>
-                    <p class="font-medium">Troca feita em até 20 minutos para você não perder tempo.</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-check-double text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">MARCAS LÍDERES</h3>
-                    <p class="font-medium">Trabalhamos apenas com as melhores marcas do mercado.</p>
-                </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-handshake text-4xl mb-4"></i>
-                    <h3 class="text-2xl font-bold mb-2">PREÇO JUSTO</h3>
-                    <p class="font-medium">O melhor custo-benefício da vila, garantido!</p>
+            <div class="max-w-3xl" data-aos="fade-up">
+                <span class="section-tag mb-6 inline-block">Montador de Móveis Profissional</span>
+                <h1 class="text-5xl md:text-7xl mb-8 leading-tight">Móveis Montados com <span class="text-blue-500">Perfeição e Rapidez.</span></h1>
+                <p class="text-xl text-gray-300 mb-12 leading-relaxed">Não arrisque seus móveis com curiosos. Diogo Montador oferece montagem técnica, limpa e com garantia total para sua casa ou escritório.</p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/551198765409" class="btn-whatsapp">
+                        <i class="fab fa-whatsapp text-2xl"></i> CHAMAR NO WHATSAPP AGORA
+                    </a>
+                    <div class="flex items-center gap-4 px-6 py-4 bg-white/10 rounded-2xl backdrop-blur-sm border border-white/20">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="font-bold">Nota 5.0 no Google</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Serviços -->
-    <section id="servicos" class="py-24 bg-gray-100">
+    <section id="servicos" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-5xl font-bebas text-gray-900">Nossos <span class="text-yellow-600">Serviços</span></h2>
-                <p class="text-gray-600 mt-2">Cuidamos de cada detalhe do seu veículo</p>
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="section-tag">O Que Eu Faço</span>
+                <h2 class="text-4xl md:text-5xl font-heading mt-6">Soluções em <span class="text-blue-600">Montagem</span></h2>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="grid md:grid-cols-3 gap-10">
                 <!-- Serviço 1 -->
-                <div class="card-service" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-oil-can"></i>
+                <div class="service-card" data-aos="fade-up">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800" alt="Guarda-roupa" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Troca de Óleo</h3>
-                    <p class="text-gray-600">Sintético, Semi-sintético e Mineral para todos os modelos de carros e motos.</p>
-                    <span class="price-tag">A partir de R$ 99,00</span>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Móveis de Quarto</h3>
+                        <p class="text-gray-600 mb-6">Montagem de guarda-roupas, camas, criados-mudos e cômodas de todas as marcas.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Serviço 2 -->
-                <div class="card-service" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-filter"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=800" alt="Cozinha" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Filtros em Geral</h3>
-                    <p class="text-gray-600">Filtro de óleo, ar, combustível e cabine (ar-condicionado).</p>
-                    <span class="price-tag">Melhores Marcas</span>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Cozinhas e Painéis</h3>
+                        <p class="text-gray-600 mb-6">Instalação de armários de cozinha, painéis de TV e racks com furação precisa.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Serviço 3 -->
-                <div class="card-service" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-black text-yellow-400 rounded-full flex items-center justify-center text-2xl mb-6">
-                        <i class="fas fa-flask"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&q=80&w=800" alt="Escritório" class="w-full h-full object-cover">
                     </div>
-                    <h3 class="text-2xl font-bold mb-4">Aditivos e Fluidos</h3>
-                    <p class="text-gray-600">Fluidos de freio, arrefecimento e aditivos para combustível.</p>
-                    <span class="price-tag">Proteção Total</span>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-4">Escritório e Corporativo</h3>
+                        <p class="text-gray-600 mb-6">Montagem de mesas, cadeiras e estações de trabalho para empresas e home office.</p>
+                        <a href="https://wa.me/551198765409" class="text-blue-600 font-bold flex items-center gap-2 hover:gap-4 transition-all">
+                            ORÇAMENTO <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por Que Escolher -->
+    <section class="py-24 bg-blue-600 text-white overflow-hidden">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-heading mb-8">Por Que Contratar o <span class="text-yellow-400">Diogo?</span></h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-tools text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Ferramentas de Ponta</h4>
+                                <p class="text-blue-100">Uso parafusadeiras e níveis de precisão para garantir que nada fique torto ou frouxo.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-broom text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Serviço Limpo</h4>
+                                <p class="text-blue-100">Respeito sua casa. Termino a montagem e deixo tudo organizado e limpo.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-6">
+                            <div class="bg-white/10 p-4 rounded-2xl h-max">
+                                <i class="fas fa-shield-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold mb-2">Garantia de 90 Dias</h4>
+                                <p class="text-blue-100">Confio no meu trabalho. Se algo der problema, eu volto e resolvo sem custo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="zoom-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1581141849291-1125c7b692b5?auto=format&fit=crop&q=80&w=800" alt="Montagem Real" class="rounded-[40px] shadow-2xl">
+                        <div class="absolute -bottom-10 -left-10 bg-yellow-400 text-black p-8 rounded-3xl shadow-xl hidden md:block">
+                            <p class="text-4xl font-black">+2.000</p>
+                            <p class="font-bold uppercase text-sm tracking-widest">Móveis Montados</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CTA Final -->
-    <section class="py-20 bg-black text-white text-center">
+    <section id="contato" class="py-32 bg-white text-center">
         <div class="container mx-auto px-6" data-aos="fade-up">
-            <h2 class="text-5xl font-bebas mb-6">Seu carro está pedindo <span class="text-yellow-400">óleo novo?</span></h2>
-            <p class="text-xl mb-10 text-gray-400">Clique no botão abaixo e fale agora mesmo com o nosso vendedor via WhatsApp.</p>
-            <a href="https://wa.me/SEU_NUMERO_AQUI" class="btn-whatsapp">
-                <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
+            <h2 class="text-5xl md:text-6xl font-heading mb-8">Pronto para montar seus <span class="text-blue-600">móveis?</span></h2>
+            <p class="text-xl text-gray-500 mb-12 max-w-2xl mx-auto">Mande uma foto do móvel agora e receba seu orçamento em menos de 5 minutos!</p>
+            <a href="https://wa.me/551198765409" class="btn-whatsapp">
+                <i class="fab fa-whatsapp text-3xl"></i> FALAR COM DIOGO MONTADOR
             </a>
-        </div>
-    </section>
-
-    <!-- Localização -->
-    <section id="contato" class="py-24">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <h2 class="text-5xl font-bebas mb-6">Onde <span class="text-yellow-600">Estamos</span></h2>
-                <p class="text-xl mb-8">Venha tomar um café conosco enquanto cuidamos do seu carro!</p>
-                <div class="space-y-4">
-                    <div class="flex items-center gap-4 text-lg">
-                        <i class="fas fa-map-marker-alt text-yellow-600"></i>
-                        <span>Rua Principal da Vila, 123 - Centro</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-lg">
-                        <i class="fas fa-phone text-yellow-600"></i>
-                        <span>(11) 99999-9999</span>
-                    </div>
-                    <div class="flex items-center gap-4 text-lg">
-                        <i class="fas fa-clock text-yellow-600"></i>
-                        <span>Segunda a Sábado: 08h às 18h</span>
-                    </div>
+            
+            <div class="mt-20 grid md:grid-cols-3 gap-8 text-gray-400 font-bold uppercase tracking-widest text-sm">
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-map-marker-alt text-blue-600"></i>
+                    <span>Atendimento em toda a Região</span>
                 </div>
-            </div>
-            <div class="md:w-1/2 w-full h-80 bg-gray-300 rounded-3xl overflow-hidden shadow-2xl" data-aos="fade-left">
-                <!-- Simulação de Mapa -->
-                <div class="w-full h-full flex items-center justify-center bg-gray-200">
-                    <div class="text-center">
-                        <i class="fas fa-map-marked-alt text-5xl text-gray-400 mb-2"></i>
-                        <p class="text-gray-500 font-bold">MAPA DA LOJA NA VILA</p>
-                    </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-calendar-check text-blue-600"></i>
+                    <span>Segunda a Sábado: 08h às 19h</span>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <i class="fas fa-credit-card text-blue-600"></i>
+                    <span>Aceito Cartão e PIX</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 border-t border-gray-800">
-        <div class="container mx-auto px-6 text-center">
-            <div class="flex justify-center items-center gap-2 mb-6">
-                <i class="fas fa-crown text-yellow-400 text-2xl"></i>
-                <span class="text-xl font-bebas tracking-wider">REI DO ÓLEO</span>
+    <footer class="py-12 bg-gray-950 text-gray-500 text-center border-t border-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center items-center gap-3 mb-6">
+                <div class="bg-blue-600 p-1 rounded">
+                    <i class="fas fa-hammer text-white text-sm"></i>
+                </div>
+                <span class="text-xl font-heading text-white tracking-tighter">DIOGO MONTADOR</span>
             </div>
-            <p class="text-gray-500">&copy; 2026 Rei do Óleo Automotivo. Todos os direitos reservados.</p>
-            <div class="flex justify-center gap-6 mt-6">
-                <a href="#" class="text-2xl hover:text-yellow-400 transition"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-2xl hover:text-yellow-400 transition"><i class="fab fa-facebook"></i></a>
-            </div>
+            <p>&copy; 2026 Diogo Montador Profissional. Todos os direitos reservados.</p>
         </div>
     </footer>
 
