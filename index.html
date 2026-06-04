@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bella Essence Hair | Excelência em Transformação Capilar</title>
+    <title>Bella Essence Hair | Transformação Capilar de Luxo</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Bella Essence Hair: Especialista em cortes, coloração e tratamentos capilares de luxo. Agende sua avaliação gratuita no melhor Studio de Beleza.">
+    <meta name="description" content="Bella Essence Hair: Transforme seu visual com especialistas em coloração e tratamentos de luxo. Agende sua avaliação gratuita.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,8 +48,8 @@
 
         /* Luxury Header Overlay */
         .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920');
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1920');
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -64,9 +64,9 @@
         .btn-gold {
             background-color: var(--gold);
             color: white;
-            padding: 16px 40px;
+            padding: 18px 45px;
             border-radius: 0;
-            font-weight: 600;
+            font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.4s ease;
@@ -84,10 +84,11 @@
 
         .btn-outline {
             border: 1px solid white;
-            padding: 16px 40px;
+            padding: 18px 45px;
             letter-spacing: 2px;
             text-transform: uppercase;
             transition: all 0.4s ease;
+            font-weight: 600;
         }
 
         .btn-outline:hover {
@@ -134,13 +135,13 @@
             right: 40px;
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
+            font-size: 35px;
             box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
             z-index: 1000;
             transition: all 0.3s ease;
@@ -180,19 +181,6 @@
             width: 100%;
         }
 
-        /* Before/After Section */
-        .transformation-card {
-            background: white;
-            padding: 10px;
-            border: 1px solid #eee;
-        }
-
-        .transformation-img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-        }
-
         /* Testimonials */
         .testimonial-card {
             background: white;
@@ -210,17 +198,54 @@
         .map-container:hover {
             filter: none;
         }
+
+        .social-proof-tag {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .before-after-container {
+            display: flex;
+            gap: 4px;
+            width: 100%;
+            height: 400px;
+        }
+
+        .before-after-img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .label-tag {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
     <!-- WhatsApp Floating -->
-    <a href="https://wa.me/551198765409" class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5511987655409" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md py-6 px-10 border-b border-gray-100">
+    <nav class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md py-6 px-10 border-b border-gray-100">
         <div class="container mx-auto flex justify-between items-center">
             <div class="text-2xl font-serif font-bold tracking-[4px] uppercase">
                 Bella <span class="text-[#C5A059]">Essence</span> Hair
@@ -229,11 +254,11 @@
             <div class="hidden lg:flex items-center gap-10 font-medium">
                 <a href="#inicio" class="nav-link">Início</a>
                 <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#transformacoes" class="nav-link">Antes & Depois</a>
+                <a href="#transformacoes" class="nav-link">Transformações</a>
                 <a href="#contato" class="nav-link">Contato</a>
             </div>
 
-            <a href="https://wa.me/551198765409" class="bg-[#C5A059] text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-black transition-all uppercase shadow-lg shadow-[#C5A059]/30">
+            <a href="https://wa.me/5511987655409" class="bg-[#C5A059] text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-black transition-all uppercase shadow-lg shadow-[#C5A059]/30">
                 Agendar Avaliação Gratuita
             </a>
         </div>
@@ -242,61 +267,126 @@
     <!-- Hero Section -->
     <section id="inicio" class="hero-section">
         <div class="container mx-auto px-6" data-aos="fade-up">
+            <!-- Social Proof Top -->
+            <div class="social-proof-tag">
+                <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span class="text-xs font-bold tracking-widest uppercase">Mais de 500 clientes transformadas</span>
+            </div>
+
             <span class="text-sm tracking-[5px] uppercase mb-4 block">Beleza & Sofisticação</span>
-            <h1 class="text-6xl md:text-8xl font-serif mb-8 leading-tight">
-                Sua melhor versão <br> <span class="italic text-[#C5A059]">começa aqui.</span>
+            <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">
+                Cabelos que chamam atenção. <br> <span class="italic text-[#C5A059]">Resultados que elevam sua autoestima.</span>
             </h1>
             <div class="gold-divider"></div>
-            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light tracking-wide">
-                Cortes exclusivos, coloração artística e tratamentos de alta performance em um ambiente projetado para o seu bem-estar.
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light tracking-wide">
+                Transforme seu visual com especialistas em coloração e tratamentos de luxo. <br class="hidden md:block">
+                Técnicas exclusivas para quem não abre mão da saúde dos fios.
             </p>
             <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://wa.me/551198765409" class="btn-gold">
+                <a href="https://wa.me/5511987655409" class="btn-gold">
                     <i class="fab fa-whatsapp"></i> AGENDAR AVALIAÇÃO GRATUITA
                 </a>
-                <a href="#transformacoes" class="btn-outline">VER TRANSFORMAÇÕES</a>
+                <a href="#transformacoes" class="btn-outline">VER TRABALHOS REAIS</a>
             </div>
         </div>
     </section>
 
-    <!-- Antes e Depois -->
-    <section id="transformacoes" class="py-32 bg-white">
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 bg-white">
         <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
-            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Galeria Real</span>
-            <h2 class="text-5xl font-serif mt-4">Antes & Depois</h2>
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Especialidades</span>
+            <h2 class="text-5xl font-serif mt-4">Nossos Serviços Premium</h2>
             <div class="gold-divider"></div>
-            <p class="text-gray-500 max-w-xl mx-auto">Veja as transformações reais realizadas em nosso studio por nossos especialistas.</p>
         </div>
 
-        <div class="container mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="transformation-card" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1620331311520-246422ff82f9?auto=format&fit=crop&q=80&w=800" class="transformation-img" alt="Transformação 1">
-                <div class="p-6 text-center">
-                    <h4 class="font-bold font-serif text-xl">Iluminação & Mechas</h4>
-                    <p class="text-gray-400 text-sm mt-2">Técnica exclusiva Bella Essence</p>
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1560869713-7d0a29430863?auto=format&fit=crop&q=80&w=800" alt="Mechas">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Mechas & Balayage</h3>
+                    <p class="text-gray-500 mb-6">Técnicas de iluminação que respeitam a integridade do fio e criam um contraste natural.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
                 </div>
             </div>
-            <div class="transformation-card" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800" class="transformation-img" alt="Transformação 2">
-                <div class="p-6 text-center">
-                    <h4 class="font-bold font-serif text-xl">Coloração Global</h4>
-                    <p class="text-gray-400 text-sm mt-2">Brilho intenso e proteção</p>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800" alt="Tratamento">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Terapia Capilar</h3>
+                    <p class="text-gray-500 mb-6">Cronograma capilar de luxo com as melhores marcas mundiais para reconstrução profunda.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
                 </div>
             </div>
-            <div class="transformation-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800" class="transformation-img" alt="Transformação 3">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800" alt="Corte">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Corte & Visagismo</h3>
+                    <p class="text-gray-500 mb-6">Estudo das linhas do rosto para criar um corte que valorize sua personalidade única.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformações (Antes e Depois com Fotos Exemplo) -->
+    <section id="transformacoes" class="py-32 bg-[#F9F7F2]">
+        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Portfólio Real</span>
+            <h2 class="text-5xl font-serif mt-4">Antes & Depois</h2>
+            <div class="gold-divider"></div>
+            <p class="text-gray-500 max-w-xl mx-auto">Confira os resultados reais de quem escolheu a excelência do Bella Essence Hair.</p>
+        </div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10">
+            <!-- Transformação 1 -->
+            <div class="bg-white p-2 shadow-xl" data-aos="fade-right">
+                <div class="before-after-container">
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Antes">
+                        <span class="label-tag left-4">Antes</span>
+                    </div>
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1492152385176-7cf4126652a1?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Depois">
+                        <span class="label-tag right-4">Depois</span>
+                    </div>
+                </div>
                 <div class="p-6 text-center">
-                    <h4 class="font-bold font-serif text-xl">Corte & Visagismo</h4>
-                    <p class="text-gray-400 text-sm mt-2">Valorização dos traços reais</p>
+                    <h4 class="font-bold font-serif text-2xl">Loiro Perolado Premium</h4>
+                    <p class="text-gray-400 text-sm mt-2">Técnica de Mechas Criativas</p>
+                </div>
+            </div>
+
+            <!-- Transformação 2 -->
+            <div class="bg-white p-2 shadow-xl" data-aos="fade-left">
+                <div class="before-after-container">
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Antes">
+                        <span class="label-tag left-4">Antes</span>
+                    </div>
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430863?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Depois">
+                        <span class="label-tag right-4">Depois</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h4 class="font-bold font-serif text-2xl">Tratamento de Brilho</h4>
+                    <p class="text-gray-400 text-sm mt-2">Terapia Capilar Intensiva</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Depoimentos -->
-    <section class="py-32 bg-[#F9F7F2]">
+    <section class="py-32 bg-white">
         <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
-            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Experiências</span>
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Depoimentos</span>
             <h2 class="text-5xl font-serif mt-4">O Que Dizem Nossas Clientes</h2>
             <div class="gold-divider"></div>
         </div>
@@ -306,7 +396,9 @@
                 <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <p class="italic text-gray-600 mb-8">"O atendimento é impecável! Fiz mechas e meu cabelo nunca esteve tão saudável e brilhante. A avaliação gratuita me deu muita segurança."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Cliente"></div>
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
                     <div>
                         <h5 class="font-bold">Mariana Silva</h5>
                         <span class="text-xs text-gray-400">Cliente há 2 anos</span>
@@ -317,7 +409,9 @@
                 <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <p class="italic text-gray-600 mb-8">"Lugar maravilhoso e profissionais extremamente qualificados. O Bella Essence Hair superou todas as minhas expectativas com o corte novo."</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Cliente"></div>
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
                     <div>
                         <h5 class="font-bold">Fernanda Costa</h5>
                         <span class="text-xs text-gray-400">Cliente VIP</span>
@@ -328,7 +422,9 @@
                 <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                 <p class="italic text-gray-600 mb-8">"Melhor studio de SP! O tratamento capilar que fiz salvou meus fios após uma química mal feita em outro lugar. Gratidão eterna!"</p>
                 <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Cliente"></div>
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
                     <div>
                         <h5 class="font-bold">Juliana Mendes</h5>
                         <span class="text-xs text-gray-400">Cliente Mensal</span>
@@ -339,12 +435,12 @@
     </section>
 
     <!-- Mapa e Contato -->
-    <section id="contato" class="py-32 bg-white">
+    <section id="contato" class="py-32 bg-[#F9F7F2]">
         <div class="container mx-auto px-6">
             <div class="flex flex-col lg:flex-row gap-20">
                 <div class="lg:w-1/2" data-aos="fade-right">
                     <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Onde Estamos</span>
-                    <h2 class="text-5xl font-serif mt-4 mb-10">Venha nos <span class="italic">visitar</span></h2>
+                    <h2 class="text-5xl font-serif mt-4 mb-10">Agende sua <span class="italic">visita</span></h2>
                     <div class="space-y-8 mb-12">
                         <div class="flex gap-6 items-center">
                             <i class="fas fa-map-marker-alt text-[#C5A059] text-2xl w-8 text-center"></i>
@@ -352,14 +448,14 @@
                         </div>
                         <div class="flex gap-6 items-center">
                             <i class="fas fa-phone-alt text-[#C5A059] text-2xl w-8 text-center"></i>
-                            <p class="text-gray-600">(11) 98765-409</p>
+                            <p class="text-gray-600">(11) 98765-5409</p>
                         </div>
                         <div class="flex gap-6 items-center">
                             <i class="fas fa-clock text-[#C5A059] text-2xl w-8 text-center"></i>
                             <p class="text-gray-600">Terça a Sábado: 09h às 20h</p>
                         </div>
                     </div>
-                    <a href="https://wa.me/551198765409" class="btn-gold w-full justify-center">
+                    <a href="https://wa.me/5511987655409" class="btn-gold w-full justify-center">
                         <i class="fab fa-whatsapp"></i> AGENDAR AVALIAÇÃO AGORA
                     </a>
                 </div>
