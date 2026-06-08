@@ -3,22 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nome do Salão | Transformação & Beleza</title>
+    <title>Bella Essence Hair | Transformação Capilar de Luxo</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Bella Essence Hair: Transforme seu visual com especialistas em coloração e tratamentos de luxo. Agende sua avaliação gratuita.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
             --gold: #C5A059;
             --dark: #121212;
             --light: #F9F7F2;
+            --gray: #4A4A4A;
         }
 
         * {
@@ -33,161 +40,518 @@
             font-family: 'Cormorant Garamond', serif;
         }
 
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        /* Luxury Header Overlay */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
+                        url('https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Buttons */
         .btn-gold {
             background-color: var(--gold);
             color: white;
-            padding: 14px 30px;
+            padding: 18px 45px;
+            border-radius: 0;
             font-weight: 700;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             border: 1px solid var(--gold);
         }
 
         .btn-gold:hover {
             background-color: transparent;
             color: var(--gold);
+            transform: scale(1.05);
         }
 
+        .btn-outline {
+            border: 1px solid white;
+            padding: 18px 45px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+            font-weight: 600;
+        }
+
+        .btn-outline:hover {
+            background-color: white;
+            color: black;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid transparent;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-img-container {
+            overflow: hidden;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .service-img-container img {
+            transition: transform 0.8s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .service-card:hover .service-img-container img {
+            transform: scale(1.1);
+        }
+
+        /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 40px;
+            right: 40px;
             background-color: #25D366;
             color: white;
-            width: 60px;
-            height: 60px;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            font-size: 35px;
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
             z-index: 1000;
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) rotate(10deg);
         }
 
+        /* Decorative Elements */
+        .gold-divider {
+            width: 80px;
+            height: 2px;
+            background-color: var(--gold);
+            margin: 20px auto;
+        }
+
+        .nav-link {
+            position: relative;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        /* Form Styling */
         .form-input {
             width: 100%;
-            padding: 12px;
-            border: 1px solid #ddd;
-            margin-bottom: 15px;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+            margin-bottom: 20px;
             outline: none;
             transition: border-color 0.3s;
+            font-size: 14px;
         }
 
         .form-input:focus {
             border-color: var(--gold);
         }
+
+        .form-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--gold);
+            font-weight: 700;
+        }
+
+        /* Map */
+        .map-container {
+            filter: grayscale(100%) invert(90%) contrast(90%);
+            transition: all 0.5s ease;
+        }
+
+        .map-container:hover {
+            filter: none;
+        }
+
+        .social-proof-tag {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin-bottom: 2rem;
+        }
+
+        .before-after-container {
+            display: flex;
+            gap: 4px;
+            width: 100%;
+            height: 400px;
+        }
+
+        .before-after-img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .label-tag {
+            position: absolute;
+            bottom: 20px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 5px 15px;
+            font-size: 12px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
     </style>
 </head>
-<body class="bg-[#F9F7F2] text-[#121212]">
+<body>
 
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/SEU_NUMERO_AQUI" class="whatsapp-float" target="_blank">
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/5511987655409" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Navegação Simples -->
-    <nav class="bg-white py-4 px-6 sticky top-0 z-50 shadow-sm">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-[100] bg-white/95 backdrop-blur-md py-6 px-10 border-b border-gray-100">
         <div class="container mx-auto flex justify-between items-center">
-            <div class="text-xl font-serif font-bold tracking-widest uppercase">
-                LOGO <span class="text-[#C5A059]">SALÃO</span>
+            <div class="text-2xl font-serif font-bold tracking-[4px] uppercase">
+                Bella <span class="text-[#C5A059]">Essence</span> Hair
             </div>
-            <a href="https://wa.me/SEU_NUMERO_AQUI" class="hidden md:block bg-[#C5A059] text-white px-6 py-2 text-xs font-bold uppercase tracking-widest">
-                Agendar Agora
+            
+            <div class="hidden lg:flex items-center gap-10 font-medium">
+                <a href="#inicio" class="nav-link">Início</a>
+                <a href="#servicos" class="nav-link">Serviços</a>
+                <a href="#transformacoes" class="nav-link">Transformações</a>
+                <a href="#contato" class="nav-link">Contato</a>
+            </div>
+
+            <a href="https://wa.me/5511987655409" class="bg-[#C5A059] text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-black transition-all uppercase shadow-lg shadow-[#C5A059]/30">
+                Agendar Avaliação Gratuita
             </a>
         </div>
     </nav>
 
-    <!-- Hero Section (Apenas 1 imagem de fundo) -->
-    <section class="relative h-[70vh] flex items-center justify-center text-center text-white bg-black">
-        <div class="absolute inset-0 opacity-50">
-            <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1200" alt="Salão" class="w-full h-full object-cover">
-        </div>
-        <div class="relative z-10 px-6">
-            <h1 class="text-4xl md:text-6xl font-serif mb-4">Sua melhor versão começa aqui.</h1>
-            <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto font-light">Especialistas em realçar sua beleza natural com técnicas exclusivas e atendimento de luxo.</p>
-            <a href="#contato" class="btn-gold">Solicitar Orçamento</a>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <section id="inicio" class="hero-section">
+        <div class="container mx-auto px-6" data-aos="fade-up">
+            <div class="social-proof-tag">
+                <div class="flex text-yellow-400 text-xs">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span class="text-xs font-bold tracking-widest uppercase">Mais de 500 clientes transformadas</span>
+            </div>
 
-    <!-- Serviços (Sem imagens, apenas ícones para ser leve) -->
-    <section class="py-20 container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-serif">Nossos Serviços</h2>
-            <div class="w-16 h-[2px] bg-[#C5A059] mx-auto mt-4"></div>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-8 text-center shadow-sm border-t-4 border-[#C5A059]">
-                <i class="fas fa-scissors text-3xl text-[#C5A059] mb-4"></i>
-                <h3 class="text-xl font-serif font-bold mb-2">Corte & Estilo</h3>
-                <p class="text-gray-500 text-sm">Cortes modernos e visagismo para valorizar seu rosto.</p>
-            </div>
-            <div class="bg-white p-8 text-center shadow-sm border-t-4 border-[#C5A059]">
-                <i class="fas fa-magic text-3xl text-[#C5A059] mb-4"></i>
-                <h3 class="text-xl font-serif font-bold mb-2">Coloração Premium</h3>
-                <p class="text-gray-500 text-sm">Mechas, luzes e cores vibrantes com proteção total dos fios.</p>
-            </div>
-            <div class="bg-white p-8 text-center shadow-sm border-t-4 border-[#C5A059]">
-                <i class="fas fa-sparkles text-3xl text-[#C5A059] mb-4"></i>
-                <h3 class="text-xl font-serif font-bold mb-2">Tratamentos</h3>
-                <p class="text-gray-500 text-sm">Hidratação profunda e reconstrução capilar intensiva.</p>
+            <span class="text-sm tracking-[5px] uppercase mb-4 block">Beleza & Sofisticação</span>
+            <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">
+                Cabelos que chamam atenção. <br> <span class="italic text-[#C5A059]">Resultados que elevam sua autoestima.</span>
+            </h1>
+            <div class="gold-divider"></div>
+            <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto font-light tracking-wide">
+                Transforme seu visual com especialistas em coloração e tratamentos de luxo. <br class="hidden md:block">
+                Técnicas exclusivas para quem não abre mão da saúde dos fios.
+            </p>
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="https://wa.me/5511987655409" class="btn-gold">
+                    <i class="fab fa-whatsapp"></i> AGENDAR AVALIAÇÃO GRATUITA
+                </a>
+                <a href="#transformacoes" class="btn-outline">VER TRABALHOS REAIS</a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Contato com Formulário -->
-    <section id="contato" class="py-20 bg-white">
-        <div class="container mx-auto px-6 max-w-4xl">
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <h2 class="text-4xl font-serif mb-6">Entre em Contato</h2>
-                    <p class="text-gray-600 mb-8">Preencha os campos ao lado e nossa equipe entrará em contato com você o mais breve possível.</p>
+    <!-- Serviços -->
+    <section id="servicos" class="py-32 bg-white">
+        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Especialidades</span>
+            <h2 class="text-5xl font-serif mt-4">Nossos Serviços Premium</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1560869713-7d0a29430863?auto=format&fit=crop&q=80&w=800" alt="Mechas">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Mechas & Balayage</h3>
+                    <p class="text-gray-500 mb-6">Técnicas de iluminação que respeitam a integridade do fio e criam um contraste natural.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800" alt="Tratamento">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Terapia Capilar</h3>
+                    <p class="text-gray-500 mb-6">Cronograma capilar de luxo com as melhores marcas mundiais para reconstrução profunda.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
+                </div>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-img-container aspect-[3/4]">
+                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800" alt="Corte">
+                </div>
+                <div class="p-10 text-center">
+                    <h3 class="text-2xl font-serif font-bold mb-4">Corte & Visagismo</h3>
+                    <p class="text-gray-500 mb-6">Estudo das linhas do rosto para criar um corte que valorize sua personalidade única.</p>
+                    <a href="https://wa.me/5511987655409" class="text-[#C5A059] font-bold border-b border-[#C5A059] pb-1">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transformações -->
+    <section id="transformacoes" class="py-32 bg-[#F9F7F2]">
+        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Portfólio Real</span>
+            <h2 class="text-5xl font-serif mt-4">Antes & Depois</h2>
+            <div class="gold-divider"></div>
+            <p class="text-gray-500 max-w-xl mx-auto">Confira os resultados reais de quem escolheu a excelência do Bella Essence Hair.</p>
+        </div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-10">
+            <div class="bg-white p-2 shadow-xl" data-aos="fade-right">
+                <div class="before-after-container">
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Antes">
+                        <span class="label-tag left-4">Antes</span>
+                    </div>
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1492152385176-7cf4126652a1?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Depois">
+                        <span class="label-tag right-4">Depois</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h4 class="font-bold font-serif text-2xl">Loiro Perolado Premium</h4>
+                    <p class="text-gray-400 text-sm mt-2">Técnica de Mechas Criativas</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-2 shadow-xl" data-aos="fade-left">
+                <div class="before-after-container">
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Antes">
+                        <span class="label-tag left-4">Antes</span>
+                    </div>
+                    <div class="before-after-img">
+                        <img src="https://images.unsplash.com/photo-1560869713-7d0a29430863?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover" alt="Depois">
+                        <span class="label-tag right-4">Depois</span>
+                    </div>
+                </div>
+                <div class="p-6 text-center">
+                    <h4 class="font-bold font-serif text-2xl">Tratamento de Brilho</h4>
+                    <p class="text-gray-400 text-sm mt-2">Terapia Capilar Intensiva</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="py-32 bg-white">
+        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
+            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Depoimentos</span>
+            <h2 class="text-5xl font-serif mt-4">O Que Dizem Nossas Clientes</h2>
+            <div class="gold-divider"></div>
+        </div>
+
+        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-600 mb-8">"O atendimento é impecável! Fiz mechas e meu cabelo nunca esteve tão saudável e brilhante. A avaliação gratuita me deu muita segurança."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
+                    <div>
+                        <h5 class="font-bold">Mariana Silva</h5>
+                        <span class="text-xs text-gray-400">Cliente há 2 anos</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-600 mb-8">"Lugar maravilhoso e profissionais extremamente qualificados. O Bella Essence Hair superou todas as minhas expectativas com o corte novo."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
+                    <div>
+                        <h5 class="font-bold">Fernanda Costa</h5>
+                        <span class="text-xs text-gray-400">Cliente VIP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex text-yellow-400 mb-6"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <p class="italic text-gray-600 mb-8">"Melhor studio de SP! O tratamento capilar que fiz salvou meus fios após uma química mal feita em outro lugar. Gratidão eterna!"</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Cliente">
+                    </div>
+                    <div>
+                        <h5 class="font-bold">Juliana Mendes</h5>
+                        <span class="text-xs text-gray-400">Cliente Mensal</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mapa e Contato -->
+    <section id="contato" class="py-32 bg-[#F9F7F2]">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-20">
+                <!-- Informações e Mapa -->
+                <div class="lg:w-1/2" data-aos="fade-right">
+                    <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Onde Estamos</span>
+                    <h2 class="text-5xl font-serif mt-4 mb-10">Agende sua <span class="italic">visita</span></h2>
                     
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-phone text-[#C5A059]"></i>
-                            <span>(11) 00000-0000</span>
+                    <div class="space-y-6 mb-12">
+                        <div class="flex gap-6 items-center">
+                            <i class="fas fa-map-marker-alt text-[#C5A059] text-2xl w-8 text-center"></i>
+                            <p class="text-gray-600">Av. das Nações Unidas, 12901 - Brooklin, São Paulo - SP</p>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-envelope text-[#C5A059]"></i>
-                            <span>contato@salao.com.br</span>
+                        <div class="flex gap-6 items-center">
+                            <i class="fas fa-phone-alt text-[#C5A059] text-2xl w-8 text-center"></i>
+                            <p class="text-gray-600">(11) 98765-5409</p>
                         </div>
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-location-dot text-[#C5A059]"></i>
-                            <span>Endereço do Salão, Cidade - UF</span>
+                        <div class="flex gap-6 items-center">
+                            <i class="fas fa-clock text-[#C5A059] text-2xl w-8 text-center"></i>
+                            <p class="text-gray-600">Terça a Sábado: 09h às 20h</p>
                         </div>
+                    </div>
+
+                    <div class="map-container rounded-[40px] overflow-hidden shadow-2xl h-[300px] mb-10">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.051366938441!2d-46.699741!3d-23.6024956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50cc7302f37d%3A0x6331908331393661!2sAv.%20das%20Na%C3%A7%C3%B5es%20Unidas%2C%2012901%20-%20Brooklin%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004578-000!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                            width="100%" 
+                            height="100%" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
                     </div>
                 </div>
 
-                <!-- Formulário -->
-                <div class="bg-[#F9F7F2] p-8 rounded-sm">
-                    <!-- Substitua o action pelo seu email ou use um serviço como Formspree -->
+                <!-- Formulário de Contato Profissional -->
+                <div class="lg:w-1/2 bg-white p-12 shadow-2xl rounded-[40px]" data-aos="fade-left">
+                    <h3 class="text-3xl font-serif mb-2">Solicitar Orçamento</h3>
+                    <p class="text-gray-400 text-sm mb-10 uppercase tracking-widest">Resposta em até 24 horas</p>
+                    
                     <form action="https://formspree.io/f/SEU_ID_AQUI" method="POST">
-                        <input type="text" name="nome" placeholder="Seu Nome" class="form-input" required>
-                        <input type="email" name="email" placeholder="Seu E-mail" class="form-input" required>
-                        <input type="tel" name="whatsapp" placeholder="Seu WhatsApp" class="form-input" required>
-                        <textarea name="mensagem" placeholder="Como podemos te ajudar?" rows="4" class="form-input" required></textarea>
-                        <button type="submit" class="btn-gold w-full justify-center">Enviar Mensagem</button>
+                        <div class="mb-6">
+                            <label class="form-label">Nome Completo</label>
+                            <input type="text" name="nome" class="form-input" placeholder="Ex: Maria Oliveira" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label">E-mail</label>
+                            <input type="email" name="email" class="form-input" placeholder="Ex: maria@email.com" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="form-label">WhatsApp</label>
+                            <input type="tel" name="whatsapp" class="form-input" placeholder="Ex: (11) 99999-9999" required>
+                        </div>
+                        <div class="mb-8">
+                            <label class="form-label">Qual serviço você procura?</label>
+                            <textarea name="mensagem" rows="3" class="form-input" placeholder="Descreva brevemente o que deseja fazer..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-gold w-full justify-center">
+                            ENVIAR SOLICITAÇÃO <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
                     </form>
-                    <p class="text-[10px] text-gray-400 mt-4 text-center">* Ao enviar, você concorda em ser contatado por nossa equipe.</p>
+                    <p class="text-[10px] text-gray-400 mt-6 text-center italic">
+                        * Suas informações estão seguras e serão usadas apenas para o agendamento.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Rodapé -->
-    <footer class="py-10 text-center border-t border-gray-100">
-        <p class="text-sm text-gray-400">&copy; 2026 Nome do Salão. Todos os direitos reservados.</p>
+    <!-- Footer -->
+    <footer class="py-12 bg-black text-white">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-3xl font-serif font-bold tracking-[4px] uppercase mb-8">
+                Bella <span class="text-[#C5A059]">Essence</span> Hair
+            </div>
+            <div class="flex justify-center gap-10 mb-10 text-gray-400">
+                <a href="#" class="hover:text-[#C5A059] transition-colors"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="hover:text-[#C5A059] transition-colors"><i class="fab fa-facebook text-2xl"></i></a>
+                <a href="#" class="hover:text-[#C5A059] transition-colors"><i class="fab fa-whatsapp text-2xl"></i></a>
+            </div>
+            <p class="text-gray-500 text-xs tracking-widest uppercase">
+                &copy; 2026 Bella Essence Hair. Todos os direitos reservados.
+            </p>
+        </div>
     </footer>
 
+    <!-- AOS Library Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
