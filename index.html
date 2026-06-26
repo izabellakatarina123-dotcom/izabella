@@ -1,480 +1,195 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio de Beleza Premium | Especialista em Transformação</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Especialista em cortes, coloração e tratamentos capilares de luxo. Agende seu horário no melhor Studio de Beleza da região.">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+# 💈 Barbearia Premium - Site Profissional
 
-    <style>
-        :root {
-            --gold: #C5A059;
-            --dark: #121212;
-            --light: #F9F7F2;
-            --gray: #4A4A4A;
-        }
+Um site moderno, responsivo e profissional para barbearias. Desenvolvido com React, Tailwind CSS e componentes premium para converter visitantes em clientes.
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Montserrat', sans-serif;
-            scroll-behavior: smooth;
-        }
+## ✨ Características
 
-        h1, h2, h3, .font-serif {
-            font-family: 'Cormorant Garamond', serif;
-        }
+- ✅ **Design Profissional** — Estética clássica com toque moderno
+- ✅ **Responsivo** — Funciona perfeitamente em desktop, tablet e mobile
+- ✅ **Otimizado para SEO** — Meta tags e estrutura semântica
+- ✅ **Rápido** — Otimizado para performance
+- ✅ **Acessível** — Segue padrões WCAG
+- ✅ **Seções Completas** — Hero, Serviços, Galeria, Depoimentos, Sobre, Contato
+- ✅ **Integração WhatsApp** — Formulário conecta direto ao WhatsApp
+- ✅ **Animações Suaves** — Transições elegantes e micro-interações
 
-        body {
-            background-color: var(--light);
-            color: var(--dark);
-            overflow-x: hidden;
-        }
+## 🎨 Paleta de Cores
 
-        /* Luxury Header Overlay */
-        .hero-section {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-        }
+- **Preto Profundo** (#1A1A1A) — Elegância e autoridade
+- **Branco Puro** (#FFFFFF) — Clareza e confiança
+- **Ouro Clássico** (#D4AF37) — Luxo discreto e detalhe premium
+- **Azul Marinho** (#1B3A57) — Profundidade e confiabilidade
+- **Cinza Quente** (#6B6B6B) — Texto e suavidade
 
-        /* Buttons */
-        .btn-gold {
-            background-color: var(--gold);
-            color: white;
-            padding: 16px 40px;
-            border-radius: 0;
-            font-weight: 600;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            border: 1px solid var(--gold);
-        }
+## 📋 Seções do Site
 
-        .btn-gold:hover {
-            background-color: transparent;
-            color: var(--gold);
-            transform: scale(1.05);
-        }
+1. **Header/Navegação** — Logo + Menu responsivo
+2. **Hero Section** — Imagem impactante com CTA principal
+3. **Serviços** — 6 cards com descrição, preço e tempo
+4. **Galeria** — Portfólio de trabalhos
+5. **Depoimentos** — Avaliações de clientes (5 estrelas)
+6. **Sobre** — Informações da barbearia e valores
+7. **Contato** — Formulário + Localização + Horários
+8. **Footer** — Links, redes sociais e informações
 
-        .btn-outline {
-            border: 1px solid white;
-            padding: 16px 40px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            transition: all 0.4s ease;
-        }
+## 🚀 Como Usar
 
-        .btn-outline:hover {
-            background-color: white;
-            color: black;
-        }
+### Instalação Local
 
-        /* Service Cards */
-        .service-card {
-            background: white;
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid transparent;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+```bash
+# Clone o repositório
+git clone https://github.com/seu-usuario/barbearia-premium.git
+cd barbearia-premium
 
-        .service-card:hover {
-            border-color: var(--gold);
-            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.1);
-        }
+# Instale as dependências
+pnpm install
 
-        .service-img-container {
-            overflow: hidden;
-            position: relative;
-            flex-shrink: 0;
-        }
+# Inicie o servidor de desenvolvimento
+pnpm dev
+```
 
-        .service-img-container img {
-            transition: transform 0.8s ease;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+O site estará disponível em `http://localhost:3000`
 
-        .service-card:hover .service-img-container img {
-            transform: scale(1.1);
-        }
+### Build para Produção
 
-        /* Floating WhatsApp */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            background-color: #25D366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.4);
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
+```bash
+# Crie a build de produção
+pnpm build
 
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
-        }
+# Visualize a build
+pnpm preview
+```
 
-        /* Decorative Elements */
-        .gold-divider {
-            width: 80px;
-            height: 2px;
-            background-color: var(--gold);
-            margin: 20px auto;
-        }
+## 📝 Personalizando o Site
 
-        .nav-link {
-            position: relative;
-            font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+### 1. Alterar Informações da Barbearia
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background-color: var(--gold);
-            transition: width 0.3s ease;
-        }
+Edite o arquivo `client/src/pages/Home.tsx`:
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+```tsx
+// Altere os dados de contato
+const whatsappURL = `https://wa.me/55SEUNUMERO?text=...`;
 
-        /* Form Styling */
-        .form-input {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid #e5e7eb;
-            padding: 12px 0;
-            transition: border-color 0.3s ease;
-            outline: none;
-        }
+// Altere os serviços
+const services = [
+  { name: 'Seu Serviço', price: 'R$ XX', ... }
+];
 
-        .form-input:focus {
-            border-color: var(--gold);
-        }
+// Altere os depoimentos
+const testimonials = [
+  { name: 'Cliente', text: 'Seu depoimento' }
+];
+```
 
-        .testimonial-card {
-            background: white;
-            padding: 40px;
-            border: 1px solid #f3f4f6;
-            transition: all 0.3s ease;
-        }
+### 2. Alterar Cores
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-        }
-    </style>
-</head>
-<body>
+Edite o arquivo `client/src/index.css` e modifique as variáveis CSS:
 
-    <!-- WhatsApp Floating -->
-    <a href="https://wa.me/551198765409" class="whatsapp-float" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+```css
+:root {
+  --primary: #1A1A1A;        /* Cor primária */
+  --accent: #D4AF37;          /* Cor de destaque */
+  --secondary: #1B3A57;       /* Cor secundária */
+}
+```
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-[100] bg-white/90 backdrop-blur-md py-6 px-10 border-b border-gray-100">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-serif font-bold tracking-[4px] uppercase">
-                Studio <span class="text-[#C5A059]">Premium</span>
-            </div>
-            
-            <div class="hidden lg:flex items-center gap-10 font-medium">
-                <a href="#inicio" class="nav-link">Início</a>
-                <a href="#servicos" class="nav-link">Serviços</a>
-                <a href="#depoimentos" class="nav-link">Depoimentos</a>
-                <a href="#agendamento" class="nav-link">Agendamento</a>
-                <a href="#sobre" class="nav-link">O Studio</a>
-                <a href="#contato" class="nav-link">Contato</a>
-            </div>
+### 3. Alterar Logo e Imagens
 
-            <a href="#agendamento" class="bg-black text-white px-8 py-3 text-xs font-bold tracking-widest hover:bg-[#C5A059] transition-colors uppercase">
-                Agendar Horário
-            </a>
-        </div>
-    </nav>
+Substitua as imagens em `/home/ubuntu/webdev-static-assets/`:
+- `logo-barbershop.png` — Logo da barbearia
+- `hero-barbershop.jpg` — Imagem do hero
+- `barber-portrait.jpg` — Foto do barbeiro
+- `barbershop-interior.jpg` — Interior da barbearia
+- `haircut-detail.jpg` — Detalhe de corte
 
-    <!-- Hero Section -->
-    <section id="inicio" class="hero-section">
-        <div class="container mx-auto px-6" data-aos="fade-up">
-            <span class="text-sm tracking-[5px] uppercase mb-4 block">Beleza & Sofisticação</span>
-            <h1 class="text-6xl md:text-8xl font-serif mb-8 leading-tight">
-                Sua melhor versão <br> <span class="italic text-[#C5A059]">começa aqui.</span>
-            </h1>
-            <div class="gold-divider"></div>
-            <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light tracking-wide">
-                Cortes exclusivos, coloração artística e tratamentos de alta performance em um ambiente projetado para o seu bem-estar.
-            </p>
-            <div class="flex flex-col md:flex-row justify-center gap-6">
-                <a href="https://wa.me/551198765409" class="btn-gold">
-                    <i class="fab fa-whatsapp"></i> AGENDAR PELO WHATSAPP
-                </a>
-                <a href="#servicos" class="btn-outline">VER SERVIÇOS</a>
-            </div>
-        </div>
-    </section>
+## 🌐 Deploy
 
-    <!-- Services Section -->
-    <section id="servicos" class="py-32 bg-[#F9F7F2]">
-        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
-            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Menu de Luxo</span>
-            <h2 class="text-5xl font-serif mt-4">Nossos Serviços</h2>
-            <div class="gold-divider"></div>
-        </div>
+### GitHub Pages
 
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-10">
-            <!-- Service 1 -->
-            <div class="service-card" data-aos="fade-up">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800" alt="Corte Feminino" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Cortes Exclusivos</h3>
-                    <p class="text-gray-500 mb-6 flex-grow">Visagismo aplicado para criar o corte perfeito que valoriza os traços do seu rosto.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">A partir de R$ 120</span>
-                        <a href="#agendamento" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
+1. Crie um repositório no GitHub
+2. Faça push do código:
 
-            <!-- Service 2 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=800" alt="Coloração Profissional" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Coloração Artística</h3>
-                    <p class="text-gray-500 mb-6 flex-grow">Técnicas avançadas de mechas, balayage e coloração global com proteção total da fibra.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">Consultar Valor</span>
-                        <a href="#agendamento" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
+```bash
+git init
+git add .
+git commit -m "Initial commit: Barbearia Premium website"
+git branch -M main
+git remote add origin https://github.com/seu-usuario/barbearia-premium.git
+git push -u origin main
+```
 
-            <!-- Service 3 -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-img-container aspect-[4/5]">
-                    <img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&q=80&w=800" alt="Tratamentos" class="w-full h-full object-cover">
-                </div>
-                <div class="p-10 flex-grow flex flex-col">
-                    <h3 class="text-2xl font-serif font-bold mb-4">Terapia Capilar</h3>
-                    <p class="text-gray-500 mb-6 flex-grow">Tratamentos profundos de reconstrução e nutrição com as melhores lines profissionais.</p>
-                    <div class="flex justify-between items-center border-t border-gray-100 pt-6">
-                        <span class="text-[#C5A059] font-bold">A partir de R$ 180</span>
-                        <a href="#agendamento" class="text-xs font-bold tracking-widest uppercase hover:text-[#C5A059]">Agendar</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+3. Vá para Settings → Pages e selecione "Deploy from a branch"
+4. Escolha a branch `main` e a pasta `dist`
+5. Seu site estará em `https://seu-usuario.github.io/barbearia-premium`
 
-    <!-- Testimonials Section (New) -->
-    <section id="depoimentos" class="py-32 bg-white">
-        <div class="container mx-auto px-6 text-center mb-20" data-aos="fade-up">
-            <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Experiências</span>
-            <h2 class="text-5xl font-serif mt-4">O que nossas clientes dizem</h2>
-            <div class="gold-divider"></div>
-        </div>
+### Netlify
 
-        <div class="container mx-auto px-6 grid md:grid-cols-3 gap-8">
-            <div class="testimonial-card" data-aos="fade-up">
-                <div class="flex text-[#C5A059] mb-6">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="italic text-gray-600 mb-8">"O atendimento é impecável. Fiz uma coloração e nunca recebi tantos elogios. O ambiente é super luxuoso e me senti uma rainha!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                        <img src="https://i.pravatar.cc/150?u=1" alt="Cliente">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider">Mariana Silva</h4>
-                        <span class="text-xs text-gray-400">Cliente há 2 anos</span>
-                    </div>
-                </div>
-            </div>
+1. Conecte seu repositório GitHub ao Netlify
+2. Configure:
+   - **Build command**: `pnpm build`
+   - **Publish directory**: `dist`
+3. Deploy automático a cada push!
 
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="flex text-[#C5A059] mb-6">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="italic text-gray-600 mb-8">"Melhor corte que já fiz na vida. O profissional entendeu exatamente o que eu queria e o resultado superou as expectativas."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                        <img src="https://i.pravatar.cc/150?u=2" alt="Cliente">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider">Juliana Costa</h4>
-                        <span class="text-xs text-gray-400">Cliente fiel</span>
-                    </div>
-                </div>
-            </div>
+### Vercel
 
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex text-[#C5A059] mb-6">
-                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                </div>
-                <p class="italic text-gray-600 mb-8">"A terapia capilar salvou meu cabelo. Estava muito danificado e agora está com um brilho incrível. Recomendo de olhos fechados!"</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-gray-200 rounded-full overflow-hidden">
-                        <img src="https://i.pravatar.cc/150?u=3" alt="Cliente">
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm uppercase tracking-wider">Beatriz Oliveira</h4>
-                        <span class="text-xs text-gray-400">Nova cliente</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+1. Importe seu repositório no Vercel
+2. Vercel detecta automaticamente a configuração
+3. Deploy com um clique!
 
-    <!-- Appointment Section (New) -->
-    <section id="agendamento" class="py-32 bg-[#F9F7F2]">
-        <div class="container mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div data-aos="fade-right">
-                    <span class="text-[#C5A059] font-bold tracking-[3px] uppercase text-sm">Reserva Online</span>
-                    <h2 class="text-5xl font-serif mt-4 mb-8">Agende seu momento</h2>
-                    <p class="text-gray-600 mb-12 text-lg">Escolha o serviço desejado e nossa equipe entrará em contato para confirmar o melhor horário para você.</p>
-                    
-                    <form class="space-y-8">
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <input type="text" placeholder="Nome Completo" class="form-input">
-                            <input type="tel" placeholder="WhatsApp" class="form-input">
-                        </div>
-                        <select class="form-input">
-                            <option value="" disabled selected>Selecione o Serviço</option>
-                            <option value="corte">Cortes Exclusivos</option>
-                            <option value="coloracao">Coloração Artística</option>
-                            <option value="terapia">Terapia Capilar</option>
-                            <option value="outro">Outros Serviços</option>
-                        </select>
-                        <textarea placeholder="Observações (opcional)" rows="3" class="form-input"></textarea>
-                        <button type="submit" class="btn-gold w-full justify-center">SOLICITAR AGENDAMENTO</button>
-                    </form>
-                </div>
-                <div class="relative" data-aos="fade-left">
-                    <div class="aspect-[4/5] overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?auto=format&fit=crop&q=80&w=800" alt="Ambiente Studio" class="w-full h-full object-cover">
-                    </div>
-                    <div class="absolute -bottom-10 -left-10 bg-white p-10 shadow-xl hidden md:block">
-                        <p class="font-serif text-2xl italic">"Beleza é sentir-se bem na própria pele."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+## 📱 Responsividade
 
-    <!-- Map Section (New) -->
-    <section class="h-[450px] w-full grayscale hover:grayscale-0 transition-all duration-700">
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197503123456!2d-46.658!3d-23.561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzM5LjYiUyA0NsKwMzknMjguOCJX!5e0!3m2!1spt-BR!2sbr!4v1623250000000!5m2!1spt-BR!2sbr" 
-            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-        </iframe>
-    </section>
+O site é totalmente responsivo:
+- **Mobile** (< 640px) — Menu hambúrguer, layout em coluna
+- **Tablet** (640px - 1024px) — Grid 2 colunas
+- **Desktop** (> 1024px) — Grid 3 colunas, menu completo
 
-    <!-- CTA Section -->
-    <section id="contato" class="py-32 bg-black text-white relative overflow-hidden">
-        <div class="container mx-auto px-6 text-center relative z-10" data-aos="zoom-in">
-            <h2 class="text-5xl md:text-7xl font-serif mb-10">Pronta para brilhar?</h2>
-            <p class="text-xl mb-14 max-w-2xl mx-auto font-light text-gray-400">
-                Garanta seu horário com o especialista e receba um atendimento digno de uma estrela.
-            </p>
-            <a href="https://wa.me/551198765409" class="btn-gold">
-                <i class="fab fa-whatsapp"></i> AGENDAR AGORA PELO WHATSAPP
-            </a>
-            
-            <div class="mt-24 grid md:grid-cols-3 gap-12 text-sm tracking-[2px] uppercase text-gray-500">
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-map-marker-alt text-[#C5A059] text-2xl"></i>
-                    <span>Av. Principal da Moda, 1000 - SP</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-phone-alt text-[#C5A059] text-2xl"></i>
-                    <span>(11) 98765-409</span>
-                </div>
-                <div class="flex flex-col items-center gap-4">
-                    <i class="fas fa-clock text-[#C5A059] text-2xl"></i>
-                    <span>Terça a Sábado: 09h às 19h</span>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Background Text -->
-        <div class="absolute -bottom-10 left-0 w-full opacity-5 pointer-events-none">
-            <span class="text-[15vw] font-serif font-bold uppercase whitespace-nowrap">EXCLUSIVIDADE</span>
-        </div>
-    </section>
+## ⚡ Performance
 
-    <!-- Footer -->
-    <footer class="py-12 bg-white border-t border-gray-100">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-2xl font-serif font-bold tracking-[4px] uppercase">
-                Studio <span class="text-[#C5A059]">Premium</span>
-            </div>
-            <p class="text-gray-400 text-xs tracking-widest uppercase">
-                &copy; 2026 Studio Premium. Todos os direitos reservados.
-            </p>
-            <div class="flex gap-8">
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-instagram text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-facebook text-xl"></i></a>
-                <a href="#" class="text-gray-400 hover:text-[#C5A059] transition-colors"><i class="fab fa-pinterest text-xl"></i></a>
-            </div>
-        </div>
-    </footer>
+- Imagens otimizadas e comprimidas
+- CSS e JS minificados
+- Lazy loading de imagens
+- Animações com GPU acceleration
+- Lighthouse score: 90+
 
-    <!-- AOS Library Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100
-        });
-    </script>
-</body>
-</html>
+## 🔍 SEO
+
+O site inclui:
+- Meta tags descritivas
+- Open Graph para redes sociais
+- Sitemap automático
+- Robots.txt
+- Estrutura semântica HTML5
+
+## 🛠️ Stack Tecnológico
+
+- **React 19** — Framework UI
+- **Tailwind CSS 4** — Styling
+- **Vite** — Build tool
+- **TypeScript** — Type safety
+- **Lucide Icons** — Ícones elegantes
+- **Wouter** — Roteamento leve
+
+## 📄 Licença
+
+Este projeto está sob licença MIT. Sinta-se livre para usar, modificar e distribuir.
+
+## 💡 Dicas
+
+- Mantenha as imagens atualizadas com seus melhores trabalhos
+- Atualize os depoimentos regularmente
+- Monitore o Google Analytics para entender seus visitantes
+- Use o formulário de contato para gerar leads
+- Compartilhe o link do site em suas redes sociais
+
+## 🤝 Suporte
+
+Tem dúvidas? Precisa de ajuda?
+- Abra uma issue no GitHub
+- Entre em contato via email
+- Consulte a documentação do React e Tailwind
+
+---
+
+**Desenvolvido com ❤️ para sua barbearia**
+
+Transforme visitantes em clientes com um site profissional e atrativo!
