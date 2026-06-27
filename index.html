@@ -3,13 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Barbearia Premium - O melhor em corte e barba. Estilo clássico e moderno com agendamento online 24h.">
-    <meta name="keywords" content="barbearia, corte de cabelo masculino, barba, barbeiro, agendamento online">
-    <meta name="author" content="Barbearia Premium">
-    <meta property="og:title" content="Barbearia Premium - Estilo e Tradição">
-    <meta property="og:description" content="Transforme seu visual com nossos serviços de barbearia premium">
-    <meta property="og:type" content="website">
-    <title>Barbearia Premium | Corte, Barba e Estilo Masculino</title>
+    <meta name="description" content="Pizzaria da Luz - Experiência Gastronômica Única. A melhor pizza artesanal com design e sabor inigualáveis.">
+    <title>Pizzaria da Luz | O Futuro da Pizza</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -17,478 +12,351 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS - Animate On Scroll -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <!-- AOS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        :root {
+            --primary: #FF3D00; /* Neon Red */
+            --secondary: #FF9100; /* Neon Orange */
+            --dark: #050505;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #6B8E23; /* Verde Oliva */
-            --secondary: #1A1A1A; /* Preto Suave */
-            --accent: #2D2D2D; /* Cinza Escuro */
-            --dark: #0A0A0A; /* Preto Profundo */
-            --light: #F5F5F5; /* Cinza Muito Claro */
-            --gold: #C5A059; /* Dourado Envelhecido */
-        }
-
-        html {
-            scroll-behavior: smooth;
+            cursor: none; /* Custom cursor effect */
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--dark);
-            color: var(--light);
+            color: #FFFFFF;
+            font-family: 'Inter', sans-serif;
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Dark */
-        .glass {
-            background: rgba(26, 26, 26, 0.7);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        h1, h2, .logo {
+            font-family: 'Syncopate', sans-serif;
+            text-transform: uppercase;
         }
 
-        /* Glow Effect */
-        .glow {
-            box-shadow: 0 0 30px rgba(107, 142, 35, 0.2);
+        /* Custom Cursor */
+        #cursor {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.1s ease;
+        }
+
+        /* Background Glows */
+        .glow-bg {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 61, 0, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(80px);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border);
+            border-radius: 30px;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 61, 0, 0.1);
+        }
+
+        /* Neon Text */
+        .neon-text {
+            text-shadow: 0 0 10px rgba(255, 61, 0, 0.5), 0 0 20px rgba(255, 61, 0, 0.3);
         }
 
         /* Navbar */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            background: rgba(10, 10, 10, 0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(107, 142, 35, 0.2);
+        .nav-blur {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
         }
 
-        .navbar-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 1.2rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: var(--primary);
-            letter-spacing: 2px;
-            text-transform: uppercase;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            position: relative;
-            padding-top: 80px;
-        }
-
-        .hero-content {
-            z-index: 10;
-            max-width: 1000px;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 10vw, 5.5rem);
-            font-weight: 900;
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            letter-spacing: -2px;
-        }
-
-        .hero h1 .highlight {
-            color: var(--primary);
-            display: block;
-        }
-
-        .hero p {
-            font-size: clamp(1.1rem, 3vw, 1.5rem);
-            margin-bottom: 2.5rem;
-            opacity: 0.9;
-            font-weight: 300;
-            letter-spacing: 1px;
-        }
-
-        .btn {
-            padding: 1.2rem 2.5rem;
-            border-radius: 4px;
+        /* Hero Animation */
+        .hero-title {
+            font-size: clamp(3rem, 12vw, 8rem);
             font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
+            line-height: 0.9;
+            letter-spacing: -4px;
         }
 
-        .btn-primary {
+        .btn-neon {
             background: var(--primary);
             color: white;
-            box-shadow: 0 10px 30px rgba(107, 142, 35, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.05);
-            background: #7A9B2E;
-        }
-
-        /* Pain Section */
-        .pain-section {
-            padding: 8rem 2rem;
-            background: var(--secondary);
-        }
-
-        .section-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+            padding: 1.5rem 3rem;
+            border-radius: 100px;
             font-weight: 800;
-            text-align: center;
-            margin-bottom: 4rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-        }
-
-        .pain-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 3rem;
-        }
-
-        .pain-card {
-            background: var(--accent);
-            padding: 3rem 2rem;
-            border-radius: 8px;
-            text-align: center;
-            transition: all 0.3s ease;
-            border-bottom: 4px solid transparent;
-        }
-
-        .pain-card:hover {
-            transform: translateY(-10px);
-            border-bottom: 4px solid var(--primary);
-        }
-
-        .pain-card i {
-            font-size: 3.5rem;
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-        }
-
-        /* Services */
-        .services-section {
-            padding: 8rem 2rem;
-            background: var(--dark);
-        }
-
-        .services-grid {
-            max-width: 1300px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
-        }
-
-        .service-card {
-            background: var(--secondary);
-            border-radius: 8px;
+            position: relative;
             overflow: hidden;
-            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 0 30px rgba(255, 61, 0, 0.4);
         }
 
-        .service-img {
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
+        .btn-neon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 61, 0, 0.6);
         }
 
-        .service-img::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Pizza Image Styling */
+        .pizza-img-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 20px;
+        }
+
+        .pizza-img-container img {
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent, var(--secondary));
+            object-fit: cover;
+            transition: transform 0.8s ease;
         }
 
-        .service-content {
-            padding: 2.5rem;
+        .glass-card:hover .pizza-img-container img {
+            transform: scale(1.1) rotate(3deg);
         }
 
-        .service-price {
-            color: var(--primary);
-            font-weight: 800;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 8rem 2rem;
-            background: var(--secondary);
-        }
-
-        .testimonial-card {
-            background: var(--accent);
-            padding: 3rem;
-            border-radius: 8px;
-            position: relative;
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 5rem;
-            color: var(--primary);
-            opacity: 0.2;
-            font-family: serif;
-        }
-
-        /* WhatsApp Float */
-        .whatsapp-float {
+        /* Floating WhatsApp */
+        .wa-float {
             position: fixed;
-            bottom: 30px;
-            right: 30px;
+            bottom: 40px;
+            right: 40px;
+            width: 70px;
+            height: 70px;
             background: #25D366;
-            width: 65px;
-            height: 65px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             color: white;
             z-index: 1000;
-            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1) rotate(10deg);
+        .wa-float:hover {
+            transform: scale(1.1) rotate(15deg);
         }
 
-        /* Footer */
-        .footer {
-            background: var(--dark);
-            padding: 5rem 2rem;
-            border-top: 1px solid rgba(107, 142, 35, 0.2);
-        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 3.5rem; }
-            .btn { width: 100%; justify-content: center; }
+            .hero-title { font-size: 4rem; letter-spacing: -2px; }
+            .wa-float { width: 60px; height: 60px; font-size: 2rem; bottom: 20px; right: 20px; }
+            cursor: none !important;
         }
     </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="navbar-content">
-            <div class="logo">The Barber Shop</div>
-            <ul class="nav-links">
-                <li><a href="#home">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
+    <div id="cursor"></div>
+    <div class="glow-bg" style="top: -10%; right: -10%;"></div>
+    <div class="glow-bg" style="bottom: -10%; left: -10%;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 nav-blur">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="logo text-xl font-bold tracking-tighter neon-text">Pizzaria da Luz</div>
+            <div class="hidden md:flex gap-10 font-semibold text-sm uppercase tracking-widest">
+                <a href="#home" class="hover:text-primary transition-colors">Início</a>
+                <a href="#menu" class="hover:text-primary transition-colors">Cardápio</a>
+                <a href="#about" class="hover:text-primary transition-colors">Sobre</a>
+                <a href="#contact" class="hover:text-primary transition-colors">Contato</a>
+            </div>
+            <a href="https://wa.me/5511973000028" class="border border-white/20 px-6 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition-all uppercase">Pedir Agora</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content" data-aos="zoom-out">
-            <p>ESTILO • TRADIÇÃO • QUALIDADE</p>
-            <h1>O Corte que Define seu <span class="highlight">Legado</span></h1>
-            <p>Experiência premium de barbearia clássica com a conveniência do agendamento moderno.</p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="https://wa.me/5511973000028?text=Olá!%20Quero%20agendar%20um%20corte%20na%20Barbearia." class="btn btn-primary">
-                    <i class="fab fa-whatsapp"></i> Agendar Agora
-                </a>
-                <a href="#servicos" class="btn border-2 border-white hover:bg-white hover:text-black">
-                    Ver Catálogo
-                </a>
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
+            <div data-aos="fade-right">
+                <p class="text-primary font-bold tracking-widest mb-4 uppercase">A Experiência Definitiva</p>
+                <h1 class="hero-title mb-8">Pizzaria<br><span class="text-transparent" style="-webkit-text-stroke: 2px white;">da Luz</span></h1>
+                <p class="text-xl text-white/60 mb-10 max-w-lg font-light leading-relaxed">Não é apenas pizza. É uma explosão de sabor artesanal, design e luz. O futuro da gastronomia chegou em Cotia.</p>
+                <a href="https://wa.me/5511973000028" class="btn-neon inline-block">Fazer Pedido Agora</a>
+            </div>
+            <div class="relative" data-aos="zoom-in">
+                <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
+                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=90" alt="Premium Pizza" class="relative rounded-[40px] shadow-2xl border border-white/10 rotate-3 hover:rotate-0 transition-transform duration-700">
             </div>
         </div>
     </section>
 
-    <!-- Problemas -->
-    <section class="pain-section">
-        <div class="section-title" data-aos="fade-up">Cansado de Esperar?</div>
-        <div class="pain-grid">
-            <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-hourglass-half"></i>
-                <h3>Sem Filas</h3>
-                <p>Chega de perder horas esperando sua vez. Aqui seu horário é sagrado.</p>
-            </div>
-            <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-user-tie"></i>
-                <h3>Profissionalismo</h3>
-                <p>Cortes executados por especialistas que entendem de visagismo masculino.</p>
-            </div>
-            <div class="pain-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-calendar-check"></i>
-                <h3>Agenda 24h</h3>
-                <p>Marque seu corte pelo WhatsApp a qualquer hora do dia ou da noite.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos" class="services-section">
-        <div class="section-title" data-aos="fade-up">Nossos Serviços</div>
-        <div class="services-grid">
-            <!-- Corte -->
-            <div class="service-card" data-aos="fade-up">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80')"></div>
-                <div class="service-content">
-                    <div class="service-price">R$ 50,00</div>
-                    <h3 class="text-2xl font-bold mb-2">Corte Executive</h3>
-                    <p class="opacity-70 mb-4">Corte clássico ou moderno com acabamento impecável na navalha.</p>
-                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
+    <!-- Menu Section -->
+    <section id="menu" class="py-32 bg-white/0">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+                <div data-aos="fade-up">
+                    <h2 class="text-5xl font-bold neon-text">A Coleção</h2>
+                    <p class="text-white/40 mt-4 max-w-sm">Nossa seleção exclusiva de pizzas artesanais criadas para paladares exigentes.</p>
+                </div>
+                <div class="h-px bg-white/10 flex-grow mx-10 hidden md:block"></div>
+                <div class="text-right" data-aos="fade-left">
+                    <span class="text-7xl font-bold text-white/5">01</span>
                 </div>
             </div>
 
-            <!-- Barba -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1621605815841-aa33c5447a33?auto=format&fit=crop&w=600&q=80')"></div>
-                <div class="service-content">
-                    <div class="service-price">R$ 40,00</div>
-                    <h3 class="text-2xl font-bold mb-2">Barba de Respeito</h3>
-                    <p class="opacity-70 mb-4">Barboterapia com toalha quente, óleos essenciais e massagem facial.</p>
-                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Pizza Card 1 -->
+                <div class="glass-card p-8" data-aos="fade-up">
+                    <div class="pizza-img-container mb-6">
+                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=600&q=80" alt="Margherita">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold">Margherita</h3>
+                        <span class="text-primary font-bold">R$ 45</span>
+                    </div>
+                    <p class="text-white/50 text-sm mb-8">Molho de tomate San Marzano, muçarela de búfala e manjericão fresco.</p>
+                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Margherita" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
                 </div>
-            </div>
 
-            <!-- Combo -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1599351431247-f57933842922?auto=format&fit=crop&w=600&q=80')"></div>
-                <div class="service-content">
-                    <div class="service-price">R$ 80,00</div>
-                    <h3 class="text-2xl font-bold mb-2">Combo Premium</h3>
-                    <p class="opacity-70 mb-4">Corte + Barba + Lavagem com produtos de alta performance.</p>
-                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
+                <!-- Pizza Card 2 -->
+                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pizza-img-container mb-6">
+                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" alt="Pepperoni">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold">Pepperoni</h3>
+                        <span class="text-primary font-bold">R$ 49</span>
+                    </div>
+                    <p class="text-white/50 text-sm mb-8">Fatias premium de pepperoni artesanal e muçarela gratinada.</p>
+                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Pepperoni" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
+                </div>
+
+                <!-- Pizza Card 3 -->
+                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pizza-img-container mb-6">
+                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a355?auto=format&fit=crop&w=600&q=80" alt="Truffle">
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="text-2xl font-bold">Quatro Queijos</h3>
+                        <span class="text-primary font-bold">R$ 52</span>
+                    </div>
+                    <p class="text-white/50 text-sm mb-8">O blend perfeito de quatro queijos nobres selecionados.</p>
+                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Quatro%20Queijos" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Depoimentos -->
-    <section class="testimonials">
-        <div class="section-title" data-aos="fade-up">A Voz dos Clientes</div>
-        <div class="max-w-4xl mx-auto">
-            <div class="testimonial-card" data-aos="fade-right">
-                <p class="text-xl italic mb-6">"Melhor experiência de barbearia que já tive. O ambiente é sensacional e o corte ficou exatamente como eu queria. O agendamento pelo WhatsApp facilita demais a vida."</p>
-                <div class="flex items-center gap-4">
-                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold">RL</div>
-                    <div>
-                        <h4 class="font-bold">Ricardo Lemos</h4>
-                        <p class="text-sm opacity-50">Cliente há 2 anos</p>
+    <!-- Experience Section -->
+    <section id="about" class="py-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="glass-card p-12 md:p-20 flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2" data-aos="fade-right">
+                    <h2 class="text-5xl font-bold mb-8">O Segredo está na <span class="text-primary">Luz</span></h2>
+                    <p class="text-white/60 text-lg mb-8 leading-relaxed">Nossa massa passa por um processo de fermentação lenta de 48 horas, resultando em uma textura leve e crocante que você nunca provou igual.</p>
+                    <div class="grid grid-cols-2 gap-8">
+                        <div>
+                            <span class="block text-4xl font-bold text-primary mb-2">48h</span>
+                            <span class="text-xs uppercase tracking-widest text-white/40">Fermentação</span>
+                        </div>
+                        <div>
+                            <span class="block text-4xl font-bold text-primary mb-2">100%</span>
+                            <span class="text-xs uppercase tracking-widest text-white/40">Artesanal</span>
+                        </div>
                     </div>
                 </div>
+                <div class="md:w-1/2 relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Process" class="rounded-3xl">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Localização -->
-    <section id="contato" class="py-20 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-4xl font-bold mb-6">ONDE ESTAMOS</h2>
-                <p class="text-xl mb-4">Rua Curitiba, 120 - Jardim Ipes<br>Cotia - SP, 06716-180</p>
-                <p class="mb-8 opacity-70">Ambiente climatizado, café cortesia e o melhor papo da região.</p>
-                <div class="flex gap-4">
-                    <a href="#" class="text-3xl hover:text-primary"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-3xl hover:text-primary"><i class="fab fa-facebook"></i></a>
-                </div>
+    <!-- Contact / CTA -->
+    <section id="contact" class="py-32">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div data-aos="zoom-in">
+                <h2 class="text-6xl md:text-8xl font-bold mb-10 tracking-tighter">Pronto para a <span class="text-primary">Luz?</span></h2>
+                <a href="https://wa.me/5511973000028" class="btn-neon inline-block text-xl">Pedir no WhatsApp</a>
             </div>
-            <div class="h-[400px] rounded-lg overflow-hidden glass" data-aos="fade-left">
-                <!-- Google Maps Placeholder -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.05123456789!2d-46.8!3d-23.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM2JzAwLjAiUyA0NsKwNDgnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
+            <div class="mt-32 grid md:grid-cols-3 gap-10 text-left border-t border-white/10 pt-20">
+                <div>
+                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Localização</h4>
+                    <p class="text-white/60">Rua Curitiba, 120<br>Jardim Ipes, Cotia - SP</p>
+                </div>
+                <div>
+                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Horário de Funcionamento</h4>
+                    <p class="text-white/60">Seg - Dom: 18:00 — 23:30</p>
+                </div>
+                <div>
+                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Contato</h4>
+                    <p class="text-white/60">(11) 97300-0028</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
-        <div class="logo mb-8">The Barber Shop</div>
-        <p class="opacity-50 mb-4">© 2026 The Barber Shop. Todos os direitos reservados.</p>
-        <p class="text-sm opacity-30">Desenvolvido com foco em alta performance e conversão.</p>
+    <footer class="py-10 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="logo text-sm font-bold opacity-30">Pizzaria da Luz</div>
+            <p class="text-white/20 text-xs uppercase tracking-widest">© 2026 O Futuro da Pizza. Todos os direitos reservados.</p>
+            <div class="flex gap-6">
+                <a href="#" class="text-white/20 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-white/20 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
     </footer>
 
     <!-- WhatsApp Float -->
-    <a href="https://wa.me/5511973000028" class="whatsapp-float">
+    <a href="https://wa.me/5511973000028" class="wa-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- AOS -->
+    <!-- Scripts -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            duration: 1000,
-            once: true
+        AOS.init({ duration: 1200, once: true });
+
+        // Custom Cursor Effect
+        const cursor = document.getElementById('cursor');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Glow Background following mouse (optional)
+        document.addEventListener('mousemove', (e) => {
+            const glow = document.querySelector('.glow-bg');
+            // glow.style.left = (e.clientX - 300) + 'px';
+            // glow.style.top = (e.clientY - 300) + 'px';
         });
     </script>
 </body>
