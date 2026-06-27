@@ -1,195 +1,1057 @@
-# 💈 Barbearia Premium - Site Profissional
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Studio Glamour - Salão de Beleza Premium em Cotia. Cabelo, Unhas, Maquiagem e Serviços Completos de Beleza com Agendamento Online.">
+    <meta name="keywords" content="salão de beleza, cabelo, unhas, maquiagem, Cotia SP, agendamento online">
+    <meta name="author" content="Studio Glamour">
+    <meta property="og:title" content="Studio Glamour - Salão de Beleza Premium">
+    <meta property="og:description" content="Transforme sua beleza com nossos serviços premium">
+    <meta property="og:type" content="website">
+    <title>Studio Glamour - Salão de Beleza Premium | Agendamento Online</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS - Animate On Scroll -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-Um site moderno, responsivo e profissional para barbearias. Desenvolvido com React, Tailwind CSS e componentes premium para converter visitantes em clientes.
+        :root {
+            --primary: #6B8E23;
+            --secondary: #F5F5F5;
+            --accent: #E8E8E8;
+            --dark: #2D2D2D;
+            --light: #FFFFFF;
+            --rose: #7A9B2E;
+            --gold: #6B8E23;
+        }
 
-## ✨ Características
+        html {
+            scroll-behavior: smooth;
+        }
 
-- ✅ **Design Profissional** — Estética clássica com toque moderno
-- ✅ **Responsivo** — Funciona perfeitamente em desktop, tablet e mobile
-- ✅ **Otimizado para SEO** — Meta tags e estrutura semântica
-- ✅ **Rápido** — Otimizado para performance
-- ✅ **Acessível** — Segue padrões WCAG
-- ✅ **Seções Completas** — Hero, Serviços, Galeria, Depoimentos, Sobre, Contato
-- ✅ **Integração WhatsApp** — Formulário conecta direto ao WhatsApp
-- ✅ **Animações Suaves** — Transições elegantes e micro-interações
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+            color: var(--dark);
+            overflow-x: hidden;
+        }
 
-## 🎨 Paleta de Cores
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
 
-- **Preto Profundo** (#1A1A1A) — Elegância e autoridade
-- **Branco Puro** (#FFFFFF) — Clareza e confiança
-- **Ouro Clássico** (#D4AF37) — Luxo discreto e detalhe premium
-- **Azul Marinho** (#1B3A57) — Profundidade e confiabilidade
-- **Cinza Quente** (#6B6B6B) — Texto e suavidade
+        .glass-dark {
+            background: rgba(45, 45, 45, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-## 📋 Seções do Site
+        /* Glow Effect */
+        .glow {
+            box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
+        }
 
-1. **Header/Navegação** — Logo + Menu responsivo
-2. **Hero Section** — Imagem impactante com CTA principal
-3. **Serviços** — 6 cards com descrição, preço e tempo
-4. **Galeria** — Portfólio de trabalhos
-5. **Depoimentos** — Avaliações de clientes (5 estrelas)
-6. **Sobre** — Informações da barbearia e valores
-7. **Contato** — Formulário + Localização + Horários
-8. **Footer** — Links, redes sociais e informações
+        .glow-rose {
+            box-shadow: 0 0 20px rgba(232, 196, 208, 0.4);
+        }
 
-## 🚀 Como Usar
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(107, 142, 35, 0.1);
+        }
 
-### Instalação Local
+        .navbar-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-```bash
-# Clone o repositório
-git clone https://github.com/seu-usuario/barbearia-premium.git
-cd barbearia-premium
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            letter-spacing: 1px;
+        }
 
-# Instale as dependências
-pnpm install
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
 
-# Inicie o servidor de desenvolvimento
-pnpm dev
-```
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
 
-O site estará disponível em `http://localhost:3000`
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
 
-### Build para Produção
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-```bash
-# Crie a build de produção
-pnpm build
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
 
-# Visualize a build
-pnpm preview
-```
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
 
-## 📝 Personalizando o Site
+        /* Hero Section */
+        .hero {
+            margin-top: 80px;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #E8E8E8 100%);
+            position: relative;
+            overflow: hidden;
+        }
 
-### 1. Alterar Informações da Barbearia
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(107, 142, 35, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            top: -100px;
+            right: -100px;
+            animation: float 6s ease-in-out infinite;
+        }
 
-Edite o arquivo `client/src/pages/Home.tsx`:
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(107, 142, 35, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            animation: float 8s ease-in-out infinite reverse;
+        }
 
-```tsx
-// Altere os dados de contato
-const whatsappURL = `https://wa.me/55SEUNUMERO?text=...`;
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(30px); }
+        }
 
-// Altere os serviços
-const services = [
-  { name: 'Seu Serviço', price: 'R$ XX', ... }
-];
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 900px;
+            text-align: center;
+            padding: 2rem;
+        }
 
-// Altere os depoimentos
-const testimonials = [
-  { name: 'Cliente', text: 'Seu depoimento' }
-];
-```
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -1px;
+        }
 
-### 2. Alterar Cores
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-Edite o arquivo `client/src/index.css` e modifique as variáveis CSS:
+        .hero p {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: var(--dark);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
 
-```css
-:root {
-  --primary: #1A1A1A;        /* Cor primária */
-  --accent: #D4AF37;          /* Cor de destaque */
-  --secondary: #1B3A57;       /* Cor secundária */
-}
-```
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-### 3. Alterar Logo e Imagens
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            border: none;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
 
-Substitua as imagens em `/home/ubuntu/webdev-static-assets/`:
-- `logo-barbershop.png` — Logo da barbearia
-- `hero-barbershop.jpg` — Imagem do hero
-- `barber-portrait.jpg` — Foto do barbeiro
-- `barbershop-interior.jpg` — Interior da barbearia
-- `haircut-detail.jpg` — Detalhe de corte
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--rose));
+            color: white;
+            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+        }
 
-## 🌐 Deploy
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+        }
 
-### GitHub Pages
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
 
-1. Crie um repositório no GitHub
-2. Faça push do código:
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
 
-```bash
-git init
-git add .
-git commit -m "Initial commit: Barbearia Premium website"
-git branch -M main
-git remote add origin https://github.com/seu-usuario/barbearia-premium.git
-git push -u origin main
-```
+        /* Seção de Dor */
+        .pain-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+        }
 
-3. Vá para Settings → Pages e selecione "Deploy from a branch"
-4. Escolha a branch `main` e a pasta `dist`
-5. Seu site estará em `https://seu-usuario.github.io/barbearia-premium`
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
 
-### Netlify
+        .pain-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
 
-1. Conecte seu repositório GitHub ao Netlify
-2. Configure:
-   - **Build command**: `pnpm build`
-   - **Publish directory**: `dist`
-3. Deploy automático a cada push!
+        .pain-card {
+            glass;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-### Vercel
+        .pain-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.2);
+        }
 
-1. Importe seu repositório no Vercel
-2. Vercel detecta automaticamente a configuração
-3. Deploy com um clique!
+        .pain-card i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
 
-## 📱 Responsividade
+        .pain-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
 
-O site é totalmente responsivo:
-- **Mobile** (< 640px) — Menu hambúrguer, layout em coluna
-- **Tablet** (640px - 1024px) — Grid 2 colunas
-- **Desktop** (> 1024px) — Grid 3 colunas, menu completo
+        .pain-card p {
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
 
-## ⚡ Performance
+        /* Benefícios */
+        .benefits-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #E8E8E8 0%, #F5F5F5 100%);
+        }
 
-- Imagens otimizadas e comprimidas
-- CSS e JS minificados
-- Lazy loading de imagens
-- Animações com GPU acceleration
-- Lighthouse score: 90+
+        .benefits-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
 
-## 🔍 SEO
+        .benefit-card {
+            glass;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
 
-O site inclui:
-- Meta tags descritivas
-- Open Graph para redes sociais
-- Sitemap automático
-- Robots.txt
-- Estrutura semântica HTML5
+        .benefit-card:hover {
+            transform: translateY(-10px);
+            glow;
+        }
 
-## 🛠️ Stack Tecnológico
+        .benefit-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            background: linear-gradient(135deg, var(--primary), var(--rose));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
 
-- **React 19** — Framework UI
-- **Tailwind CSS 4** — Styling
-- **Vite** — Build tool
-- **TypeScript** — Type safety
-- **Lucide Icons** — Ícones elegantes
-- **Wouter** — Roteamento leve
+        .benefit-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
 
-## 📄 Licença
+        .benefit-card p {
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.6;
+        }
 
-Este projeto está sob licença MIT. Sinta-se livre para usar, modificar e distribuir.
+        /* Serviços */
+        .services-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+        }
 
-## 💡 Dicas
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
 
-- Mantenha as imagens atualizadas com seus melhores trabalhos
-- Atualize os depoimentos regularmente
-- Monitore o Google Analytics para entender seus visitantes
-- Use o formulário de contato para gerar leads
-- Compartilhe o link do site em suas redes sociais
+        .service-card {
+            glass;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-## 🤝 Suporte
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(212, 165, 116, 0.25);
+        }
 
-Tem dúvidas? Precisa de ajuda?
-- Abra uma issue no GitHub
-- Entre em contato via email
-- Consulte a documentação do React e Tailwind
+        .service-header {
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+        }
 
----
+        .service-content {
+            padding: 2rem;
+        }
 
-**Desenvolvido com ❤️ para sua barbearia**
+        .service-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
 
-Transforme visitantes em clientes com um site profissional e atrativo!
+        .service-content p {
+            color: var(--dark);
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .service-items {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-items li {
+            padding: 0.5rem 0;
+            color: var(--dark);
+            opacity: 0.8;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-items li::before {
+            content: '✓';
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Prova Social */
+        .testimonials-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #E8E8E8 0%, #F5F5F5 100%);
+        }
+
+        .testimonials-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            glass;
+            padding: 2rem;
+            border-radius: 20px;
+            border-left: 4px solid var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--rose));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            color: var(--dark);
+            margin-bottom: 0.2rem;
+        }
+
+        .testimonial-info .stars {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .testimonial-text {
+            color: var(--dark);
+            opacity: 0.8;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Diferencial */
+        .differentials-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+        }
+
+        .differentials-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .differentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .differential-card {
+            glass;
+            padding: 2rem;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .differential-card:hover {
+            transform: translateY(-10px);
+            glow;
+        }
+
+        .differential-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .differential-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+
+        .differential-card p {
+            color: var(--dark);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, #6B8E23, #7A9B2E);
+            text-align: center;
+            color: white;
+        }
+
+        .cta-final h2 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .cta-final p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .footer-section p, .footer-section a {
+            opacity: 0.8;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            opacity: 0.8;
+        }
+
+        /* WhatsApp Flutuante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366, #20BA5A);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .hero {
+                margin-top: 60px;
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .pain-grid, .benefits-grid, .services-grid, .testimonials-grid, .differentials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-content">
+            <div class="logo">Studio Glamour</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content" data-aos="fade-up">
+            <h1>Studio Glamour - Transforme Sua <span class="highlight">Beleza</span></h1>
+            <p>Serviços premium de cabelo, unhas e beleza completa com agendamento online 24/7</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary">
+                    <i class="fab fa-whatsapp"></i> Agendar Agora
+                </a>
+                <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção de Dor -->
+    <section class="pain-section">
+        <div class="section-title" data-aos="fade-up">Por Que Escolher Studio Glamour?</div>
+        <div class="pain-grid">
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-clock"></i>
+                <h3>Agendamento 24/7</h3>
+                <p>Agende seu horário quando quiser, sem esperar ligações ou mensagens</p>
+            </div>
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-star"></i>
+                <h3>Profissionais Experientes</h3>
+                <p>Equipe certificada com anos de experiência em beleza premium</p>
+            </div>
+            <div class="pain-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-check-circle"></i>
+                <h3>Resultados Garantidos</h3>
+                <p>Transformações reais comprovadas por nossos clientes satisfeitos</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits-section">
+        <div class="section-title" data-aos="fade-up">Seus Benefícios</div>
+        <div class="benefits-grid">
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="benefit-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <h3>Catálogo Completo</h3>
+                <p>Todos os serviços em um só lugar com descrição detalhada</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="benefit-icon">
+                    <i class="fas fa-tag"></i>
+                </div>
+                <h3>Tabela de Preços</h3>
+                <p>Transparência total - saiba exatamente quanto vai pagar</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="benefit-icon">
+                    <i class="fas fa-images"></i>
+                </div>
+                <h3>Fotos Profissionais</h3>
+                <p>Veja resultados reais antes de agendar seu horário</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="benefit-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Localização Fácil</h3>
+                <p>Encontre-nos facilmente com mapa integrado</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="benefit-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Mobile First</h3>
+                <p>Perfeito no seu celular - agendamento super rápido</p>
+            </div>
+            <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="benefit-icon">
+                    <i class="fas fa-bolt"></i>
+                </div>
+                <h3>Carregamento Rápido</h3>
+                <p>Site otimizado para máxima velocidade</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="services-section">
+        <div class="section-title" data-aos="fade-up">Nossos Serviços Premium</div>
+        <div class="services-grid">
+            <!-- Cabelo -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-header">
+                    <i class="fas fa-scissors"></i>
+                </div>
+                <div class="service-content">
+                    <h3>💇 Cabelo</h3>
+                    <p>Transformação capilar completa com técnicas premium</p>
+                    <ul class="service-items">
+                        <li>Corte feminino e masculino</li>
+                        <li>Coloração profissional</li>
+                        <li>Alisamento e progressiva</li>
+                        <li>Botox capilar</li>
+                        <li>Cronograma capilar</li>
+                    </ul>
+                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20cabelo." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
+                </div>
+            </div>
+
+            <!-- Unhas -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-header">
+                    <i class="fas fa-hand-sparkles"></i>
+                </div>
+                <div class="service-content">
+                    <h3>💅 Unhas</h3>
+                    <p>Manicure e pedicure com design exclusivo</p>
+                    <ul class="service-items">
+                        <li>Manicure e pedicure</li>
+                        <li>Esmaltação em gel</li>
+                        <li>Alongamento em gel</li>
+                        <li>Fibra de vidro</li>
+                        <li>Blindagem e spa dos pés</li>
+                    </ul>
+                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20unhas." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
+                </div>
+            </div>
+
+            <!-- Beleza -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-header">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+                <div class="service-content">
+                    <h3>✨ Beleza Completa</h3>
+                    <p>Maquiagem e tratamentos especiais</p>
+                    <ul class="service-items">
+                        <li>Maquiagem profissional</li>
+                        <li>Escova e babyliss</li>
+                        <li>Chapinha e luzes</li>
+                        <li>Hidratação premium</li>
+                        <li>Reconstrução capilar</li>
+                    </ul>
+                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20beleza." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prova Social -->
+    <section id="depoimentos" class="testimonials-section">
+        <div class="section-title" data-aos="fade-up">O Que Dizem Nossas Clientes</div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">MA</div>
+                    <div class="testimonial-info">
+                        <h4>Mariana Silva</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Adorei! Agendei super rápido pelo WhatsApp e o resultado foi perfeito. Voltarei com certeza!"</p>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">JC</div>
+                    <div class="testimonial-info">
+                        <h4>Juliana Costa</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Melhor salão de Cotia! Profissionais competentes e ambiente lindo. Recomendo muito!"</p>
+            </div>
+
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">AO</div>
+                    <div class="testimonial-info">
+                        <h4>Amanda Oliveira</h4>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+                <p class="testimonial-text">"Fiz meu cabelo e ficou maravilhoso! Equipe super atenciosa e resultado impecável!"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="differentials-section">
+        <div class="differentials-content">
+            <div class="section-title" data-aos="fade-up">Por Que Somos Diferentes</div>
+            <div class="differentials-grid">
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="differential-icon">✅</div>
+                    <h3>Agendamento Online</h3>
+                    <p>Reserve seu horário 24/7 sem complicações</p>
+                </div>
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="differential-icon">📸</div>
+                    <h3>Antes e Depois</h3>
+                    <p>Veja transformações reais de clientes satisfeitos</p>
+                </div>
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="differential-icon">⭐</div>
+                    <h3>Avaliações Reais</h3>
+                    <p>Confira as opiniões de quem já usou nossos serviços</p>
+                </div>
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="differential-icon">💬</div>
+                    <h3>WhatsApp 24/7</h3>
+                    <p>Atendimento rápido e eficiente quando você precisar</p>
+                </div>
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="differential-icon">📍</div>
+                    <h3>Localização Fácil</h3>
+                    <p>Encontre-nos facilmente em Cotia com GPS integrado</p>
+                </div>
+                <div class="differential-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="differential-icon">⚡</div>
+                    <h3>Carregamento Rápido</h3>
+                    <p>Site otimizado para máxima velocidade e performance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final">
+        <h2 data-aos="fade-up">Pronto Para Se Transformar?</h2>
+        <p data-aos="fade-up" data-aos-delay="100">Agende seu horário agora e descubra o melhor em beleza premium</p>
+        <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-secondary" data-aos="fade-up" data-aos-delay="200">
+            <i class="fab fa-whatsapp"></i> Agendar via WhatsApp
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Studio Glamour</h3>
+                <p>Salão de Beleza Premium em Cotia, SP</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <p>📱 <a href="https://wa.me/5511973000028">(11) 97300-0028</a></p>
+                <p>📍 Rua Curitiba, 120 - Cotia, SP</p>
+            </div>
+            <div class="footer-section">
+                <h3>Horário</h3>
+                <p>Segunda a Sexta: 9h - 19h</p>
+                <p>Sábado: 9h - 17h</p>
+                <p>Domingo: Fechado</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Studio Glamour. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="whatsapp-float" title="Enviar mensagem no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Menu Mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '100%';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.background = 'rgba(250, 250, 248, 0.95)';
+            navLinks.style.padding = '2rem';
+            navLinks.style.gap = '1rem';
+            navLinks.style.zIndex = '999';
+        });
+
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.style.display = 'none';
+            });
+        });
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        revealElements.forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Analytics
+        console.log('Studio Glamour - Site Premium Carregado com Sucesso! 🎉');
+    </script>
+</body>
+</html>
