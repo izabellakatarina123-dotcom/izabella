@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Studio Glamour - Salão de Beleza Premium em Cotia. Cabelo, Unhas, Maquiagem e Serviços Completos de Beleza com Agendamento Online.">
-    <meta name="keywords" content="salão de beleza, cabelo, unhas, maquiagem, Cotia SP, agendamento online">
-    <meta name="author" content="Studio Glamour">
-    <meta property="og:title" content="Studio Glamour - Salão de Beleza Premium">
-    <meta property="og:description" content="Transforme sua beleza com nossos serviços premium">
+    <meta name="description" content="Barbearia Premium - O melhor em corte e barba. Estilo clássico e moderno com agendamento online 24h.">
+    <meta name="keywords" content="barbearia, corte de cabelo masculino, barba, barbeiro, agendamento online">
+    <meta name="author" content="Barbearia Premium">
+    <meta property="og:title" content="Barbearia Premium - Estilo e Tradição">
+    <meta property="og:description" content="Transforme seu visual com nossos serviços de barbearia premium">
     <meta property="og:type" content="website">
-    <title>Studio Glamour - Salão de Beleza Premium | Agendamento Online</title>
+    <title>Barbearia Premium | Corte, Barba e Estilo Masculino</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,13 +28,12 @@
         }
 
         :root {
-            --primary: #6B8E23;
-            --secondary: #F5F5F5;
-            --accent: #E8E8E8;
-            --dark: #2D2D2D;
-            --light: #FFFFFF;
-            --rose: #7A9B2E;
-            --gold: #6B8E23;
+            --primary: #6B8E23; /* Verde Oliva */
+            --secondary: #1A1A1A; /* Preto Suave */
+            --accent: #2D2D2D; /* Cinza Escuro */
+            --dark: #0A0A0A; /* Preto Profundo */
+            --light: #F5F5F5; /* Cinza Muito Claro */
+            --gold: #C5A059; /* Dourado Envelhecido */
         }
 
         html {
@@ -43,33 +42,22 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
-            color: var(--dark);
+            background-color: var(--dark);
+            color: var(--light);
             overflow-x: hidden;
         }
 
-        /* Glassmorphism */
+        /* Glassmorphism Dark */
         .glass {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .glass-dark {
-            background: rgba(45, 45, 45, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
         /* Glow Effect */
         .glow {
-            box-shadow: 0 0 20px rgba(212, 165, 116, 0.3);
-        }
-
-        .glow-rose {
-            box-shadow: 0 0 20px rgba(232, 196, 208, 0.4);
+            box-shadow: 0 0 30px rgba(107, 142, 35, 0.2);
         }
 
         /* Navbar */
@@ -78,37 +66,41 @@
             top: 0;
             width: 100%;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(10, 10, 10, 0.85);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(107, 142, 35, 0.1);
+            border-bottom: 1px solid rgba(107, 142, 35, 0.2);
         }
 
         .navbar-content {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1rem 2rem;
+            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.8rem;
+            font-weight: 800;
             color: var(--primary);
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--dark);
+            color: var(--light);
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
             position: relative;
         }
@@ -124,586 +116,230 @@
             transition: width 0.3s ease;
         }
 
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
         .nav-links a:hover::after {
             width: 100%;
         }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark);
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
         /* Hero Section */
         .hero {
-            margin-top: 80px;
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 50%, #E8E8E8 100%);
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(107, 142, 35, 0.2) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -100px;
-            right: -100px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(107, 142, 35, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            bottom: -50px;
-            left: -50px;
-            animation: float 8s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(30px); }
+            padding-top: 80px;
         }
 
         .hero-content {
-            position: relative;
             z-index: 10;
-            max-width: 900px;
+            max-width: 1000px;
             text-align: center;
             padding: 2rem;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
-            color: var(--dark);
+            font-size: clamp(2.5rem, 10vw, 5.5rem);
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1;
             margin-bottom: 1.5rem;
-            line-height: 1.2;
-            letter-spacing: -1px;
+            letter-spacing: -2px;
         }
 
         .hero h1 .highlight {
-            background: linear-gradient(135deg, var(--primary), var(--rose));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary);
+            display: block;
         }
 
         .hero p {
-            font-size: clamp(1rem, 3vw, 1.3rem);
-            color: var(--dark);
-            margin-bottom: 2rem;
-            line-height: 1.6;
+            font-size: clamp(1.1rem, 3vw, 1.5rem);
+            margin-bottom: 2.5rem;
             opacity: 0.9;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            font-weight: 300;
+            letter-spacing: 1px;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            border: none;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--primary), var(--rose));
+            background: var(--primary);
             color: white;
-            box-shadow: 0 10px 30px rgba(212, 165, 116, 0.3);
+            box-shadow: 0 10px 30px rgba(107, 142, 35, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(212, 165, 116, 0.4);
+            transform: scale(1.05);
+            background: #7A9B2E;
         }
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.9);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Seção de Dor */
+        /* Pain Section */
         .pain-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
+            padding: 8rem 2rem;
+            background: var(--secondary);
         }
 
         .section-title {
-            font-size: clamp(2rem, 5vw, 3rem);
-            font-weight: 700;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
             text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark);
+            margin-bottom: 4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .pain-grid {
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
         }
 
         .pain-card {
-            glass;
-            padding: 2rem;
-            border-radius: 20px;
+            background: var(--accent);
+            padding: 3rem 2rem;
+            border-radius: 8px;
             text-align: center;
             transition: all 0.3s ease;
-            cursor: pointer;
+            border-bottom: 4px solid transparent;
         }
 
         .pain-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(212, 165, 116, 0.2);
+            border-bottom: 4px solid var(--primary);
         }
 
         .pain-card i {
-            font-size: 3rem;
+            font-size: 3.5rem;
             color: var(--primary);
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
         }
 
-        .pain-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .pain-card p {
-            color: var(--dark);
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        /* Benefícios */
-        .benefits-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #E8E8E8 0%, #F5F5F5 100%);
-        }
-
-        .benefits-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .benefit-card {
-            glass;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-10px);
-            glow;
-        }
-
-        .benefit-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--primary), var(--rose));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .benefit-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: var(--dark);
-        }
-
-        .benefit-card p {
-            color: var(--dark);
-            opacity: 0.8;
-            line-height: 1.6;
-        }
-
-        /* Serviços */
+        /* Services */
         .services-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #FFFFFF 0%, #F5F5F5 100%);
+            padding: 8rem 2rem;
+            background: var(--dark);
         }
 
         .services-grid {
-            max-width: 1400px;
+            max-width: 1300px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
-            glass;
-            border-radius: 20px;
+            background: var(--secondary);
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            position: relative;
         }
 
-        .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 25px 50px rgba(212, 165, 116, 0.25);
+        .service-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
         }
 
-        .service-header {
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary), var(--rose));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: white;
+        .service-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, var(--secondary));
         }
 
         .service-content {
-            padding: 2rem;
+            padding: 2.5rem;
         }
 
-        .service-content h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .service-content p {
-            color: var(--dark);
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .service-items {
-            list-style: none;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-items li {
-            padding: 0.5rem 0;
-            color: var(--dark);
-            opacity: 0.8;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .service-items li::before {
-            content: '✓';
+        .service-price {
             color: var(--primary);
-            font-weight: bold;
+            font-weight: 800;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        /* Prova Social */
-        .testimonials-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #E8E8E8 0%, #F5F5F5 100%);
-        }
-
-        .testimonials-grid {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 2rem;
+            background: var(--secondary);
         }
 
         .testimonial-card {
-            glass;
-            padding: 2rem;
-            border-radius: 20px;
-            border-left: 4px solid var(--primary);
-            transition: all 0.3s ease;
+            background: var(--accent);
+            padding: 3rem;
+            border-radius: 8px;
+            position: relative;
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-10px);
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: serif;
         }
 
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
+        /* WhatsApp Float */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 65px;
+            height: 65px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--rose));
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 2.2rem;
             color: white;
-            font-weight: bold;
-        }
-
-        .testimonial-info h4 {
-            font-size: 1rem;
-            color: var(--dark);
-            margin-bottom: 0.2rem;
-        }
-
-        .testimonial-info .stars {
-            color: var(--primary);
-            font-size: 0.9rem;
-        }
-
-        .testimonial-text {
-            color: var(--dark);
-            opacity: 0.8;
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* Diferencial */
-        .differentials-section {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #F5F5F5 0%, #FFFFFF 100%);
-        }
-
-        .differentials-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .differentials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .differential-card {
-            glass;
-            padding: 2rem;
-            border-radius: 20px;
-            text-align: center;
+            z-index: 1000;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
         }
 
-        .differential-card:hover {
-            transform: translateY(-10px);
-            glow;
-        }
-
-        .differential-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .differential-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            color: var(--dark);
-        }
-
-        .differential-card p {
-            color: var(--dark);
-            opacity: 0.8;
-            font-size: 0.95rem;
-        }
-
-        /* CTA Final */
-        .cta-final {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, #6B8E23, #7A9B2E);
-            text-align: center;
-            color: white;
-        }
-
-        .cta-final h2 {
-            font-size: clamp(2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .cta-final p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
         }
 
         /* Footer */
         .footer {
             background: var(--dark);
-            color: white;
-            padding: 3rem 2rem;
-            text-align: center;
+            padding: 5rem 2rem;
+            border-top: 1px solid rgba(107, 142, 35, 0.2);
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .footer-section p, .footer-section a {
-            opacity: 0.8;
-            text-decoration: none;
-            color: white;
-            transition: all 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            opacity: 0.8;
-        }
-
-        /* WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #25D366, #20BA5A);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.8rem;
-            cursor: pointer;
-            z-index: 999;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.5);
-        }
-
-        /* Responsividade */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-            }
-
-            .hero {
-                margin-top: 60px;
-                min-height: 80vh;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .pain-grid, .benefits-grid, .services-grid, .testimonials-grid, .differentials-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-float {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
-                bottom: 1rem;
-                right: 1rem;
-            }
-        }
-
-        /* Animações */
-        @keyframes slideInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-in {
-            animation: slideInUp 0.6s ease-out;
-        }
-
-        /* Scroll animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
-        }
-
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            .nav-links { display: none; }
+            .hero h1 { font-size: 3.5rem; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
@@ -711,347 +347,149 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="navbar-content">
-            <div class="logo">Studio Glamour</div>
+            <div class="logo">The Barber Shop</div>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#depoimentos">Depoimentos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section id="home" class="hero">
-        <div class="hero-content" data-aos="fade-up">
-            <h1>Studio Glamour - Transforme Sua <span class="highlight">Beleza</span></h1>
-            <p>Serviços premium de cabelo, unhas e beleza completa com agendamento online 24/7</p>
-            <div class="hero-buttons">
-                <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-primary">
+        <div class="hero-content" data-aos="zoom-out">
+            <p>ESTILO • TRADIÇÃO • QUALIDADE</p>
+            <h1>O Corte que Define seu <span class="highlight">Legado</span></h1>
+            <p>Experiência premium de barbearia clássica com a conveniência do agendamento moderno.</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511973000028?text=Olá!%20Quero%20agendar%20um%20corte%20na%20Barbearia." class="btn btn-primary">
                     <i class="fab fa-whatsapp"></i> Agendar Agora
                 </a>
-                <a href="#servicos" class="btn btn-secondary">Ver Serviços</a>
+                <a href="#servicos" class="btn border-2 border-white hover:bg-white hover:text-black">
+                    Ver Catálogo
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Seção de Dor -->
+    <!-- Problemas -->
     <section class="pain-section">
-        <div class="section-title" data-aos="fade-up">Por Que Escolher Studio Glamour?</div>
+        <div class="section-title" data-aos="fade-up">Cansado de Esperar?</div>
         <div class="pain-grid">
             <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fas fa-clock"></i>
-                <h3>Agendamento 24/7</h3>
-                <p>Agende seu horário quando quiser, sem esperar ligações ou mensagens</p>
+                <i class="fas fa-hourglass-half"></i>
+                <h3>Sem Filas</h3>
+                <p>Chega de perder horas esperando sua vez. Aqui seu horário é sagrado.</p>
             </div>
             <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-star"></i>
-                <h3>Profissionais Experientes</h3>
-                <p>Equipe certificada com anos de experiência em beleza premium</p>
+                <i class="fas fa-user-tie"></i>
+                <h3>Profissionalismo</h3>
+                <p>Cortes executados por especialistas que entendem de visagismo masculino.</p>
             </div>
             <div class="pain-card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fas fa-check-circle"></i>
-                <h3>Resultados Garantidos</h3>
-                <p>Transformações reais comprovadas por nossos clientes satisfeitos</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefícios -->
-    <section class="benefits-section">
-        <div class="section-title" data-aos="fade-up">Seus Benefícios</div>
-        <div class="benefits-grid">
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="benefit-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <h3>Catálogo Completo</h3>
-                <p>Todos os serviços em um só lugar com descrição detalhada</p>
-            </div>
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="benefit-icon">
-                    <i class="fas fa-tag"></i>
-                </div>
-                <h3>Tabela de Preços</h3>
-                <p>Transparência total - saiba exatamente quanto vai pagar</p>
-            </div>
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="benefit-icon">
-                    <i class="fas fa-images"></i>
-                </div>
-                <h3>Fotos Profissionais</h3>
-                <p>Veja resultados reais antes de agendar seu horário</p>
-            </div>
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="400">
-                <div class="benefit-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                </div>
-                <h3>Localização Fácil</h3>
-                <p>Encontre-nos facilmente com mapa integrado</p>
-            </div>
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="500">
-                <div class="benefit-icon">
-                    <i class="fas fa-mobile-alt"></i>
-                </div>
-                <h3>Mobile First</h3>
-                <p>Perfeito no seu celular - agendamento super rápido</p>
-            </div>
-            <div class="benefit-card" data-aos="fade-up" data-aos-delay="600">
-                <div class="benefit-icon">
-                    <i class="fas fa-bolt"></i>
-                </div>
-                <h3>Carregamento Rápido</h3>
-                <p>Site otimizado para máxima velocidade</p>
+                <i class="fas fa-calendar-check"></i>
+                <h3>Agenda 24h</h3>
+                <p>Marque seu corte pelo WhatsApp a qualquer hora do dia ou da noite.</p>
             </div>
         </div>
     </section>
 
     <!-- Serviços -->
     <section id="servicos" class="services-section">
-        <div class="section-title" data-aos="fade-up">Nossos Serviços Premium</div>
+        <div class="section-title" data-aos="fade-up">Nossos Serviços</div>
         <div class="services-grid">
-            <!-- Cabelo -->
+            <!-- Corte -->
+            <div class="service-card" data-aos="fade-up">
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?auto=format&fit=crop&w=600&q=80')"></div>
+                <div class="service-content">
+                    <div class="service-price">R$ 50,00</div>
+                    <h3 class="text-2xl font-bold mb-2">Corte Executive</h3>
+                    <p class="opacity-70 mb-4">Corte clássico ou moderno com acabamento impecável na navalha.</p>
+                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
+                </div>
+            </div>
+
+            <!-- Barba -->
             <div class="service-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="service-header">
-                    <i class="fas fa-scissors"></i>
-                </div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1621605815841-aa33c5447a33?auto=format&fit=crop&w=600&q=80')"></div>
                 <div class="service-content">
-                    <h3>💇 Cabelo</h3>
-                    <p>Transformação capilar completa com técnicas premium</p>
-                    <ul class="service-items">
-                        <li>Corte feminino e masculino</li>
-                        <li>Coloração profissional</li>
-                        <li>Alisamento e progressiva</li>
-                        <li>Botox capilar</li>
-                        <li>Cronograma capilar</li>
-                    </ul>
-                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20cabelo." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
+                    <div class="service-price">R$ 40,00</div>
+                    <h3 class="text-2xl font-bold mb-2">Barba de Respeito</h3>
+                    <p class="opacity-70 mb-4">Barboterapia com toalha quente, óleos essenciais e massagem facial.</p>
+                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
                 </div>
             </div>
 
-            <!-- Unhas -->
+            <!-- Combo -->
             <div class="service-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="service-header">
-                    <i class="fas fa-hand-sparkles"></i>
-                </div>
+                <div class="service-img" style="background-image: url('https://images.unsplash.com/photo-1599351431247-f57933842922?auto=format&fit=crop&w=600&q=80')"></div>
                 <div class="service-content">
-                    <h3>💅 Unhas</h3>
-                    <p>Manicure e pedicure com design exclusivo</p>
-                    <ul class="service-items">
-                        <li>Manicure e pedicure</li>
-                        <li>Esmaltação em gel</li>
-                        <li>Alongamento em gel</li>
-                        <li>Fibra de vidro</li>
-                        <li>Blindagem e spa dos pés</li>
-                    </ul>
-                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20unhas." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
-                </div>
-            </div>
-
-            <!-- Beleza -->
-            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="service-header">
-                    <i class="fas fa-wand-magic-sparkles"></i>
-                </div>
-                <div class="service-content">
-                    <h3>✨ Beleza Completa</h3>
-                    <p>Maquiagem e tratamentos especiais</p>
-                    <ul class="service-items">
-                        <li>Maquiagem profissional</li>
-                        <li>Escova e babyliss</li>
-                        <li>Chapinha e luzes</li>
-                        <li>Hidratação premium</li>
-                        <li>Reconstrução capilar</li>
-                    </ul>
-                    <a href="https://wa.me/5511973000028?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço%20de%20beleza." class="btn btn-primary" style="width: 100%; text-align: center;">Agendar</a>
+                    <div class="service-price">R$ 80,00</div>
+                    <h3 class="text-2xl font-bold mb-2">Combo Premium</h3>
+                    <p class="opacity-70 mb-4">Corte + Barba + Lavagem com produtos de alta performance.</p>
+                    <a href="https://wa.me/5511973000028" class="text-primary font-bold hover:underline">RESERVAR →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Prova Social -->
-    <section id="depoimentos" class="testimonials-section">
-        <div class="section-title" data-aos="fade-up">O Que Dizem Nossas Clientes</div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">MA</div>
-                    <div class="testimonial-info">
-                        <h4>Mariana Silva</h4>
-                        <div class="stars">★★★★★</div>
+    <!-- Depoimentos -->
+    <section class="testimonials">
+        <div class="section-title" data-aos="fade-up">A Voz dos Clientes</div>
+        <div class="max-w-4xl mx-auto">
+            <div class="testimonial-card" data-aos="fade-right">
+                <p class="text-xl italic mb-6">"Melhor experiência de barbearia que já tive. O ambiente é sensacional e o corte ficou exatamente como eu queria. O agendamento pelo WhatsApp facilita demais a vida."</p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center font-bold">RL</div>
+                    <div>
+                        <h4 class="font-bold">Ricardo Lemos</h4>
+                        <p class="text-sm opacity-50">Cliente há 2 anos</p>
                     </div>
-                </div>
-                <p class="testimonial-text">"Adorei! Agendei super rápido pelo WhatsApp e o resultado foi perfeito. Voltarei com certeza!"</p>
-            </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">JC</div>
-                    <div class="testimonial-info">
-                        <h4>Juliana Costa</h4>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text">"Melhor salão de Cotia! Profissionais competentes e ambiente lindo. Recomendo muito!"</p>
-            </div>
-
-            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
-                <div class="testimonial-header">
-                    <div class="testimonial-avatar">AO</div>
-                    <div class="testimonial-info">
-                        <h4>Amanda Oliveira</h4>
-                        <div class="stars">★★★★★</div>
-                    </div>
-                </div>
-                <p class="testimonial-text">"Fiz meu cabelo e ficou maravilhoso! Equipe super atenciosa e resultado impecável!"</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Diferenciais -->
-    <section class="differentials-section">
-        <div class="differentials-content">
-            <div class="section-title" data-aos="fade-up">Por Que Somos Diferentes</div>
-            <div class="differentials-grid">
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="differential-icon">✅</div>
-                    <h3>Agendamento Online</h3>
-                    <p>Reserve seu horário 24/7 sem complicações</p>
-                </div>
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="differential-icon">📸</div>
-                    <h3>Antes e Depois</h3>
-                    <p>Veja transformações reais de clientes satisfeitos</p>
-                </div>
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="differential-icon">⭐</div>
-                    <h3>Avaliações Reais</h3>
-                    <p>Confira as opiniões de quem já usou nossos serviços</p>
-                </div>
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="differential-icon">💬</div>
-                    <h3>WhatsApp 24/7</h3>
-                    <p>Atendimento rápido e eficiente quando você precisar</p>
-                </div>
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="differential-icon">📍</div>
-                    <h3>Localização Fácil</h3>
-                    <p>Encontre-nos facilmente em Cotia com GPS integrado</p>
-                </div>
-                <div class="differential-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="differential-icon">⚡</div>
-                    <h3>Carregamento Rápido</h3>
-                    <p>Site otimizado para máxima velocidade e performance</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Final -->
-    <section class="cta-final">
-        <h2 data-aos="fade-up">Pronto Para Se Transformar?</h2>
-        <p data-aos="fade-up" data-aos-delay="100">Agende seu horário agora e descubra o melhor em beleza premium</p>
-        <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="btn btn-secondary" data-aos="fade-up" data-aos-delay="200">
-            <i class="fab fa-whatsapp"></i> Agendar via WhatsApp
-        </a>
+    <!-- Localização -->
+    <section id="contato" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-4xl font-bold mb-6">ONDE ESTAMOS</h2>
+                <p class="text-xl mb-4">Rua Curitiba, 120 - Jardim Ipes<br>Cotia - SP, 06716-180</p>
+                <p class="mb-8 opacity-70">Ambiente climatizado, café cortesia e o melhor papo da região.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="text-3xl hover:text-primary"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-3xl hover:text-primary"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="h-[400px] rounded-lg overflow-hidden glass" data-aos="fade-left">
+                <!-- Google Maps Placeholder -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.05123456789!2d-46.8!3d-23.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDM2JzAwLjAiUyA0NsKwNDgnMDAuMCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Studio Glamour</h3>
-                <p>Salão de Beleza Premium em Cotia, SP</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contato</h3>
-                <p>📱 <a href="https://wa.me/5511973000028">(11) 97300-0028</a></p>
-                <p>📍 Rua Curitiba, 120 - Cotia, SP</p>
-            </div>
-            <div class="footer-section">
-                <h3>Horário</h3>
-                <p>Segunda a Sexta: 9h - 19h</p>
-                <p>Sábado: 9h - 17h</p>
-                <p>Domingo: Fechado</p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Studio Glamour. Todos os direitos reservados.</p>
-        </div>
+    <footer class="footer text-center">
+        <div class="logo mb-8">The Barber Shop</div>
+        <p class="opacity-50 mb-4">© 2026 The Barber Shop. Todos os direitos reservados.</p>
+        <p class="text-sm opacity-30">Desenvolvido com foco em alta performance e conversão.</p>
     </footer>
 
-    <!-- WhatsApp Flutuante -->
-    <a href="https://wa.me/5511973000028?text=Olá%20Studio%20Glamour!%20Gostaria%20de%20agendar%20um%20horário." class="whatsapp-float" title="Enviar mensagem no WhatsApp">
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/5511973000028" class="whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
     <script>
-        // Inicializar AOS
         AOS.init({
             duration: 1000,
-            once: true,
-            offset: 100
+            once: true
         });
-
-        // Menu Mobile
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.background = 'rgba(250, 250, 248, 0.95)';
-            navLinks.style.padding = '2rem';
-            navLinks.style.gap = '1rem';
-            navLinks.style.zIndex = '999';
-        });
-
-        // Fechar menu ao clicar em um link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.style.display = 'none';
-            });
-        });
-
-        // Scroll Reveal
-        const revealElements = document.querySelectorAll('.fade-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        });
-
-        revealElements.forEach(el => observer.observe(el));
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const href = this.getAttribute('href');
-                if (href !== '#' && document.querySelector(href)) {
-                    e.preventDefault();
-                    document.querySelector(href).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Analytics
-        console.log('Studio Glamour - Site Premium Carregado com Sucesso! 🎉');
     </script>
 </body>
 </html>
