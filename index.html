@@ -1,363 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pizzaria da Luz - Experiência Gastronômica Única. A melhor pizza artesanal com design e sabor inigualáveis.">
-    <title>Pizzaria da Luz | O Futuro da Pizza</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
-    <!-- AOS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #FF3D00; /* Neon Red */
-            --secondary: #FF9100; /* Neon Orange */
-            --dark: #050505;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            cursor: none; /* Custom cursor effect */
-        }
-
-        body {
-            background-color: var(--dark);
-            color: #FFFFFF;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-
-        h1, h2, .logo {
-            font-family: 'Syncopate', sans-serif;
-            text-transform: uppercase;
-        }
-
-        /* Custom Cursor */
-        #cursor {
-            width: 20px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
-
-        /* Background Glows */
-        .glow-bg {
-            position: fixed;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 61, 0, 0.15) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: -1;
-            filter: blur(80px);
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        }
-
-        .glass-card:hover {
-            border-color: var(--primary);
-            background: rgba(255, 255, 255, 0.06);
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255, 61, 0, 0.1);
-        }
-
-        /* Neon Text */
-        .neon-text {
-            text-shadow: 0 0 10px rgba(255, 61, 0, 0.5), 0 0 20px rgba(255, 61, 0, 0.3);
-        }
-
-        /* Navbar */
-        .nav-blur {
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(15px);
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* Hero Animation */
-        .hero-title {
-            font-size: clamp(3rem, 12vw, 8rem);
-            font-weight: 700;
-            line-height: 0.9;
-            letter-spacing: -4px;
-        }
-
-        .btn-neon {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 100px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s ease;
-            box-shadow: 0 0 30px rgba(255, 61, 0, 0.4);
-        }
-
-        .btn-neon:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 50px rgba(255, 61, 0, 0.6);
-        }
-
-        /* Pizza Image Styling */
-        .pizza-img-container {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
-            border-radius: 20px;
-        }
-
-        .pizza-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s ease;
-        }
-
-        .glass-card:hover .pizza-img-container img {
-            transform: scale(1.1) rotate(3deg);
-        }
-
-        /* Floating WhatsApp */
-        .wa-float {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 70px;
-            height: 70px;
-            background: #25D366;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            z-index: 1000;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .wa-float:hover {
-            transform: scale(1.1) rotate(15deg);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--dark); }
-        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
-
-        @media (max-width: 768px) {
-            .hero-title { font-size: 4rem; letter-spacing: -2px; }
-            .wa-float { width: 60px; height: 60px; font-size: 2rem; bottom: 20px; right: 20px; }
-            cursor: none !important;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brilho Total Limpeza Profissional</title>
+  <meta name="description" content="Serviços de limpeza residencial, comercial e pós-obra em São Paulo. Profissionalismo, pontualidade e confiança.">
+  <meta name="keywords" content="limpeza, pós-obra, residencial, comercial, higienização, São Paulo">
+  <link rel="icon" href="assets/icons/favicon.png">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="cursor"></div>
-    <div class="glow-bg" style="top: -10%; right: -10%;"></div>
-    <div class="glow-bg" style="bottom: -10%; left: -10%;"></div>
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Ambientes impecáveis com a Brilho Total</h1>
+      <p>Limpeza profissional para residências, empresas e pós-obra.</p>
+      <a href="https://wa.me/5511998765432" class="btn btn-primary">Solicitar Orçamento</a>
+      <a href="https://wa.me/5511998765432" class="btn btn-secondary">WhatsApp</a>
+    </div>
+    <img src="assets/img/equipe-limpeza.jpg" alt="Equipe realizando limpeza profissional">
+  </header>
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full z-50 nav-blur">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="logo text-xl font-bold tracking-tighter neon-text">Pizzaria da Luz</div>
-            <div class="hidden md:flex gap-10 font-semibold text-sm uppercase tracking-widest">
-                <a href="#home" class="hover:text-primary transition-colors">Início</a>
-                <a href="#menu" class="hover:text-primary transition-colors">Cardápio</a>
-                <a href="#about" class="hover:text-primary transition-colors">Sobre</a>
-                <a href="#contact" class="hover:text-primary transition-colors">Contato</a>
-            </div>
-            <a href="https://wa.me/5511973000028" class="border border-white/20 px-6 py-2 rounded-full text-xs font-bold hover:bg-white hover:text-black transition-all uppercase">Pedir Agora</a>
-        </div>
-    </nav>
+  <!-- Sobre -->
+  <section class="sobre">
+    <h2>Sobre Nós</h2>
+    <p>A Brilho Total atua há mais de 8 anos oferecendo serviços de limpeza com excelência, pontualidade e profissionais altamente treinados.</p>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center pt-20">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-center">
-            <div data-aos="fade-right">
-                <p class="text-primary font-bold tracking-widest mb-4 uppercase">A Experiência Definitiva</p>
-                <h1 class="hero-title mb-8">Pizzaria<br><span class="text-transparent" style="-webkit-text-stroke: 2px white;">da Luz</span></h1>
-                <p class="text-xl text-white/60 mb-10 max-w-lg font-light leading-relaxed">Não é apenas pizza. É uma explosão de sabor artesanal, design e luz. O futuro da gastronomia chegou em Cotia.</p>
-                <a href="https://wa.me/5511973000028" class="btn-neon inline-block">Fazer Pedido Agora</a>
-            </div>
-            <div class="relative" data-aos="zoom-in">
-                <div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full"></div>
-                <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1000&q=90" alt="Premium Pizza" class="relative rounded-[40px] shadow-2xl border border-white/10 rotate-3 hover:rotate-0 transition-transform duration-700">
-            </div>
-        </div>
-    </section>
+  <!-- Serviços -->
+  <section class="servicos">
+    <h2>Nossos Serviços</h2>
+    <div class="cards">
+      <div class="card"><h3>Limpeza Residencial</h3></div>
+      <div class="card"><h3>Limpeza Comercial</h3></div>
+      <div class="card"><h3>Pós-Obra</h3></div>
+      <div class="card"><h3>Vidros</h3></div>
+      <div class="card"><h3>Faxina Completa</h3></div>
+      <div class="card"><h3>Higienização</h3></div>
+    </div>
+  </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-32 bg-white/0">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
-                <div data-aos="fade-up">
-                    <h2 class="text-5xl font-bold neon-text">A Coleção</h2>
-                    <p class="text-white/40 mt-4 max-w-sm">Nossa seleção exclusiva de pizzas artesanais criadas para paladares exigentes.</p>
-                </div>
-                <div class="h-px bg-white/10 flex-grow mx-10 hidden md:block"></div>
-                <div class="text-right" data-aos="fade-left">
-                    <span class="text-7xl font-bold text-white/5">01</span>
-                </div>
-            </div>
+  <!-- Diferenciais -->
+  <section class="diferenciais">
+    <h2>Por que escolher a Brilho Total?</h2>
+    <ul>
+      <li>Equipe treinada</li>
+      <li>Produtos profissionais</li>
+      <li>Pontualidade</li>
+      <li>Segurança</li>
+      <li>Qualidade</li>
+    </ul>
+  </section>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Pizza Card 1 -->
-                <div class="glass-card p-8" data-aos="fade-up">
-                    <div class="pizza-img-container mb-6">
-                        <img src="https://images.unsplash.com/photo-1574071318508-1cdbad80ad38?auto=format&fit=crop&w=600&q=80" alt="Margherita">
-                    </div>
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold">Margherita</h3>
-                        <span class="text-primary font-bold">R$ 45</span>
-                    </div>
-                    <p class="text-white/50 text-sm mb-8">Molho de tomate San Marzano, muçarela de búfala e manjericão fresco.</p>
-                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Margherita" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
-                </div>
+  <!-- Depoimentos -->
+  <section class="depoimentos">
+    <h2>O que nossos clientes dizem</h2>
+    <div class="cards">
+      <div class="card">⭐⭐⭐⭐⭐ Mariana Oliveira - "Minha casa ficou impecável."</div>
+      <div class="card">⭐⭐⭐⭐⭐ Carlos Mendes - "Superou todas as expectativas."</div>
+      <div class="card">⭐⭐⭐⭐⭐ Juliana Costa - "Pontuais e muito profissionais."</div>
+    </div>
+  </section>
 
-                <!-- Pizza Card 2 -->
-                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="100">
-                    <div class="pizza-img-container mb-6">
-                        <img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=600&q=80" alt="Pepperoni">
-                    </div>
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold">Pepperoni</h3>
-                        <span class="text-primary font-bold">R$ 49</span>
-                    </div>
-                    <p class="text-white/50 text-sm mb-8">Fatias premium de pepperoni artesanal e muçarela gratinada.</p>
-                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Pepperoni" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
-                </div>
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>Perguntas Frequentes</h2>
+    <details><summary>Atendem residências e empresas?</summary><p>Sim, atendemos ambos.</p></details>
+    <details><summary>Fazem limpeza pós-obra?</summary><p>Sim, somos especialistas.</p></details>
+    <details><summary>Trabalham com contratos?</summary><p>Sim, mensais, quinzenais e semanais.</p></details>
+  </section>
 
-                <!-- Pizza Card 3 -->
-                <div class="glass-card p-8" data-aos="fade-up" data-aos-delay="200">
-                    <div class="pizza-img-container mb-6">
-                        <img src="https://images.unsplash.com/photo-1593504049359-74330189a355?auto=format&fit=crop&w=600&q=80" alt="Truffle">
-                    </div>
-                    <div class="flex justify-between items-start mb-4">
-                        <h3 class="text-2xl font-bold">Quatro Queijos</h3>
-                        <span class="text-primary font-bold">R$ 52</span>
-                    </div>
-                    <p class="text-white/50 text-sm mb-8">O blend perfeito de quatro queijos nobres selecionados.</p>
-                    <a href="https://wa.me/5511973000028?text=Quero%20a%20Quatro%20Queijos" class="w-full block py-4 text-center border border-white/10 rounded-2xl font-bold hover:bg-white hover:text-black transition-all uppercase text-xs tracking-widest">Adicionar ao Pedido</a>
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Contato -->
+  <section class="contato">
+    <h2>Entre em Contato</h2>
+    <p>📍 Rua das Acácias, 325 - Vila Mariana - São Paulo/SP</p>
+    <p>📞 <a href="tel:+5511998765432">(11) 99876-5432</a></p>
+    <p>📸 <a href="https://instagram.com/brilhototallimpeza">@brilhototallimpeza</a></p>
+    <a href="https://wa.me/5511998765432" class="btn btn-primary">Falar no WhatsApp</a>
+  </section>
 
-    <!-- Experience Section -->
-    <section id="about" class="py-32 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="glass-card p-12 md:p-20 flex flex-col md:flex-row items-center gap-16">
-                <div class="md:w-1/2" data-aos="fade-right">
-                    <h2 class="text-5xl font-bold mb-8">O Segredo está na <span class="text-primary">Luz</span></h2>
-                    <p class="text-white/60 text-lg mb-8 leading-relaxed">Nossa massa passa por um processo de fermentação lenta de 48 horas, resultando em uma textura leve e crocante que você nunca provou igual.</p>
-                    <div class="grid grid-cols-2 gap-8">
-                        <div>
-                            <span class="block text-4xl font-bold text-primary mb-2">48h</span>
-                            <span class="text-xs uppercase tracking-widest text-white/40">Fermentação</span>
-                        </div>
-                        <div>
-                            <span class="block text-4xl font-bold text-primary mb-2">100%</span>
-                            <span class="text-xs uppercase tracking-widest text-white/40">Artesanal</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="md:w-1/2 relative" data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80" alt="Process" class="rounded-3xl">
-                </div>
-            </div>
-        </div>
-    </section>
+  <!-- Rodapé -->
+  <footer>
+    <p>© 2026 Brilho Total Limpeza Profissional - Todos os direitos reservados.</p>
+  </footer>
 
-    <!-- Contact / CTA -->
-    <section id="contact" class="py-32">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div data-aos="zoom-in">
-                <h2 class="text-6xl md:text-8xl font-bold mb-10 tracking-tighter">Pronto para a <span class="text-primary">Luz?</span></h2>
-                <a href="https://wa.me/5511973000028" class="btn-neon inline-block text-xl">Pedir no WhatsApp</a>
-            </div>
-            
-            <div class="mt-32 grid md:grid-cols-3 gap-10 text-left border-t border-white/10 pt-20">
-                <div>
-                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Localização</h4>
-                    <p class="text-white/60">Rua Curitiba, 120<br>Jardim Ipes, Cotia - SP</p>
-                </div>
-                <div>
-                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Horário de Funcionamento</h4>
-                    <p class="text-white/60">Seg - Dom: 18:00 — 23:30</p>
-                </div>
-                <div>
-                    <h4 class="text-primary uppercase text-xs font-bold tracking-widest mb-6">Contato</h4>
-                    <p class="text-white/60">(11) 97300-0028</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="py-10 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="logo text-sm font-bold opacity-30">Pizzaria da Luz</div>
-            <p class="text-white/20 text-xs uppercase tracking-widest">© 2026 O Futuro da Pizza. Todos os direitos reservados.</p>
-            <div class="flex gap-6">
-                <a href="#" class="text-white/20 hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="text-white/20 hover:text-white transition-colors"><i class="fab fa-facebook"></i></a>
-            </div>
-        </div>
-    </footer>
-
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/5511973000028" class="wa-float">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1200, once: true });
-
-        // Custom Cursor Effect
-        const cursor = document.getElementById('cursor');
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // Glow Background following mouse (optional)
-        document.addEventListener('mousemove', (e) => {
-            const glow = document.querySelector('.glow-bg');
-            // glow.style.left = (e.clientX - 300) + 'px';
-            // glow.style.top = (e.clientY - 300) + 'px';
-        });
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
