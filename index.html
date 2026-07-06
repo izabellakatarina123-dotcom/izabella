@@ -4,11 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechMaster Assistência Técnica</title>
-  <meta name="description" content="Assistência técnica especializada em computadores, notebooks e celulares. Upgrade SSD, manutenção e garantia de 90 dias.">
+  <meta name="description" content="Assistência técnica premium em São Paulo. Upgrade SSD, manutenção de notebooks e celulares com garantia de 90 dias.">
+  
+  <!-- SEO Avançado -->
   <meta property="og:title" content="TechMaster Assistência Técnica">
   <meta property="og:description" content="Há mais de 10 anos consertando computadores e notebooks com rapidez e garantia.">
   <meta property="og:image" content="logo-techmaster.jpg">
+  <meta property="og:url" content="https://techmaster.com.br">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TechMaster Assistência Técnica">
+  <meta name="twitter:description" content="Seu notebook novo em 24h — garantia e confiança TechMaster.">
+  <meta name="twitter:image" content="logo-techmaster.jpg">
+
+  <!-- Schema.org LocalBusiness -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,6 +33,8 @@
     "openingHours": "Mo-Fr 08:30-18:30, Sa 09:00-13:00"
   }
   </script>
+
+  <!-- Estilos Premium -->
   <style>
     :root {
       --azul: #007bff;
@@ -40,6 +50,7 @@
       color: var(--branco);
       overflow-x: hidden;
     }
+    /* Navbar com Glassmorphism */
     header {
       backdrop-filter: blur(10px);
       background: var(--blur-bg);
@@ -55,6 +66,7 @@
     header h1 {
       color: var(--laranja);
       font-weight: 700;
+      font-size: 1.5rem;
     }
     nav a {
       color: var(--branco);
@@ -63,6 +75,8 @@
       transition: color 0.3s;
     }
     nav a:hover { color: var(--neon); }
+
+    /* Hero Cinematográfico */
     .hero {
       height: 100vh;
       display: flex;
@@ -80,6 +94,13 @@
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
+      color: var(--branco);
+      text-shadow: 0 0 20px var(--neon);
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-bottom: 2rem;
     }
     .cta {
       background: var(--laranja);
@@ -88,52 +109,17 @@
       border-radius: 50px;
       text-decoration: none;
       font-weight: bold;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 20px var(--laranja);
     }
-    .cta:hover { transform: scale(1.1); }
-    section {
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-    }
-    .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 20px;
-      padding: 2rem;
-      backdrop-filter: blur(5px);
-      transition: transform 0.3s;
-    }
-    .card:hover { transform: translateY(-10px); }
-    footer {
-      background: #000;
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-    }
-    .whatsapp {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      text-decoration: none;
-      box-shadow: 0 0 20px #25D366;
+    .cta:hover { 
+      transform: scale(1.1); 
+      box-shadow: 0 0 40px var(--neon);
     }
   </style>
 </head>
 <body>
+  <!-- Navbar -->
   <header>
     <h1>TechMaster</h1>
     <nav>
@@ -144,41 +130,803 @@
     </nav>
   </header>
 
+  <!-- Hero -->
   <section class="hero">
     <h2>Assistência Técnica Premium</h2>
     <p>Há mais de 10 anos consertando computadores, notebooks e celulares com rapidez e garantia.</p>
     <a href="https://wa.me/5511998543278" class="cta">Gerar orçamento via WhatsApp</a>
   </section>
-
-  <section id="servicos">
-    <h2>Serviços</h2>
-    <div class="cards">
-      <div class="card"><h3>Upgrade SSD</h3><p>Transforme seu notebook em alta performance.</p></div>
-      <div class="card"><h3>Troca de Tela</h3><p>Peças originais e garantia de 90 dias.</p></div>
-      <div class="card"><h3>Limpeza e Manutenção</h3><p>Serviço rápido e seguro em até 48h.</p></div>
-    </div>
-  </section>
-
-  <section id="avaliacoes">
-    <h2>Depoimentos</h2>
-    <div class="cards">
-      <div class="card"><strong>⭐⭐⭐⭐⭐ Lucas</strong><p>"Notebook ficou novo."</p></div>
-      <div class="card"><strong>⭐⭐⭐⭐⭐ Fernanda</strong><p>"Troca de tela perfeita."</p></div>
-      <div class="card"><strong>⭐⭐⭐⭐⭐ Ricardo</strong><p>"Atendimento rápido e honesto."</p></div>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>📍 Av. Brigadeiro Luís Antônio, 1845 - São Paulo/SP</p>
-    <p>📞 <a href="tel:11998543278">(11) 99854-3278</a></p>
-    <p>📸 Instagram: @techmasterassistencia</p>
-  </section>
-
-  <footer>
-    © 2026 TechMaster Assistência — Todos os direitos reservados.
-  </footer>
-
-  <a href="https://wa.me/5511998543278" class="whatsapp">💬</a>
 </body>
 </html>
+<!-- Serviços Premium -->
+<section id="servicos" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Nossos Serviços
+  </h2>
+  <div class="cards">
+    <!-- Card 1 -->
+    <div class="card">
+      <h3 style="color:var(--laranja);">Upgrade SSD</h3>
+      <p>Transforme seu notebook em alta performance com SSD original e instalação rápida.</p>
+    </div>
+    <!-- Card 2 -->
+    <div class="card">
+      <h3 style="color:var(--laranja);">Troca de Tela</h3>
+      <p>Peças originais, garantia de 90 dias e acabamento perfeito.</p>
+    </div>
+    <!-- Card 3 -->
+    <div class="card">
+      <h3 style="color:var(--laranja);">Limpeza e Manutenção</h3>
+      <p>Serviço rápido e seguro em até 48h, com higienização completa.</p>
+    </div>
+    <!-- Card 4 -->
+    <div class="card">
+      <h3 style="color:var(--laranja);">Atendimento em Domicílio</h3>
+      <p>Assistência técnica premium sem sair de casa ou do escritório.</p>
+    </div>
+    <!-- Card 5 -->
+    <div class="card">
+      <h3 style="color:var(--laranja);">Suporte para Empresas</h3>
+      <p>Planos corporativos com atendimento dedicado e SLA garantido.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Cards Premium */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .card {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    transition: transform 0.5s, box-shadow 0.5s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, var(--neon), transparent 70%);
+    animation: rotateGlow 10s linear infinite;
+    opacity: 0.2;
+  }
+  @keyframes rotateGlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 0 40px var(--neon);
+  }
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .card p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+</style>
+<!-- Galeria Profissional -->
+<section id="galeria" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Galeria Profissional
+  </h2>
+  <div class="gallery-grid">
+    <img src="fachada.jpg" alt="Fachada TechMaster" class="gallery-item">
+    <img src="bancada.jpg" alt="Bancada técnica" class="gallery-item">
+    <img src="tecnico.jpg" alt="Técnico trabalhando" class="gallery-item">
+    <img src="troca-tela.jpg" alt="Troca de tela" class="gallery-item">
+    <img src="gamer.jpg" alt="Computador gamer" class="gallery-item">
+    <img src="cliente.jpg" alt="Cliente recebendo aparelho" class="gallery-item">
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" class="lightbox">
+  <span class="close">&times;</span>
+  <img class="lightbox-content" id="lightbox-img">
+  <div id="caption"></div>
+</div>
+
+<style>
+  /* Galeria Grid */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  .gallery-item {
+    width: 100%;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.4s, box-shadow 0.4s;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+  .gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px var(--neon);
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 100px;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+  }
+  .lightbox-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    border-radius: 20px;
+    animation: fadeIn 0.6s;
+  }
+  #caption {
+    margin: auto;
+    text-align: center;
+    color: #fff;
+    padding: 1rem;
+    font-size: 1.2rem;
+  }
+  .close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    color: #fff;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  .close:hover { color: var(--neon); }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+</style>
+
+<script>
+  // Lightbox Script
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const caption = document.getElementById('caption');
+  const closeBtn = document.querySelector('.close');
+
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      lightbox.style.display = 'block';
+      lightboxImg.src = item.src;
+      caption.innerHTML = item.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target == lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+</script>
+<!-- Depoimentos Animados -->
+<section id="avaliacoes" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Depoimentos de Clientes
+  </h2>
+  <div class="testimonials">
+    <!-- Lucas -->
+    <div class="testimonial">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Notebook ficou novo."</p>
+      <span>- Lucas</span>
+    </div>
+    <!-- Fernanda -->
+    <div class="testimonial">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Troca de tela perfeita."</p>
+      <span>- Fernanda</span>
+    </div>
+    <!-- Ricardo -->
+    <div class="testimonial">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <p>"Atendimento rápido e honesto."</p>
+      <span>- Ricardo</span>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Testimonials */
+  .testimonials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+  }
+  .testimonial {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    width: 300px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    animation: floatCard 6s ease-in-out infinite;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .testimonial:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px var(--neon);
+  }
+  .testimonial .stars {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--laranja);
+    text-shadow: 0 0 10px var(--neon);
+  }
+  .testimonial p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  .testimonial span {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  @keyframes floatCard {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+  }
+</style>
+
+<!-- Prova Social Extra -->
+<section id="prova-social" style="padding:4rem 2rem; background:linear-gradient(135deg,#111,#222);">
+  <h2 style="text-align:center; font-size:2rem; margin-bottom:2rem; color:#fff;">
+    Empresas e Clientes Atendidos
+  </h2>
+  <div class="logos">
+    <img src="logo1.png" alt="Empresa 1">
+    <img src="logo2.png" alt="Empresa 2">
+    <img src="logo3.png" alt="Empresa 3">
+    <img src="logo4.png" alt="Empresa 4">
+  </div>
+</section>
+
+<style>
+  /* Prova Social Logos */
+  .logos {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .logos img {
+    width: 120px;
+    filter: drop-shadow(0 0 10px var(--neon));
+    transition: transform 0.4s, filter 0.4s;
+  }
+  .logos img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px var(--laranja));
+  }
+</style>
+<!-- Timeline "Como Funciona" -->
+<section id="como-funciona" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Como Funciona
+  </h2>
+  <div class="timeline">
+    <!-- Passo 1 -->
+    <div class="timeline-step">
+      <div class="icon">📞</div>
+      <div class="content">
+        <h3>1. Contato</h3>
+        <p>Você nos chama pelo WhatsApp ou telefone e descreve o problema.</p>
+      </div>
+    </div>
+    <!-- Passo 2 -->
+    <div class="timeline-step">
+      <div class="icon">🛠️</div>
+      <div class="content">
+        <h3>2. Diagnóstico</h3>
+        <p>Nosso técnico avalia o equipamento e apresenta o orçamento.</p>
+      </div>
+    </div>
+    <!-- Passo 3 -->
+    <div class="timeline-step">
+      <div class="icon">⚡</div>
+      <div class="content">
+        <h3>3. Serviço</h3>
+        <p>Executamos o reparo ou upgrade com peças originais e rapidez.</p>
+      </div>
+    </div>
+    <!-- Passo 4 -->
+    <div class="timeline-step">
+      <div class="icon">✅</div>
+      <div class="content">
+        <h3>4. Entrega</h3>
+        <p>Você recebe o equipamento pronto, com garantia de 90 dias.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Timeline */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    position: relative;
+    margin: 2rem auto;
+    padding-left: 2rem;
+    border-left: 3px solid var(--neon);
+  }
+  .timeline-step {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    animation: fadeSlide 1.5s ease forwards;
+    opacity: 0;
+  }
+  .timeline-step:nth-child(1) { animation-delay: 0.5s; }
+  .timeline-step:nth-child(2) { animation-delay: 1s; }
+  .timeline-step:nth-child(3) { animation-delay: 1.5s; }
+  .timeline-step:nth-child(4) { animation-delay: 2s; }
+
+  .timeline-step .icon {
+    background: var(--laranja);
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    box-shadow: 0 0 20px var(--neon);
+    animation: pulse 2s infinite;
+  }
+  .timeline-step .content h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--laranja);
+  }
+  .timeline-step .content p {
+    margin: 0.5rem 0 0;
+    font-size: 1rem;
+    color: #ddd;
+  }
+
+  @keyframes fadeSlide {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 10px var(--neon); }
+    50% { box-shadow: 0 0 30px var(--neon); }
+    100% { box-shadow: 0 0 10px var(--neon); }
+  }
+</style>
+<!-- FAQ Animado -->
+<section id="faq" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Perguntas Frequentes
+  </h2>
+  <div class="faq-container">
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+      <button class="faq-question">Qual o tempo médio de serviço?</button>
+      <div class="faq-answer">
+        <p>O tempo médio é de 24 a 48 horas, dependendo do tipo de manutenção.</p>
+      </div>
+    </div>
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+      <button class="faq-question">Vocês oferecem garantia?</button>
+      <div class="faq-answer">
+        <p>Sim, todos os serviços possuem garantia de 90 dias.</p>
+      </div>
+    </div>
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+      <button class="faq-question">Atendem em domicílio?</button>
+      <div class="faq-answer">
+        <p>Sim, realizamos atendimento em domicílio e também para empresas.</p>
+      </div>
+    </div>
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+      <button class="faq-question">Fazem upgrades de hardware?</button>
+      <div class="faq-answer">
+        <p>Sim, realizamos upgrades de SSD, RAM e limpeza completa.</p>
+      </div>
+    </div>
+    <!-- FAQ 5 -->
+    <div class="faq-item">
+      <button class="faq-question">As peças são originais?</button>
+      <div class="faq-answer">
+        <p>Sim, trabalhamos apenas com peças originais e de alta qualidade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* FAQ Styles */
+  .faq-container {
+    max-width: 800px;
+    margin: auto;
+  }
+  .faq-item {
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  }
+  .faq-question {
+    width: 100%;
+    padding: 1rem;
+    text-align: left;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    color: var(--laranja);
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+  }
+  .faq-question:hover {
+    background: rgba(255,255,255,0.1);
+    color: var(--neon);
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease, padding 0.6s ease;
+    padding: 0 1rem;
+  }
+  .faq-answer p {
+    margin: 1rem 0;
+    color: #ddd;
+  }
+  .faq-item.active .faq-answer {
+    max-height: 200px;
+    padding: 1rem;
+  }
+</style>
+
+<script>
+  // FAQ Script
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    question.addEventListener('click', () => {
+      item.classList.toggle('active');
+    });
+  });
+</script>
+<!-- Contadores Dinâmicos -->
+<section id="contadores" style="padding:6rem 2rem; max-width:1200px; margin:auto;">
+  <h2 style="text-align:center; font-size:2.5rem; margin-bottom:3rem; color:#fff; text-shadow:0 0 20px var(--neon);">
+    Nossos Números
+  </h2>
+  <div class="counters">
+    <!-- Anos de Experiência -->
+    <div class="counter-box">
+      <span class="counter" data-target="10">0</span>
+      <p>Anos de Experiência</p>
+    </div>
+    <!-- Clientes Atendidos -->
+    <div class="counter-box">
+      <span class="counter" data-target="5000">0</span>
+      <p>Clientes Atendidos</p>
+    </div>
+    <!-- Equipamentos Reparados -->
+    <div class="counter-box">
+      <span class="counter" data-target="8000">0</span>
+      <p>Equipamentos Reparados</p>
+    </div>
+    <!-- Garantia -->
+    <div class="counter-box">
+      <span class="counter" data-target="90">0</span>
+      <p>Dias de Garantia</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Contadores */
+  .counters {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+  .counter-box {
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 2rem;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .counter-box:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 0 40px var(--neon);
+  }
+  .counter {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--laranja);
+    text-shadow: 0 0 20px var(--neon);
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .counter-box p {
+    font-size: 1.2rem;
+    color: #ddd;
+  }
+</style>
+
+<script>
+  // Contadores Dinâmicos
+  const counters = document.querySelectorAll('.counter');
+  const speed = 200; // Velocidade da animação
+
+  const animateCounters = () => {
+    counters.forEach(counter => {
+      const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
+        const increment = target / speed;
+
+        if(count < target) {
+          counter.innerText = Math.ceil(count + increment);
+          setTimeout(updateCount, 20);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      updateCount();
+    });
+  };
+
+  // Ativar animação ao rolar
+  const section = document.getElementById('contadores');
+  window.addEventListener('scroll', () => {
+    const sectionTop = section.getBoundingClientRect().top;
+    const triggerPoint = window.innerHeight - 100;
+    if(sectionTop < triggerPoint) {
+      animateCounters();
+    }
+  });
+</script>
+<!-- Rodapé Premium -->
+<footer id="rodape" style="background:#000; padding:4rem 2rem; color:#fff;">
+  <div class="footer-grid">
+    <!-- Contato -->
+    <div class="footer-col">
+      <h3>Contato</h3>
+      <p>📍 Av. Brigadeiro Luís Antônio, 1845 - São Paulo/SP</p>
+      <p>📞 <a href="tel:11998543278" style="color:var(--laranja);">(11) 99854-3278</a></p>
+      <p>📸 Instagram: <a href="https://instagram.com/techmasterassistencia" style="color:var(--neon);">@techmasterassistencia</a></p>
+    </div>
+    <!-- Links Rápidos -->
+    <div class="footer-col">
+      <h3>Links Rápidos</h3>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#avaliacoes">Depoimentos</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contadores">Números</a></li>
+      </ul>
+    </div>
+    <!-- Redes Sociais -->
+    <div class="footer-col">
+      <h3>Redes Sociais</h3>
+      <div class="social-icons">
+        <a href="https://wa.me/5511998543278">💬 WhatsApp</a>
+        <a href="https://facebook.com/techmasterassistencia">📘 Facebook</a>
+        <a href="https://instagram.com/techmasterassistencia">📸 Instagram</a>
+        <a href="https://maps.google.com/?q=Av.+Brigadeiro+Luís+Antônio,+1845">🗺️ Google Maps</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 TechMaster Assistência — Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<style>
+  /* Rodapé Premium */
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-col h3 {
+    color: var(--laranja);
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px var(--neon);
+  }
+  .footer-col p, .footer-col ul, .footer-col a {
+    color: #ccc;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .footer-col a:hover {
+    color: var(--neon);
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-col ul li {
+    margin-bottom: 0.5rem;
+  }
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .social-icons a {
+    color: #fff;
+    font-weight: bold;
+    transition: transform 0.3s, color 0.3s;
+  }
+  .social-icons a:hover {
+    transform: scale(1.1);
+    color: var(--neon);
+  }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 1rem;
+    font-size: 0.9rem;
+    color: #aaa;
+  }
+</style>
+<!-- Botão Flutuante WhatsApp -->
+<a href="https://wa.me/5511998543278" class="whatsapp-float" target="_blank" title="Fale conosco no WhatsApp">
+  💬
+</a>
+
+<!-- Botão Voltar ao Topo -->
+<button id="backToTop" title="Voltar ao topo">⬆️</button>
+
+<style>
+  /* Botão WhatsApp Flutuante */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #25D366;
+    color: #fff;
+    border-radius: 50%;
+    width: 60px; height: 60px;
+    display: flex; justify-content: center; align-items: center;
+    font-size: 2rem;
+    text-decoration: none;
+    box-shadow: 0 0 20px #25D366;
+    animation: pulseWhats 2s infinite;
+    z-index: 1500;
+  }
+  @keyframes pulseWhats {
+    0% { box-shadow: 0 0 10px #25D366; }
+    50% { box-shadow: 0 0 30px #25D366; }
+    100% { box-shadow: 0 0 10px #25D366; }
+  }
+
+  /* Botão Voltar ao Topo */
+  #backToTop {
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: var(--laranja);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px; height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--neon);
+    display: none;
+    z-index: 1500;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #backToTop:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 40px var(--neon);
+  }
+</style>
+
+<script>
+  // Botão Voltar ao Topo Script
+  const backToTopBtn = document.getElementById('backToTop');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTopBtn.style.display = 'block';
+    } else {
+      backToTopBtn.style.display = 'none';
+    }
+  });
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+<!-- Integração com Facebook Pixel -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'SEU_PIXEL_ID_AQUI'); 
+  fbq('track', 'PageView');
+</script>
+<noscript>
+  <img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=SEU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/>
+</noscript>
+
+<!-- Integração com Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=SEU_ID_GOOGLEADS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'SEU_ID_GOOGLEADS');
+</script>
+
+<!-- SEO Final -->
+<meta name="keywords" content="assistência técnica São Paulo, conserto notebook, upgrade SSD, troca de tela, manutenção computadores, TechMaster Assistência">
+<meta name="author" content="TechMaster Assistência">
+<link rel="canonical" href="https://techmaster.com.br">
+
+<!-- Sitemap e Robots -->
+<link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+<meta name="robots" content="index, follow">
+
+<!-- Performance e Acessibilidade -->
+<script>
+  // Lazy Loading de Imagens
+  document.addEventListener("DOMContentLoaded", function() {
+    const lazyImages = document.querySelectorAll("img");
+    lazyImages.forEach(img => {
+      img.setAttribute("loading", "lazy");
+    });
+  });
+
+  // Monitor de Performance
+  window.addEventListener('load', () => {
+    const perfData = window.performance.timing;
+    const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+    console.log("Tempo de carregamento da página: " + pageLoadTime + "ms");
+  });
+</script>
