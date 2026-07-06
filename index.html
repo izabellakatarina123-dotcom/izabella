@@ -3,116 +3,132 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Brilho Total Limpeza Profissional</title>
-  <meta name="description" content="Serviços de limpeza residencial, comercial e pós-obra em São Paulo. Profissionalismo, pontualidade e confiança.">
-  <meta name="keywords" content="limpeza, pós-obra, residencial, comercial, higienização, São Paulo">
-  <meta property="og:title" content="Brilho Total Limpeza Profissional">
-  <meta property="og:description" content="Ambientes impecáveis com serviços de limpeza premium em São Paulo.">
-  <meta property="og:image" content="assets/img/equipe-limpeza.jpg">
-  <link rel="icon" href="assets/icons/favicon.png">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="TechMaster Assistência - Conserto de computadores, notebooks e celulares com rapidez, garantia e peças originais. Solicite orçamento pelo WhatsApp.">
+  <meta name="keywords" content="assistência técnica, conserto notebook, upgrade SSD, manutenção computador, São Paulo">
+  <meta name="author" content="TechMaster Assistência">
+  <title>TechMaster Assistência</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- FontAwesome -->
+  <script src="https://kit.fontawesome.com/a2e0e6f6e0.js" crossorigin="anonymous"></script>
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #16213e);
+      color: #fff;
+      font-family: 'Inter', sans-serif;
+    }
+    .glass {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 1.5rem;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .btn-neon {
+      background: linear-gradient(90deg, #00f2fe, #4facfe);
+      color: #fff;
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      box-shadow: 0 0 20px #00f2fe;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-neon:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px #4facfe;
+    }
+    .navbar {
+      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.05);
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: #fff;
+      border-radius: 50%;
+      padding: 15px;
+      font-size: 1.8rem;
+      box-shadow: 0 0 20px #25D366;
+      transition: transform 0.3s ease;
+      z-index: 999;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+    }
+  </style>
 </head>
 <body>
-  <!-- Hero -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Ambientes impecáveis com a Brilho Total</h1>
-      <p>Limpeza profissional para residências, empresas e pós-obra.</p>
-      <a href="https://wa.me/5511998765432" class="btn btn-primary">Solicitar Orçamento</a>
-      <a href="https://wa.me/5511998765432" class="btn btn-secondary">WhatsApp</a>
+
+  <!-- Navbar -->
+  <nav class="navbar fixed w-full z-50 px-6 py-4 flex justify-between items-center">
+    <div class="text-xl font-bold text-white">TechMaster Assistência</div>
+    <div class="space-x-6 hidden md:flex">
+      <a href="#hero" class="hover:text-blue-400">Início</a>
+      <a href="#dor" class="hover:text-blue-400">Problemas</a>
+      <a href="#beneficios" class="hover:text-blue-400">Benefícios</a>
+      <a href="#servicos" class="hover:text-blue-400">Serviços</a>
+      <a href="#prova" class="hover:text-blue-400">Depoimentos</a>
+      <a href="#cta" class="hover:text-blue-400">Contato</a>
     </div>
-    <img src="assets/img/equipe-limpeza.jpg" alt="Equipe realizando limpeza profissional">
-  </header>
+  </nav>
 
-  <!-- Sobre -->
-  <section class="sobre">
-    <h2>Sobre Nós</h2>
-    <p>A Brilho Total atua há mais de 8 anos oferecendo serviços de limpeza com excelência, pontualidade e profissionais altamente treinados.</p>
+  <!-- HERO -->
+  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-4" data-aos="fade-up">Seu Notebook Novo em 24h 🚀</h1>
+    <p class="text-lg md:text-2xl mb-6 max-w-2xl" data-aos="fade-up" data-aos-delay="200">Upgrade para SSD, manutenção premium e atendimento rápido. Mais de 10 anos de confiança em São Paulo.</p>
+    <a href="https://wa.me/5511998543278" class="btn-neon" data-aos="zoom-in">Solicitar Orçamento no WhatsApp</a>
   </section>
 
-  <!-- Serviços -->
-  <section class="servicos">
-    <h2>Nossos Serviços</h2>
-    <div class="cards">
-      <div class="card"><h3>Limpeza Residencial</h3></div>
-      <div class="card"><h3>Limpeza Comercial</h3></div>
-      <div class="card"><h3>Pós-Obra</h3></div>
-      <div class="card"><h3>Vidros</h3></div>
-      <div class="card"><h3>Faxina Completa</h3></div>
-      <div class="card"><h3>Higienização</h3></div>
-    </div>
-  </section>
-
-  <!-- Como Trabalhamos -->
-  <section class="processo">
-    <h2>Como Trabalhamos</h2>
-    <p>Equipe própria, treinada e uniformizada. Produtos biodegradáveis e equipamentos modernos. Atendimento pontual e seguro.</p>
-  </section>
-
-  <!-- Diferenciais -->
-  <section class="diferenciais">
-    <h2>Por que escolher a Brilho Total?</h2>
-    <ul>
-      <li>Equipe treinada</li>
-      <li>Produtos profissionais</li>
-      <li>Pontualidade</li>
-      <li>Segurança</li>
-      <li>Qualidade</li>
-    </ul>
-  </section>
-
-  <!-- Galeria -->
-  <section class="galeria">
-    <h2>Galeria</h2>
-    <div class="grid">
-      <img src="assets/img/antes-depois.jpg" alt="Antes e depois da limpeza">
-      <img src="assets/img/equipamentos.jpg" alt="Equipamentos profissionais">
-      <img src="assets/img/escritorio-limpo.jpg" alt="Escritório limpo">
+  <!-- SEÇÃO DE DOR -->
+  <section id="dor" class="py-20 px-6">
+    <div class="glass p-10 text-center" data-aos="fade-right">
+      <h2 class="text-3xl font-bold mb-6">Cansado de Problemas?</h2>
+      <p class="text-lg mb-4">Computador lento, tela quebrada, travamentos constantes... cada minuto perdido custa produtividade e dinheiro.</p>
+      <p class="text-lg font-semibold text-red-400">Não espere até piorar. Seu equipamento precisa de atenção agora.</p>
     </div>
   </section>
 
-  <!-- Depoimentos -->
-  <section class="depoimentos">
-    <h2>O que nossos clientes dizem</h2>
-    <div class="cards">
-      <div class="card">⭐⭐⭐⭐⭐ Mariana Oliveira - "Minha casa ficou impecável."</div>
-      <div class="card">⭐⭐⭐⭐⭐ Carlos Mendes - "Superou todas as expectativas."</div>
-      <div class="card">⭐⭐⭐⭐⭐ Juliana Costa - "Pontuais e muito profissionais."</div>
-      <div class="card">⭐⭐⭐⭐⭐ Eduardo Lima - "Atendimento excelente, já sou cliente há mais de um ano."</div>
-      <div class="card">⭐⭐⭐⭐⭐ Fernanda Alves - "Melhor empresa de limpeza que já contratei."</div>
+  <!-- BENEFÍCIOS -->
+  <section id="beneficios" class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Transformação Garantida</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-8 card-hover" data-aos="zoom-in">
+        <i class="fas fa-bolt text-4xl text-blue-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Velocidade</h3>
+        <p>Upgrade para SSD deixa seu notebook até 10x mais rápido.</p>
+      </div>
+      <div class="glass p-8 card-hover" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-shield-alt text-4xl text-green-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Segurança</h3>
+        <p>Peças originais e garantia de 90 dias em todos os serviços.</p>
+      </div>
+      <div class="glass p-8 card-hover" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-smile text-4xl text-yellow-400 mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Satisfação</h3>
+        <p>Clientes felizes que recomendam nosso atendimento rápido e honesto.</p>
+      </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="faq">
-    <h2>Perguntas Frequentes</h2>
-    <details><summary>Atendem residências e empresas?</summary><p>Sim, atendemos ambos.</p></details>
-    <details><summary>Fazem limpeza pós-obra?</summary><p>Sim, somos especialistas.</p></details>
-    <details><summary>Trabalham com contratos?</summary><p>Sim, mensais, quinzenais e semanais.</p></details>
-    <details><summary>Equipe própria?</summary><p>Sim, todos registrados e uniformizados.</p></details>
-    <details><summary>Produtos profissionais?</summary><p>Sim, biodegradáveis e de alta performance.</p></details>
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="py-20 px-6">
+    <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="glass p-6 card-hover" data-aos="flip-left"><i class="fas fa-laptop text-3xl mb-4"></i><h3 class="font-semibold">Manutenção de Notebooks</h3></div>
+      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-mobile-alt text-3xl mb-4"></i><h3 class="font-semibold">Conserto de Celulares</h3></div>
+      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-desktop text-3xl mb-4"></i><h3 class="font-semibold">Computadores Gamer</h3></div>
+      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-tablet-alt text-3xl mb-4"></i><h3 class="font-semibold">Tablets</h3></div>
+      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="400"><i class="fas fa-gamepad text-3xl mb-4"></i><h3 class="font-semibold">Videogames</h3></div>
+      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="500"><i class="fas fa-tools text-3xl mb-4"></i><h3 class="font-semibold">Upgrades SSD & RAM</h3></div>
+    </div>
   </section>
 
-  <!-- Mapa -->
-  <section class="mapa">
-    <h2>Onde Estamos</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </section>
-
-  <!-- Contato -->
-  <section class="contato">
-    <h2>Entre em Contato</h2>
-    <p>📍 Rua das Acácias, 325 - Vila Mariana - São Paulo/SP</p>
-    <p>📞 <a href="tel:+5511998765432">(11) 99876-5432</a></p>
-    <p>📸 <a href="https://instagram.com/brilhototallimpeza">@brilhototallimpeza</a></p>
-    <a href="https://wa.me/5511998765432" class="btn btn-primary">Falar no WhatsApp</a>
-  </section>
-
-  <!-- Rodapé -->
-  <footer>
-    <p>© 2026 Brilho Total Limpeza Profissional - Todos os direitos reservados.</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
+  <!--
