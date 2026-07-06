@@ -15,37 +15,38 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(135deg, #0f0f1a, #1a1a2e, #16213e);
+      background: radial-gradient(circle at top left, #0f0f1a, #1a1a2e, #16213e);
       color: #fff;
       font-family: 'Inter', sans-serif;
     }
     .glass {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(12px);
-      border-radius: 1.5rem;
+      border-radius: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .glass:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
     }
     .btn-neon {
       background: linear-gradient(90deg, #00f2fe, #4facfe);
       color: #fff;
       font-weight: bold;
-      padding: 0.75rem 1.5rem;
+      padding: 0.9rem 2rem;
       border-radius: 9999px;
-      box-shadow: 0 0 20px #00f2fe;
+      box-shadow: 0 0 25px #00f2fe;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .btn-neon:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 40px #4facfe;
+      transform: scale(1.08);
+      box-shadow: 0 0 45px #4facfe;
     }
     .navbar {
       backdrop-filter: blur(12px);
       background: rgba(255,255,255,0.05);
-    }
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.5);
     }
     .whatsapp-float {
       position: fixed;
@@ -54,14 +55,14 @@
       background: #25D366;
       color: #fff;
       border-radius: 50%;
-      padding: 15px;
-      font-size: 1.8rem;
-      box-shadow: 0 0 20px #25D366;
+      padding: 18px;
+      font-size: 2rem;
+      box-shadow: 0 0 25px #25D366;
       transition: transform 0.3s ease;
       z-index: 999;
     }
     .whatsapp-float:hover {
-      transform: scale(1.1);
+      transform: scale(1.15);
     }
   </style>
 </head>
@@ -82,15 +83,17 @@
 
   <!-- HERO -->
   <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-4xl md:text-6xl font-extrabold mb-4" data-aos="fade-up">Seu Notebook Novo em 24h 🚀</h1>
-    <p class="text-lg md:text-2xl mb-6 max-w-2xl" data-aos="fade-up" data-aos-delay="200">Upgrade para SSD, manutenção premium e atendimento rápido. Mais de 10 anos de confiança em São Paulo.</p>
+    <h1 class="text-5xl md:text-7xl font-extrabold mb-6" data-aos="fade-up">Seu Notebook Novo em 24h 🚀</h1>
+    <p class="text-lg md:text-2xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+      Upgrade para SSD, manutenção premium e atendimento rápido. Há mais de 10 anos consertando computadores, notebooks e celulares em São Paulo.
+    </p>
     <a href="https://wa.me/5511998543278" class="btn-neon" data-aos="zoom-in">Solicitar Orçamento no WhatsApp</a>
   </section>
 
   <!-- SEÇÃO DE DOR -->
   <section id="dor" class="py-20 px-6">
     <div class="glass p-10 text-center" data-aos="fade-right">
-      <h2 class="text-3xl font-bold mb-6">Cansado de Problemas?</h2>
+      <h2 class="text-4xl font-bold mb-6">Cansado de Problemas?</h2>
       <p class="text-lg mb-4">Computador lento, tela quebrada, travamentos constantes... cada minuto perdido custa produtividade e dinheiro.</p>
       <p class="text-lg font-semibold text-red-400">Não espere até piorar. Seu equipamento precisa de atenção agora.</p>
     </div>
@@ -98,21 +101,21 @@
 
   <!-- BENEFÍCIOS -->
   <section id="beneficios" class="py-20 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Transformação Garantida</h2>
+    <h2 class="text-4xl font-bold text-center mb-12">Transformação Garantida</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-8 card-hover" data-aos="zoom-in">
-        <i class="fas fa-bolt text-4xl text-blue-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Velocidade</h3>
+      <div class="glass p-8" data-aos="zoom-in">
+        <i class="fas fa-bolt text-5xl text-blue-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Velocidade</h3>
         <p>Upgrade para SSD deixa seu notebook até 10x mais rápido.</p>
       </div>
-      <div class="glass p-8 card-hover" data-aos="zoom-in" data-aos-delay="200">
-        <i class="fas fa-shield-alt text-4xl text-green-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Segurança</h3>
+      <div class="glass p-8" data-aos="zoom-in" data-aos-delay="200">
+        <i class="fas fa-shield-alt text-5xl text-green-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Segurança</h3>
         <p>Peças originais e garantia de 90 dias em todos os serviços.</p>
       </div>
-      <div class="glass p-8 card-hover" data-aos="zoom-in" data-aos-delay="400">
-        <i class="fas fa-smile text-4xl text-yellow-400 mb-4"></i>
-        <h3 class="text-xl font-semibold mb-2">Satisfação</h3>
+      <div class="glass p-8" data-aos="zoom-in" data-aos-delay="400">
+        <i class="fas fa-smile text-5xl text-yellow-400 mb-4"></i>
+        <h3 class="text-2xl font-semibold mb-2">Satisfação</h3>
         <p>Clientes felizes que recomendam nosso atendimento rápido e honesto.</p>
       </div>
     </div>
@@ -120,15 +123,11 @@
 
   <!-- SERVIÇOS -->
   <section id="servicos" class="py-20 px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Nossos Serviços</h2>
+    <h2 class="text-4xl font-bold text-center mb-12">Nossos Serviços</h2>
     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass p-6 card-hover" data-aos="flip-left"><i class="fas fa-laptop text-3xl mb-4"></i><h3 class="font-semibold">Manutenção de Notebooks</h3></div>
-      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-mobile-alt text-3xl mb-4"></i><h3 class="font-semibold">Conserto de Celulares</h3></div>
-      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-desktop text-3xl mb-4"></i><h3 class="font-semibold">Computadores Gamer</h3></div>
-      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-tablet-alt text-3xl mb-4"></i><h3 class="font-semibold">Tablets</h3></div>
-      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="400"><i class="fas fa-gamepad text-3xl mb-4"></i><h3 class="font-semibold">Videogames</h3></div>
-      <div class="glass p-6 card-hover" data-aos="flip-left" data-aos-delay="500"><i class="fas fa-tools text-3xl mb-4"></i><h3 class="font-semibold">Upgrades SSD & RAM</h3></div>
-    </div>
-  </section>
-
-  <!--
+      <div class="glass p-6" data-aos="flip-left"><i class="fas fa-laptop text-4xl mb-4"></i><h3 class="font-semibold">Manutenção de Notebooks</h3></div>
+      <div class="glass p-6" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-mobile-alt text-4xl mb-4"></i><h3 class="font-semibold">Conserto de Celulares</h3></div>
+      <div class="glass p-6" data-aos="flip-left" data-aos-delay="200"><i class="fas fa-desktop text-4xl mb-4"></i><h3 class="font-semibold">Computadores Gamer</h3></div>
+      <div class="glass p-6" data-aos="flip-left" data-aos-delay="300"><i class="fas fa-tablet-alt text-4xl mb-4"></i><h3 class="font-semibold">Tablets</h3></div>
+      <div class="glass p-6" data-aos="flip-left" data-aos-delay="400"><i class="fas fa-gamepad text-4xl mb-4"></i><h3 class="font-semibold">Videogames</h3></div>
+      <div class="glass p-6" data-aos="flip-left" data-aos-delay="500"><i class="fas fa-tools text-4xl mb-4"></
