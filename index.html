@@ -1,161 +1,68 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- SEO -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TechMaster Assistência - Upgrade SSD e Manutenção Premium</title>
-  <meta name="description" content="TechMaster Assistência - Conserto de computadores, notebooks e celulares com rapidez, garantia e peças originais. Solicite orçamento pelo WhatsApp.">
-  <meta name="keywords" content="assistência técnica, conserto notebook, upgrade SSD, manutenção computador, São Paulo">
-  <meta name="author" content="TechMaster Assistência">
-  <meta name="theme-color" content="#0f172a">
-  <link rel="canonical" href="https://techmasterassistencia.github.io/">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="TechMaster Assistência - Upgrade SSD e Manutenção Premium">
-  <meta property="og:description" content="Há mais de 10 anos consertando computadores, notebooks e celulares com rapidez e garantia.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://techmasterassistencia.github.io/">
-  <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TechMaster Assistência - Upgrade SSD e Manutenção Premium">
-  <meta name="twitter:description" content="Há mais de 10 anos consertando computadores, notebooks e celulares com rapidez e garantia.">
-  <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/2920/2920244.png">
-
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": "TechMaster Assistência",
-    "image": "https://cdn-icons-png.flaticon.com/512/2920/2920244.png",
-    "telephone": "+55 11 99854-3278",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Av. Brigadeiro Luís Antônio, 1845",
-      "addressLocality": "São Paulo",
-      "addressRegion": "SP",
-      "postalCode": "01317-000",
-      "addressCountry": "BR"
-    },
-    "openingHours": "Mo-Fr 08:30-18:30, Sa 09:00-13:00",
-    "url": "https://techmasterassistencia.github.io/"
-  }
-  </script>
-
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- FontAwesome -->
-  <script src="https://kit.fontawesome.com/a2e0e6f6e0.js" crossorigin="anonymous"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <!-- AOS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: radial-gradient(circle at top left, #0f172a, #1a1a2e, #16213e);
-      color: #fff;
-      scroll-behavior: smooth;
-    }
-    .glass {
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(12px);
-      border-radius: 2rem;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .glass:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.6);
-    }
-    .btn-neon {
-      background: linear-gradient(90deg, #00f2fe, #4facfe);
-      color: #fff;
-      font-weight: bold;
-      padding: 1rem 2rem;
-      border-radius: 9999px;
-      box-shadow: 0 0 25px #00f2fe;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .btn-neon:hover {
-      transform: scale(1.08);
-      box-shadow: 0 0 45px #4facfe;
-    }
-    .navbar {
-      backdrop-filter: blur(12px);
-      background: rgba(255,255,255,0.05);
-      transition: background 0.3s ease;
-    }
-    .navbar.scrolled {
-      background: rgba(15,23,42,0.9);
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: #fff;
-      border-radius: 50%;
-      padding: 18px;
-      font-size: 2rem;
-      box-shadow: 0 0 25px #25D366;
-      transition: transform 0.3s ease;
-      z-index: 999;
-    }
-    .whatsapp-float:hover {
-      transform: scale(1.15);
-    }
-    .faq-item {
-      cursor: pointer;
-    }
-    .faq-answer {
-      display: none;
-      padding-top: 0.5rem;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TechMaster Assistência | Manutenção de Notebooks e Celulares</title>
+<meta name="description" content="Assistência técnica premium em São Paulo. Upgrade SSD, notebooks, celulares, tablets e videogames.">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<style>
+body{background:radial-gradient(circle at top,#0f4cff,#081126 45%,#030712);color:#fff}
+.glass{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)}
+.glow{box-shadow:0 0 30px rgba(59,130,246,.45)}
+</style>
 </head>
 <body>
+<nav class="fixed top-0 w-full glass z-50"><div class="max-w-7xl mx-auto p-4 flex justify-between"><b>TechMaster</b><a href="https://wa.me/5511998543278" class="bg-blue-600 px-5 py-2 rounded-full glow">WhatsApp</a></div></nav>
+<section class="min-h-screen flex items-center">
+<div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-10 p-8">
+<div data-aos="fade-right">
+<h1 class="text-5xl font-black">Seu notebook lento pode voltar a ser rápido em até 24 horas.</h1>
+<p class="mt-6 text-xl text-slate-300">Mais de 10 anos consertando computadores, notebooks, celulares, tablets e videogames com garantia de 90 dias.</p>
+<a href="https://wa.me/5511998543278" class="inline-block mt-8 bg-orange-500 px-8 py-4 rounded-full glow">Solicitar orçamento</a>
+</div>
+<div class="glass rounded-3xl p-10 glow" data-aos="zoom-in">
+<h2 class="text-2xl font-bold mb-4">Por que escolher a TechMaster?</h2>
+<ul class="space-y-3">
+<li>✔ Upgrade SSD</li>
+<li>✔ Troca de tela</li>
+<li>✔ Limpeza preventiva</li>
+<li>✔ Atendimento residencial</li>
+<li>✔ Atendimento para empresas</li>
+<li>✔ Peças originais</li>
+</ul>
+</div>
+</div>
+</section>
 
-  <!-- Navbar -->
-  <nav class="navbar fixed w-full z-50 px-6 py-4 flex justify-between items-center">
-    <div class="text-xl font-bold text-white">TechMaster Assistência</div>
-    <div class="space-x-6 hidden md:flex">
-      <a href="#hero" class="hover:text-blue-400">Início</a>
-      <a href="#dor" class="hover:text-blue-400">Problemas</a>
-      <a href="#beneficios" class="hover:text-blue-400">Benefícios</a>
-      <a href="#servicos" class="hover:text-blue-400">Serviços</a>
-      <a href="#prova" class="hover:text-blue-400">Depoimentos</a>
-      <a href="#cta" class="hover:text-blue-400">Contato</a>
-    </div>
-  </nav>
+<section class="max-w-7xl mx-auto p-8">
+<h2 class="text-4xl font-bold mb-8">Serviços</h2>
+<div class="grid md:grid-cols-3 gap-6">
+<div class="glass rounded-3xl p-6">💻 Manutenção de notebooks</div>
+<div class="glass rounded-3xl p-6">🚀 Upgrade SSD</div>
+<div class="glass rounded-3xl p-6">📱 Celulares</div>
+<div class="glass rounded-3xl p-6">🎮 Videogames</div>
+<div class="glass rounded-3xl p-6">🧹 Limpeza interna</div>
+<div class="glass rounded-3xl p-6">💾 Upgrade RAM</div>
+</div>
+</section>
 
-  <!-- HERO -->
-  <section id="hero" class="min-h-screen flex flex-col justify-center items-center text-center px-6">
-    <h1 class="text-5xl md:text-7xl font-extrabold mb-6" data-aos="fade-up">Seu Notebook Novo em 24h 🚀</h1>
-    <p class="text-lg md:text-2xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
-      Upgrade para SSD, manutenção premium e atendimento rápido. Há mais de 10 anos consertando computadores, notebooks e celulares em São Paulo.
-    </p>
-    <div class="flex gap-4">
-      <a href="https://wa.me/5511998543278" class="btn-neon" data-aos="zoom-in">Solicitar Orçamento</a>
-      <a href="https://wa.me/5511998543278" class="btn-neon bg-green-500" data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-    </div>
-  </section>
+<section class="max-w-5xl mx-auto p-8">
+<h2 class="text-4xl font-bold">Avaliações</h2>
+<div class="grid md:grid-cols-3 gap-6 mt-6">
+<div class="glass p-6 rounded-3xl">⭐⭐⭐⭐⭐<br><b>Lucas</b><br>Notebook ficou novo.</div>
+<div class="glass p-6 rounded-3xl">⭐⭐⭐⭐⭐<br><b>Fernanda</b><br>Troca de tela perfeita.</div>
+<div class="glass p-6 rounded-3xl">⭐⭐⭐⭐⭐<br><b>Ricardo</b><br>Atendimento rápido e honesto.</div>
+</div>
+</section>
 
-  <!-- SEÇÃO DE DOR -->
-  <section id="dor" class="py-20 px-6">
-    <div class="glass p-10 text-center" data-aos="fade-right">
-      <h2 class="text-4xl font-bold mb-6">Cansado de Problemas?</h2>
-      <p class="text-lg mb-4">Computador lento, tela quebrada, travamentos constantes... cada minuto perdido custa produtividade e dinheiro.</p>
-      <p class="text-lg font-semibold text-red-400">Não espere até piorar. Seu equipamento precisa de atenção agora.</p>
-    </div>
-  </section>
-
-  <!-- BENEFÍCIOS -->
-  <section id="beneficios" class="py-20 px-6">
-    <h2 class="text-4xl font-bold text-center mb-12">Transformação Garantida</h2>
+<footer class="p-10 text-center">
+<p>Av. Brigadeiro Luís Antônio, 1845 - São Paulo/SP</p>
+<p>Seg–Sex: 08h30–18h30 | Sáb: 09h–13h</p>
+<a class="bg-green-500 inline-block mt-4 px-8 py-4 rounded-full glow" href="https://wa.me/5511998543278"><i class="fab fa-whatsapp"></i> Chamar no WhatsApp</a>
+</footer>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body></html>
