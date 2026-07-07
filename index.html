@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechMaster Assistência | Conserto de Notebooks, Celulares e Computadores em SP</title>
-    <meta name="description" content="Assistência técnica especializada em São Paulo. Conserto de notebooks, computadores e celulares com rapidez, garantia de 90 dias e peças originais. Orçamento via WhatsApp.">
-    <meta name="keywords" content="assistência técnica, conserto de notebook, conserto de celular, formatação, upgrade SSD, São Paulo, manutenção de computadores">
-    <meta property="og:title" content="TechMaster Assistência | Especialistas em Tecnologia">
-    <meta property="og:description" content="Conserto rápido e garantido para seus equipamentos. Atendimento em domicílio e para empresas.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://techmasterassistencia.com.br">
+    <title>Auto Prime Centro Automotivo | Oficina Mecânica em Osasco, SP</title>
+    <meta name="description" content="Oficina mecânica em Osasco, SP. Manutenção automotiva completa para carros nacionais e importados. Diagnóstico, revisão, freios, motor e mais. Agende via WhatsApp.">
+    <meta name="keywords" content="oficina mecânica, centro automotivo, revisão automotiva, troca de óleo, freios, suspensão, injeção eletrônica, osasco, são paulo">
     
-    <!-- Preconnect para fontes -->
+    <!-- Open Graph -->
+    <meta property="og:title" content="Auto Prime Centro Automotivo | Confiança e Qualidade para Seu Veículo">
+    <meta property="og:description" content="Mais de 18 anos de experiência em manutenção automotiva. Equipe especializada e equipamentos modernos.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://autoprimecentroautomotivo.com.br">
+    
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,1327 +24,488 @@
     <style>
         /* Variáveis de Cores e Estilos */
         :root {
-            --primary: #0056b3; /* Azul Premium */
-            --primary-dark: #003d82;
-            --primary-light: #e6f0fa;
-            --accent: #ff7a00; /* Laranja para destaque/logo */
-            --accent-hover: #e66e00;
-            --text-main: #1a1a1a;
-            --text-light: #4a4a4a;
-            --text-muted: #718096;
-            --bg-main: #ffffff;
-            --bg-alt: #f8fafc;
-            --bg-dark: #0f172a;
+            /* Paleta Conforme Briefing */
+            --black: #1a1a1a;
+            --dark-gray: #333333;
+            --medium-gray: #666666;
+            --light-gray: #f0f2f5;
+            --white: #ffffff;
+            --red-accent: #e63946; /* Vermelho para destaque */
+            --red-dark: #c02d39;
+            --blue-primary: #1d3557; /* Azul para profissionalismo */
+            --blue-dark: #142840;
             --whatsapp: #25D366;
-            --whatsapp-hover: #128C7E;
-            --border: #e2e8f0;
-            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-            --radius: 8px;
-            --radius-lg: 16px;
-            --transition: all 0.3s ease;
+            
+            /* UI */
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Reset e Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', sans-serif; color: var(--dark-gray); background-color: var(--white); line-height: 1.6; overflow-x: hidden; }
 
-        html {
-            scroll-behavior: smooth;
-            font-size: 16px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Tipografia */
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            line-height: 1.2;
-            color: var(--text-main);
-        }
-
-        h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
-        h2 { font-size: clamp(2rem, 4vw, 2.5rem); margin-bottom: 1rem; }
-        h3 { font-size: 1.5rem; margin-bottom: 0.75rem; }
-        
-        p { margin-bottom: 1rem; color: var(--text-light); }
-
+        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        section { padding: 6rem 0; }
         .text-center { text-align: center; }
-        .text-primary { color: var(--primary); }
-        .text-white { color: #fff; }
-        
-        .section-subtitle {
-            color: var(--primary);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.875rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
+        .bg-dark { background-color: var(--black); color: var(--white); }
+        .bg-light { background-color: var(--light-gray); }
 
-        /* Layout */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
+        /* Tipografia Premium */
+        h1, h2, h3 { color: var(--black); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; }
+        h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); margin-bottom: 1.5rem; }
+        h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1rem; }
+        p { color: var(--medium-gray); font-size: 1.1rem; }
+        .bg-dark h2, .bg-dark p { color: var(--white); }
 
-        section {
-            padding: 6rem 0;
-        }
-
-        .bg-alt { background-color: var(--bg-alt); }
-        .bg-dark { background-color: var(--bg-dark); color: #fff; }
-        .bg-dark h2, .bg-dark h3, .bg-dark p { color: #fff; }
-
-        /* Botões */
+        /* Botões Modernos */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 1rem 2rem;
-            font-weight: 600;
-            border-radius: var(--radius);
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            border-radius: 50px;
             transition: var(--transition);
             cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.95rem;
+            gap: 0.8rem;
             border: none;
-            font-size: 1rem;
-            gap: 0.5rem;
         }
 
-        .btn-primary {
-            background-color: var(--primary);
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(0, 86, 179, 0.3);
-        }
+        .btn-primary { background-color: var(--blue-primary); color: var(--white); box-shadow: 0 8px 20px rgba(29, 53, 87, 0.3); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(29, 53, 87, 0.4); background-color: var(--blue-dark); }
 
-        .btn-primary:hover {
-            background-color: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 86, 179, 0.4);
-        }
+        .btn-accent { background-color: var(--red-accent); color: var(--white); box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3); }
+        .btn-accent:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(230, 57, 70, 0.4); background-color: var(--red-dark); }
 
-        .btn-whatsapp {
-            background-color: var(--whatsapp);
-            color: #fff;
-            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
-        }
+        .btn-whatsapp { background-color: var(--whatsapp); color: var(--white); }
+        .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4); }
 
-        .btn-whatsapp:hover {
-            background-color: var(--whatsapp-hover);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: #fff;
-        }
-
-        /* Header & Navegação */
+        /* Header */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            top: 0; width: 100%; height: 90px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            box-shadow: var(--shadow-sm);
-            transition: var(--transition);
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 80px;
-        }
-
-        .logo {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .logo i {
-            color: var(--accent);
-            font-size: 1.8rem;
-        }
+        .nav-wrap { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; font-size: 1.6rem; font-weight: 800; color: var(--blue-primary); text-decoration: none; }
+        .logo i { color: var(--red-accent); font-size: 2rem; }
+        .logo span { color: var(--black); }
 
-        .logo span {
-            color: var(--text-main);
-        }
+        .nav-menu { display: flex; gap: 2.5rem; align-items: center; }
+        .nav-menu a { text-decoration: none; color: var(--black); font-weight: 600; font-size: 0.95rem; transition: var(--transition); }
+        .nav-menu a:hover { color: var(--blue-primary); }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            font-weight: 500;
-            color: var(--text-main);
-            transition: var(--transition);
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--text-main);
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
+        .menu-toggle { display: none; font-size: 1.8rem; color: var(--black); cursor: pointer; }
 
         /* Hero Section */
         .hero {
-            padding-top: 120px;
-            padding-bottom: 4rem;
             min-height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #f8fafc 0%, #e6f0fa 100%);
+            padding-top: 120px;
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
             position: relative;
             overflow: hidden;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-text h1 {
-            margin-bottom: 1.5rem;
-            color: var(--bg-dark);
-        }
-
-        .hero-text p {
-            font-size: 1.25rem;
-            margin-bottom: 2.5rem;
-            color: var(--text-light);
-            max-width: 90%;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .hero-image {
-            position: relative;
-        }
-
-        .hero-image img {
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-lg);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-shape {
-            position: absolute;
-            top: -5%;
-            right: -5%;
-            width: 110%;
-            height: 110%;
-            background-color: var(--primary);
-            border-radius: var(--radius-lg);
-            z-index: 1;
-            opacity: 0.1;
-            transform: rotate(3deg);
-        }
-
-        .trust-badges {
-            display: flex;
-            gap: 2rem;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border);
-        }
-
-        .badge {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-main);
-        }
-
-        .badge i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        /* Sobre Section */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-image {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background: var(--bg-main);
-            padding: 1.5rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--primary);
-            line-height: 1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-label {
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        /* Serviços Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .service-card {
-            background: var(--bg-main);
-            padding: 2.5rem 2rem;
-            border-radius: var(--radius-lg);
-            box-shadow: var(--shadow-sm);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary-light);
-        }
-
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-card h3 {
-            margin-bottom: 1rem;
-        }
-
-        .service-card ul {
-            margin-top: 1.5rem;
-        }
-
-        .service-card li {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        .service-card li i {
-            color: var(--whatsapp);
-            font-size: 0.8rem;
-        }
-
-        /* Equipamentos Section */
-        .equipments {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .equipment-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 1rem;
-            padding: 2rem;
-            background: var(--bg-main);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-sm);
-            min-width: 150px;
-            transition: var(--transition);
-        }
-
-        .equipment-item:hover {
-            transform: translateY(-5px);
-            color: var(--primary);
-        }
-
-        .equipment-item i {
-            font-size: 2.5rem;
-            color: var(--primary);
-        }
-
-        .equipment-item span {
-            font-weight: 600;
-        }
-
-        /* Diferenciais Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
-        }
-
-        /* Processo Section */
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 4rem;
-            position: relative;
-        }
-
-        .step {
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin: 0 auto 1.5rem;
-            border: 4px solid var(--bg-alt);
-            box-shadow: var(--shadow-md);
-        }
-
-        /* Avaliações Section */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .review-card {
-            background: var(--bg-main);
-            padding: 2rem;
-            border-radius: var(--radius);
-            box-shadow: var(--shadow-md);
-            position: relative;
-        }
-
-        .stars {
-            color: #FFB800;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        .review-text {
-            font-style: italic;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            color: var(--text-main);
-        }
-
-        .review-author {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .author-avatar {
-            width: 40px;
-            height: 40px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-        }
-
-        .author-name {
-            font-weight: 600;
-        }
-
-        /* FAQ Section */
-        .faq-container {
-            max-width: 800px;
-            margin: 3rem auto 0;
-        }
-
-        .faq-item {
-            background: var(--bg-main);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-
-        .faq-question {
-            padding: 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 1.1rem;
-            background: var(--bg-main);
-            transition: var(--transition);
-        }
-
-        .faq-question:hover {
-            color: var(--primary);
-        }
-
-        .faq-icon {
-            transition: transform 0.3s ease;
-            color: var(--primary);
-        }
-
-        .faq-answer {
-            padding: 0 1.5rem;
-            max-height: 0;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            color: var(--text-light);
-        }
-
-        .faq-item.active .faq-answer {
-            padding: 0 1.5rem 1.5rem;
-            max-height: 500px;
-        }
-
-        .faq-item.active .faq-icon {
-            transform: rotate(180deg);
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
-            color: #fff;
-            text-align: center;
-            padding: 5rem 0;
-            border-radius: var(--radius-lg);
-            margin: 4rem 1.5rem;
-        }
-
-        .cta-section h2 {
-            color: #fff;
-            margin-bottom: 1.5rem;
-        }
-
-        .cta-section p {
-            color: rgba(255, 255, 255, 0.9);
-            font-size: 1.2rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Contato & Footer */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 4rem;
-            margin-top: 3rem;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .info-icon {
-            width: 50px;
-            height: 50px;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            flex-shrink: 0;
-        }
-
-        .info-content h4 {
-            margin-bottom: 0.25rem;
-        }
-
-        .map-container {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            box-shadow: var(--shadow-md);
-            height: 400px;
-        }
-
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        footer {
-            background-color: var(--bg-dark);
-            color: #fff;
-            padding: 4rem 0 2rem;
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 4rem;
-            margin-bottom: 3rem;
-        }
-
-        .footer-about p {
-            color: var(--text-muted);
-            margin-top: 1rem;
-        }
-
-        .footer-links h4 {
-            color: #fff;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-links ul {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .footer-links a {
-            color: var(--text-muted);
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: #fff;
-            padding-left: 5px;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: center; }
+        .hero-tag { display: inline-block; padding: 0.5rem 1.2rem; background: rgba(29, 53, 87, 0.1); color: var(--blue-primary); border-radius: 50px; font-weight: 700; font-size: 0.85rem; margin-bottom: 1.5rem; text-transform: uppercase; }
+        .hero-btns { display: flex; gap: 1.2rem; margin-top: 2.5rem; flex-wrap: wrap; }
+
+        .hero-img-wrap { position: relative; }
+        .hero-img { width: 100%; border-radius: var(--radius); box-shadow: var(--shadow); position: relative; z-index: 2; }
+        .hero-badge { position: absolute; bottom: -20px; left: -20px; background: var(--red-accent); color: var(--white); padding: 1.5rem; border-radius: var(--radius); z-index: 3; box-shadow: var(--shadow); text-align: center; }
+        .hero-badge strong { display: block; font-size: 1.8rem; line-height: 1; }
+
+        /* Serviços */
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2.5rem; margin-top: 4rem; }
+        .service-card { background: var(--white); padding: 3rem 2rem; border-radius: var(--radius); border: 1px solid rgba(0,0,0,0.05); transition: var(--transition); position: relative; overflow: hidden; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); border-color: var(--blue-primary); }
+        .service-icon { width: 70px; height: 70px; background: var(--light-gray); color: var(--blue-primary); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin-bottom: 2rem; transition: var(--transition); }
+        .service-card:hover .service-icon { background: var(--blue-primary); color: var(--white); }
+        .service-card h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+        .service-card p { font-size: 1rem; color: var(--medium-gray); }
+
+        /* Como Trabalhamos */
+        .how-it-works-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; margin-top: 4rem; }
+        .work-step { text-align: center; }
+        .work-step-icon { width: 80px; height: 80px; background: var(--red-accent); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin: 0 auto 1.5rem; box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3); }
+        .work-step h4 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+        /* Diferenciais */
+        .diff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-top: 4rem; }
+        .diff-item { text-align: center; }
+        .diff-icon { font-size: 3rem; color: var(--red-accent); margin-bottom: 1.5rem; }
+        .diff-item h4 { font-size: 1.3rem; margin-bottom: 0.8rem; }
+
+        /* Avaliações */
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem; }
+        .review-card { background: var(--white); padding: 2.5rem; border-radius: var(--radius); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .stars { color: #FFD700; margin-bottom: 1.2rem; }
+        .review-text { font-style: italic; margin-bottom: 1.5rem; color: var(--black); font-weight: 500; }
+        .author { font-weight: 700; color: var(--blue-primary); }
+
+        /* Contato & Mapa */
+        .contact-layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; margin-top: 4rem; }
+        .contact-info { display: flex; flex-direction: column; gap: 2.5rem; }
+        .info-box { display: flex; gap: 1.5rem; }
+        .info-icon { width: 55px; height: 55px; background: rgba(29, 53, 87, 0.1); color: var(--blue-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+        .info-content h4 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+        .map-frame { border-radius: var(--radius); overflow: hidden; height: 450px; box-shadow: var(--shadow); }
+
+        /* Footer */
+        footer { padding: 5rem 0 2rem; background-color: var(--black); color: var(--white); }
+        footer h4 { color: var(--white); }
+        footer p, footer a { color: var(--medium-gray); }
+        footer a:hover { color: var(--white); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+        .footer-links h4 { margin-bottom: 1.5rem; }
+        .footer-links ul { list-style: none; }
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { text-decoration: none; transition: var(--transition); }
+        .footer-links a:hover { padding-left: 5px; }
+        .copyright { text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); color: var(--medium-gray); font-size: 0.9rem; }
 
         /* WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            width: 60px;
-            height: 60px;
-            background-color: var(--whatsapp);
-            color: #fff;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
-            z-index: 100;
-            transition: var(--transition);
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            background-color: var(--whatsapp-hover);
-        }
+        .wa-float { position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; background: var(--whatsapp); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2.2rem; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4); z-index: 999; text-decoration: none; transition: var(--transition); animation: pulse 2s infinite; }
+        .wa-float:hover { transform: scale(1.1); }
 
         @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5); }
-            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+            70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); }
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
         /* Responsividade */
         @media (max-width: 992px) {
-            .hero-content, .about-grid, .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-            
-            .hero {
-                padding-top: 100px;
-                text-align: center;
-            }
-
-            .hero-text p {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .trust-badges {
-                justify-content: center;
-                flex-wrap: wrap;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            .hero-grid, .contact-layout, .footer-grid { grid-template-columns: 1fr; gap: 3rem; }
+            .hero { text-align: center; padding-top: 100px; }
+            .hero-btns { justify-content: center; }
+            .hero-img-wrap { max-width: 500px; margin: 0 auto; }
+            .nav-menu { display: none; }
+            .menu-toggle { display: block; }
+            .nav-menu.active { display: flex; flex-direction: column; position: fixed; top: 90px; left: 0; width: 100%; background: var(--white); padding: 2rem; border-bottom: 1px solid rgba(0,0,0,0.1); }
         }
 
         @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            
             section { padding: 4rem 0; }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: #fff;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-                transition: var(--transition);
-                box-shadow: var(--shadow-md);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .mobile-menu-btn {
-                display: block;
-            }
-
-            .cta-section {
-                margin: 2rem 0;
-                border-radius: 0;
-            }
-            
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .hero-badge { left: 0; right: 0; bottom: -10px; margin: 0 auto; width: fit-content; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header id="header">
-        <div class="container nav-container">
+    <header>
+        <div class="container nav-wrap">
             <a href="#" class="logo">
-                <i class="fa-solid fa-laptop-medical"></i>
-                <span>TechMaster</span>
+                <i class="fa-solid fa-gear"></i>
+                <span>Auto Prime</span>
             </a>
-            
-            <nav class="nav-links" id="navLinks">
-                <a href="#sobre" onclick="toggleMenu()">Sobre</a>
-                <a href="#servicos" onclick="toggleMenu()">Serviços</a>
-                <a href="#diferenciais" onclick="toggleMenu()">Diferenciais</a>
-                <a href="#avaliacoes" onclick="toggleMenu()">Avaliações</a>
-                <a href="#contato" onclick="toggleMenu()">Contato</a>
-                <a href="https://wa.me/5511998543278?text=Olá! Gostaria de solicitar um orçamento." target="_blank" class="btn btn-primary" style="color: white;">
-                    <i class="fa-brands fa-whatsapp"></i> Orçamento Rápido
-                </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#sobre">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#diferenciais">Diferenciais</a>
+                <a href="#avaliacoes">Avaliações</a>
+                <a href="#contato">Contato</a>
             </nav>
-
-            <button class="mobile-menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-content">
-            <div class="hero-text">
-                <span class="section-subtitle">Assistência Técnica Especializada</span>
-                <h1>Seu equipamento novo de novo, <span class="text-primary">rápido e com garantia.</span></h1>
-                <p>Conserto profissional de notebooks, computadores e celulares em São Paulo. Diagnóstico preciso, peças originais e atendimento que você pode confiar.</p>
-                
-                <div class="hero-buttons">
-                    <a href="https://wa.me/5511998543278?text=Olá! Meu equipamento está com problema e preciso de um orçamento." target="_blank" class="btn btn-whatsapp">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="hero-tag">Manutenção Automotiva de Confiança</span>
+                <h1>Seu carro em boas mãos: <span style="color: var(--red-accent);">qualidade e honestidade.</span></h1>
+                <p>Mais de 18 anos de experiência em serviços mecânicos completos para veículos nacionais e importados. Agende seu orçamento via WhatsApp.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5511998542187?text=Olá! Gostaria de solicitar um orçamento para meu veículo." target="_blank" class="btn btn-accent">
                         <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
                     </a>
-                    <a href="#servicos" class="btn btn-outline">
-                        Ver Serviços
+                    <a href="tel:+5511998542187" class="btn btn-primary">
+                        <i class="fa-solid fa-phone"></i> (11) 99854-2187
                     </a>
                 </div>
-
-                <div class="trust-badges">
-                    <div class="badge">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Garantia de 90 dias</span>
+                <div style="margin-top: 2rem; display: flex; gap: 2rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
+                        <i class="fa-solid fa-circle-check" style="color: var(--blue-primary);"></i> 18+ Anos de Experiência
                     </div>
-                    <div class="badge">
-                        <i class="fa-solid fa-stopwatch"></i>
-                        <span>Pronto em 24h-48h</span>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600;">
+                        <i class="fa-solid fa-circle-check" style="color: var(--blue-primary);"></i> Peças de Qualidade
                     </div>
                 </div>
             </div>
-            
-            <div class="hero-image">
-                <div class="hero-shape"></div>
-                <!-- Imagem representativa de técnico trabalhando/bancada -->
-                <img src="https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Técnico realizando manutenção em notebook na bancada" loading="lazy">
+            <div class="hero-img-wrap">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mecânico trabalhando em um veículo moderno" class="hero-img">
+                <div class="hero-badge">
+                    <strong>18+</strong>
+                    <span>Anos de Tradição</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Equipamentos Atendidos -->
-    <section class="bg-alt">
+    <section id="sobre" class="bg-light">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span style="color: var(--blue-primary); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Sobre a Auto Prime</span>
+                <h2 style="margin-top: 1rem;">Sua Oficina de Confiança em Osasco</h2>
+                <p style="margin-top: 1.5rem;">Há mais de 18 anos, a Auto Prime Centro Automotivo é referência em manutenção e reparos veiculares em Osasco e região. Nossa missão é garantir a segurança e o desempenho do seu carro, com um atendimento transparente, equipe especializada e o uso de equipamentos de última geração.</p>
+                <p>Atendemos todas as marcas e modelos, nacionais e importados, oferecendo soluções completas para você e sua frota.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos">
         <div class="container">
             <div class="text-center">
-                <span class="section-subtitle">O que consertamos</span>
-                <h2>Especialistas em Múltiplas Plataformas</h2>
+                <h2>Nossos Serviços</h2>
+                <p>Manutenção completa para o seu veículo, do básico ao avançado.</p>
             </div>
-            
-            <div class="equipments">
-                <div class="equipment-item">
-                    <i class="fa-solid fa-laptop"></i>
-                    <span>Notebooks</span>
-                </div>
-                <div class="equipment-item">
-                    <i class="fa-solid fa-desktop"></i>
-                    <span>Computadores</span>
-                </div>
-                <div class="equipment-item">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                    <span>Celulares</span>
-                </div>
-                <div class="equipment-item">
-                    <i class="fa-solid fa-tablet-screen-button"></i>
-                    <span>Tablets</span>
-                </div>
-                <div class="equipment-item">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <span>Videogames</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sobre Section -->
-    <section id="sobre">
-        <div class="container about-grid">
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Laboratório técnico da TechMaster" loading="lazy">
-            </div>
-            
-            <div class="about-text">
-                <span class="section-subtitle">Sobre a TechMaster</span>
-                <h2>Mais de 10 anos de excelência em tecnologia</h2>
-                <p>A TechMaster nasceu com um propósito claro: oferecer um serviço de assistência técnica honesto, rápido e de altíssima qualidade. Sabemos o quanto você depende dos seus equipamentos no dia a dia, seja para trabalho, estudo ou lazer.</p>
-                <p>Nossa equipe é formada por técnicos altamente capacitados, trabalhando em um laboratório equipado com ferramentas de ponta para garantir diagnósticos precisos e reparos definitivos.</p>
-                
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-number">+10</div>
-                        <div class="stat-label">Anos de Experiência</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="stat-number">+5k</div>
-                        <div class="stat-label">Equipamentos Reparados</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Serviços Section -->
-    <section id="servicos" class="bg-alt">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-subtitle">Nossas Soluções</span>
-                <h2>Serviços Especializados</h2>
-                <p style="max-width: 600px; margin: 0 auto;">Oferecemos soluções completas para manter seus dispositivos funcionando com desempenho máximo.</p>
-            </div>
-
             <div class="services-grid">
-                <!-- Serviço 1 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-microchip"></i>
-                    </div>
-                    <h3>Upgrade e Performance</h3>
-                    <p>Seu computador está lento? Deixamos ele até 10x mais rápido com as peças certas.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Instalação de SSD</li>
-                        <li><i class="fa-solid fa-check"></i> Aumento de Memória RAM</li>
-                        <li><i class="fa-solid fa-check"></i> Otimização de Sistema</li>
-                    </ul>
+                    <div class="service-icon"><i class="fa-solid fa-oil-can"></i></div>
+                    <h3>Troca de Óleo e Filtros</h3>
+                    <p>Utilizamos óleos e filtros de alta qualidade para a longevidade do motor.</p>
                 </div>
-
-                <!-- Serviço 2 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-screwdriver-wrench"></i>
-                    </div>
-                    <h3>Manutenção de Notebooks</h3>
-                    <p>Reparos complexos em placas e troca de componentes com peças originais.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Troca de Tela e Teclado</li>
-                        <li><i class="fa-solid fa-check"></i> Reparo de Placa Mãe</li>
-                        <li><i class="fa-solid fa-check"></i> Limpeza Interna e Pasta Térmica</li>
-                    </ul>
+                    <div class="service-icon"><i class="fa-solid fa-car-battery"></i></div>
+                    <h3>Revisão Completa</h3>
+                    <p>Check-up detalhado para identificar e prevenir problemas futuros no seu veículo.</p>
                 </div>
-
-                <!-- Serviço 3 -->
                 <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fa-solid fa-mobile-retro"></i>
-                    </div>
-                    <h3>Conserto de Celulares</h3>
-                    <p>Seu smartphone novo de novo em poucas horas, com total segurança dos seus dados.</p>
-                    <ul>
-                        <li><i class="fa-solid fa-check"></i> Troca de Tela Quebrada</li>
-                        <li><i class="fa-solid fa-check"></i> Substituição de Bateria</li>
-                        <li><i class="fa-solid fa-check"></i> Reparo de Conectores</li>
-                    </ul>
+                    <div class="service-icon"><i class="fa-solid fa-brake-disc"></i></div>
+                    <h3>Freios e Suspensão</h3>
+                    <p>Manutenção e troca de componentes para garantir sua segurança na estrada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-engine"></i></div>
+                    <h3>Motor e Câmbio</h3>
+                    <p>Reparos e diagnósticos precisos para o coração do seu automóvel.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-fan"></i></div>
+                    <h3>Ar-Condicionado Automotivo</h3>
+                    <p>Manutenção, recarga de gás e reparos para um ambiente sempre agradável.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-tire"></i></div>
+                    <h3>Alinhamento e Balanceamento</h3>
+                    <p>Aumente a vida útil dos pneus e a estabilidade do seu carro.</p>
                 </div>
             </div>
-            
             <div class="text-center" style="margin-top: 3rem;">
-                <a href="https://wa.me/5511998543278?text=Olá! Preciso de ajuda com um serviço específico." target="_blank" class="btn btn-primary">
-                    Consultar Outros Serviços
+                <a href="https://wa.me/5511998542187?text=Olá! Gostaria de saber mais sobre os serviços da Auto Prime." target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Ver Todos os Serviços
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Diferenciais Section -->
+    <section id="como-trabalhamos" class="bg-dark">
+        <div class="container">
+            <div class="text-center">
+                <span style="color: var(--red-accent); font-weight: 700; text-transform: uppercase; letter-spacing: 2px;">Nosso Processo</span>
+                <h2 style="margin-top: 1rem;">Transparência e Eficiência em Cada Etapa</h2>
+                <p style="max-width: 800px; margin: 1.5rem auto 0;">Na Auto Prime, você acompanha de perto cada passo da manutenção do seu veículo, com diagnósticos claros e orçamentos detalhados.</p>
+            </div>
+            <div class="how-it-works-grid">
+                <div class="work-step">
+                    <div class="work-step-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                    <h4>1. Diagnóstico Preciso</h4>
+                    <p>Utilizamos scanners avançados para identificar a raiz do problema.</p>
+                </div>
+                <div class="work-step">
+                    <div class="work-step-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                    <h4>2. Orçamento Detalhado</h4>
+                    <p>Apresentamos um orçamento claro, sem surpresas, antes de qualquer serviço.</p>
+                </div>
+                <div class="work-step">
+                    <div class="work-step-icon"><i class="fa-solid fa-wrench"></i></div>
+                    <h4>3. Execução Qualificada</h4>
+                    <p>Nossa equipe realiza o serviço com peças de qualidade e garantia.</p>
+                </div>
+                <div class="work-step">
+                    <div class="work-step-icon"><i class="fa-solid fa-car-on"></i></div>
+                    <h4>4. Veículo Pronto</h4>
+                    <p>Entregamos seu carro revisado, seguro e com desempenho otimizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="diferenciais">
         <div class="container">
             <div class="text-center">
-                <span class="section-subtitle">Por que nos escolher</span>
-                <h2>O Padrão TechMaster de Qualidade</h2>
+                <h2>Por que escolher a Auto Prime?</h2>
             </div>
-
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    </div>
-                    <h3>Diagnóstico Rápido</h3>
-                    <p>Identificamos o problema do seu aparelho com precisão e agilidade, sem enrolação.</p>
+            <div class="diff-grid">
+                <div class="diff-item">
+                    <div class="diff-icon"><i class="fa-solid fa-users-gear"></i></div>
+                    <h4>Equipe Especializada</h4>
+                    <p>Mecânicos experientes e em constante atualização técnica.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-certificate"></i>
-                    </div>
-                    <h3>Peças Originais</h3>
-                    <p>Trabalhamos apenas com componentes de primeira linha para garantir a durabilidade do reparo.</p>
+                <div class="diff-item">
+                    <div class="diff-icon"><i class="fa-solid fa-certificate"></i></div>
+                    <h4>Garantia de Serviços</h4>
+                    <p>Tranquilidade com garantia em todas as peças e mão de obra.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <h3>Equipe Especializada</h3>
-                    <p>Técnicos constantemente atualizados com as novas tecnologias do mercado.</p>
+                <div class="diff-item">
+                    <div class="diff-icon"><i class="fa-solid fa-robot"></i></div>
+                    <h4>Tecnologia de Ponta</h4>
+                    <p>Equipamentos modernos para diagnósticos e reparos precisos.</p>
                 </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fa-solid fa-house-laptop"></i>
-                    </div>
-                    <h3>Atendimento em Domicílio</h3>
-                    <p>Comodidade para você e sua empresa. Vamos até o local para resolver o problema.</p>
+                <div class="diff-item">
+                    <div class="diff-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h4>Atendimento Transparente</h4>
+                    <p>Honestidade e clareza em todas as informações e procedimentos.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Intermediário -->
-    <div class="container">
-        <div class="cta-section">
-            <h2>Seu equipamento parou? Não perca tempo!</h2>
-            <p>Fale agora com um de nossos técnicos pelo WhatsApp. Orçamento sem compromisso e atendimento imediato.</p>
-            <a href="https://wa.me/5511998543278?text=Olá! Preciso de um atendimento urgente." target="_blank" class="btn btn-whatsapp" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
-                <i class="fa-brands fa-whatsapp"></i> Falar no WhatsApp Agora
-            </a>
-        </div>
-    </div>
-
-    <!-- Avaliações Section -->
-    <section id="avaliacoes" class="bg-alt">
+    <section id="avaliacoes" class="bg-light">
         <div class="container">
             <div class="text-center">
-                <span class="section-subtitle">Prova Social</span>
                 <h2>O que nossos clientes dizem</h2>
-                <p>A satisfação de quem já confiou seus equipamentos à TechMaster.</p>
             </div>
-
             <div class="reviews-grid">
                 <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"Meu notebook estava super lento, não conseguia nem trabalhar. Levei na TechMaster, fizeram um upgrade para SSD e o notebook ficou novo! Muito rápido."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">L</div>
-                        <div class="author-name">Lucas</div>
-                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Serviço rápido, honesto e com preço justo. Meu carro ficou perfeito. Recomendo a Auto Prime de olhos fechados!"</p>
+                    <p class="author">— Marcos Silva</p>
                 </div>
-
                 <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"Deixei meu celular cair e a tela quebrou inteira. Fizeram a troca de tela perfeita no mesmo dia. Atendimento excelente e preço justo."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">F</div>
-                        <div class="author-name">Fernanda</div>
-                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Resolveram um problema elétrico que outras oficinas não encontraram. Profissionalismo e conhecimento técnico impecáveis."</p>
+                    <p class="author">— Juliana Costa</p>
                 </div>
-
                 <div class="review-card">
-                    <div class="stars">
-                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                    </div>
-                    <p class="review-text">"Atendimento rápido e honesto. Levei o PC achando que teria que trocar a placa mãe, mas era apenas um problema na fonte. Ganharam um cliente fiel."</p>
-                    <div class="review-author">
-                        <div class="author-avatar">R</div>
-                        <div class="author-name">Ricardo</div>
-                    </div>
+                    <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="review-text">"Atendimento excelente e muita confiança. Levei meu carro para uma revisão e saí com a certeza de que fiz a melhor escolha."</p>
+                    <p class="author">— Ricardo Oliveira</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq">
+    <section id="contato">
         <div class="container">
             <div class="text-center">
-                <span class="section-subtitle">Dúvidas Frequentes</span>
-                <h2>Perguntas Comuns</h2>
+                <h2>Fale Conosco</h2>
+                <p>Agende seu serviço ou tire suas dúvidas. Estamos prontos para atendê-lo!</p>
             </div>
-
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Qual o tempo médio para o conserto?
-                        <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p style="padding-top: 1rem;">A maioria dos nossos reparos é concluída entre 24 e 48 horas. Serviços mais simples, como troca de tela de celular ou instalação de SSD, muitas vezes podem ser feitos no mesmo dia, dependendo da disponibilidade da peça.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Vocês oferecem garantia do serviço?
-                        <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p style="padding-top: 1rem;">Sim! Todos os nossos serviços e peças possuem garantia de 90 dias. Caso o mesmo problema volte a ocorrer neste período, refazemos o serviço sem custo adicional.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Vocês atendem empresas?
-                        <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p style="padding-top: 1rem;">Sim, prestamos suporte técnico de TI para empresas e escritórios, incluindo manutenção preventiva, configuração de redes e reparo de frotas de equipamentos. Podemos realizar o atendimento no local.</p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question" onclick="toggleFaq(this)">
-                        Meus dados estão seguros durante o conserto?
-                        <i class="fa-solid fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p style="padding-top: 1rem;">Absolutamente. Temos uma política rigorosa de privacidade. Seus arquivos, fotos e documentos pessoais não são acessados, copiados ou alterados, a menos que o serviço contratado seja especificamente de backup ou recuperação de dados.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contato Section -->
-    <section id="contato" class="bg-alt">
-        <div class="container">
-            <div class="text-center">
-                <span class="section-subtitle">Fale Conosco</span>
-                <h2>Estamos prontos para ajudar</h2>
-            </div>
-
-            <div class="contact-grid">
+            <div class="contact-layout">
                 <div class="contact-info">
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fa-brands fa-whatsapp"></i>
-                        </div>
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <div class="info-content">
-                            <h4>WhatsApp / Telefone</h4>
-                            <p>(11) 99854-3278</p>
-                            <a href="https://wa.me/5511998543278" target="_blank" class="text-primary" style="font-weight: 600; font-size: 0.9rem;">Chamar agora &rarr;</a>
+                            <h4>WhatsApp</h4>
+                            <p>(11) 99854-2187</p>
                         </div>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
                         <div class="info-content">
-                            <h4>Endereço</h4>
-                            <p>Av. Brigadeiro Luís Antônio, 1845<br>São Paulo/SP</p>
+                            <h4>Nosso Endereço</h4>
+                            <p>Av. dos Autonomistas, 3250<br>Osasco - São Paulo/SP</p>
                         </div>
                     </div>
-
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fa-regular fa-clock"></i>
-                        </div>
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-solid fa-clock"></i></div>
                         <div class="info-content">
-                            <h4>Horário de Funcionamento</h4>
-                            <p>Segunda a Sexta: 08h30 às 18h30<br>Sábado: 09h00 às 13h00</p>
+                            <h4>Horário de Atendimento</h4>
+                            <p>Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 13h</p>
                         </div>
                     </div>
-                    
-                    <div class="info-item">
-                        <div class="info-icon">
-                            <i class="fa-brands fa-instagram"></i>
-                        </div>
+                    <div class="info-box">
+                        <div class="info-icon"><i class="fa-brands fa-instagram"></i></div>
                         <div class="info-content">
-                            <h4>Instagram</h4>
-                            <p>@techmasterassistencia</p>
+                            <h4>Siga-nos</h4>
+                            <p>@autoprimecentroautomotivo</p>
                         </div>
                     </div>
                 </div>
-
-                <div class="map-container">
-                    <!-- Mapa embutido (coordenadas aproximadas da Av. Brigadeiro) -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197586835368!2d-46.64966368447573!3d-23.56134886747514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59b81e05d215%3A0x805210926514b87!2sAv.%20Brigadeiro%20Lu%C3%ADs%20Ant%C3%B4nio%2C%201845%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001317-002!5e0!3m2!1spt-BR!2sbr!4v1625000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                <div class="map-frame">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.804077884611!2d-46.7820046844761!3d-23.53930066747514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5982e01b1a7d%3A0x805210926514b87!2sAv.%20dos%20Autonomistas%2C%203250%20-%20Centro%2C%20Osasco%20-%20SP%2C%2006020-010!5e0!3m2!1spt-BR!2sbr!4v1625000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-about">
-                    <a href="#" class="logo" style="color: #fff;">
-                        <i class="fa-solid fa-laptop-medical" style="color: var(--accent);"></i>
-                        <span style="color: #fff;">TechMaster</span>
+                <div>
+                    <a href="#" class="logo" style="color: var(--white);">
+                        <i class="fa-solid fa-gear" style="color: var(--red-accent);"></i>
+                        <span>Auto Prime</span>
                     </a>
-                    <p>Sua assistência técnica de confiança em São Paulo. Especialistas em conserto de notebooks, computadores e celulares com rapidez e garantia.</p>
+                    <p style="margin-top: 1.5rem;">Sua oficina de confiança em Osasco. Especialistas em manutenção automotiva completa para garantir a segurança e o desempenho do seu veículo.</p>
                 </div>
-
                 <div class="footer-links">
-                    <h4>Navegação</h4>
+                    <h4>Links Rápidos</h4>
                     <ul>
                         <li><a href="#sobre">Sobre Nós</a></li>
                         <li><a href="#servicos">Serviços</a></li>
                         <li><a href="#diferenciais">Diferenciais</a></li>
                         <li><a href="#avaliacoes">Avaliações</a></li>
-                        <li><a href="#faq">FAQ</a></li>
                     </ul>
                 </div>
-
                 <div class="footer-links">
-                    <h4>Serviços</h4>
+                    <h4>Nossos Serviços</h4>
                     <ul>
-                        <li><a href="#">Conserto de Notebook</a></li>
-                        <li><a href="#">Manutenção de PC</a></li>
-                        <li><a href="#">Conserto de Celular</a></li>
-                        <li><a href="#">Upgrade para SSD</a></li>
-                        <li><a href="#">Atendimento Empresarial</a></li>
+                        <li><a href="#">Revisão Completa</a></li>
+                        <li><a href="#">Troca de Óleo</a></li>
+                        <li><a href="#">Freios e Suspensão</a></li>
+                        <li><a href="#">Diagnóstico Eletrônico</a></li>
                     </ul>
                 </div>
             </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2023 TechMaster Assistência. Todos os direitos reservados.</p>
+            <div class="copyright">
+                <p>&copy; 2023 Auto Prime Centro Automotivo. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Botão WhatsApp Flutuante -->
-    <a href="https://wa.me/5511998543278?text=Olá! Estava no site e gostaria de tirar uma dúvida." target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <a href="https://wa.me/5511998542187?text=Olá! Gostaria de agendar um serviço na Auto Prime." target="_blank" class="wa-float">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
     <script>
-        // Menu Mobile Toggle
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const menuBtn = document.getElementById('menuBtn');
-            
-            navLinks.classList.toggle('active');
-            
-            if (navLinks.classList.contains('active')) {
-                menuBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
-            } else {
-                menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
-            }
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
         }
 
-        // Header Scroll Effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
             if (window.scrollY > 50) {
-                header.style.boxShadow = '0 4px 6px -1px rgba(0,0,0,0.1)';
-                header.style.padding = '0';
+                header.style.height = '70px';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.1)';
             } else {
-                header.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
+                header.style.height = '90px';
+                header.style.boxShadow = 'none';
             }
         });
 
-        // FAQ Toggle
-        function toggleFaq(element) {
-            const item = element.parentElement;
-            
-            // Fechar outros
-            const allItems = document.querySelectorAll('.faq-item');
-            allItems.forEach(faq => {
-                if (faq !== item && faq.classList.contains('active')) {
-                    faq.classList.remove('active');
-                }
-            });
-            
-            // Alternar atual
-            item.classList.toggle('active');
-        }
-
-        // Smooth Scroll para links internos
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const headerHeight = document.getElementById('header').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
             });
         });
     </script>
