@@ -1,1304 +1,705 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <title>Torque One | Centro Automotivo em Osasco - Agendamento e Orçamento Online</title>
-    <meta name="description" content="Agende sua revisão preventiva ou solicite seu orçamento online na Torque One Centro Automotivo em Osasco. Especialistas em mecânica geral, injeção e diagnóstico com scanner.">
-    <meta name="keywords" content="centro automotivo osasco, mecanica osasco, troca de oleo osasco, revisao automotiva, freios suspensao osasco, torque one">
-    <link rel="canonical" href="https://torqueoneauto.com.br/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://torqueoneauto.com.br/">
-    <meta property="og:title" content="Torque One | Centro Automotivo em Osasco">
-    <meta property="og:description" content="Agende sua revisão preventiva ou solicite seu orçamento online com rapidez e transparência.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://torqueoneauto.com.br/">
-    <meta property="twitter:title" content="Torque One | Centro Automotivo em Osasco">
-    <meta property="twitter:description" content="Agende sua revisão preventiva ou solicite seu orçamento online com rapidez e transparência.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=1200&q=80">
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-primary: #0F0F12;
-            --bg-secondary: #16161D;
-            --bg-tertiary: #1E1E26;
-            --brand-red: #E50914;
-            --brand-red-hover: #B80710;
-            --text-main: #FFFFFF;
-            --text-muted: #A0A0AA;
-            --border-color: #2D2D3A;
-            --accent-silver: #E2E8F0;
-            --success: #10B981;
-            --radius-lg: 12px;
-            --radius-md: 8px;
-            --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        body {
-            background-color: var(--bg-primary);
-            color: var(--text-main);
-            overflow-x: hidden;
-            line-height: 1.5;
-        }
-
-        /* Utility Components */
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 8px;
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            font-size: 1rem;
-            color: var(--text-muted);
-            text-align: center;
-            margin-bottom: 48px;
-        }
-
-        /* Header */
-        header {
-            background: rgba(15, 15, 18, 0.85);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border-color);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100;
-        }
-
-        .header-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 72px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: var(--text-main);
-            text-decoration: none;
-        }
-
-        .logo svg {
-            fill: var(--brand-red);
-            width: 28px;
-            height: 28px;
-        }
-
-        .logo span {
-            color: var(--accent-silver);
-            font-weight: 300;
-        }
-
-        nav {
-            display: flex;
-            gap: 24px;
-        }
-
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        .nav-btn {
-            background: var(--brand-red);
-            color: white;
-            padding: 8px 16px;
-            border-radius: var(--radius-md);
-            font-weight: 600;
-        }
-
-        .nav-btn:hover {
-            background: var(--brand-red-hover);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-main);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Hero */
-        .hero {
-            padding: 160px 0 80px 0;
-            background: radial-gradient(circle at 80% 20%, rgba(229, 9, 20, 0.08) 0%, transparent 50%), var(--bg-primary);
-            position: relative;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 48px;
-            align-items: center;
-        }
-
-        .hero-tag {
-            background: rgba(225, 9, 20, 0.1);
-            border: 1px solid rgba(225, 9, 20, 0.2);
-            color: var(--brand-red);
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 16px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            font-weight: 700;
-            letter-spacing: -1px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 span {
-            color: var(--brand-red);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            max-width: 540px;
-        }
-
-        .hero-badges {
-            display: flex;
-            gap: 24px;
-            margin-top: 40px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 24px;
-        }
-
-        .badge-item {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .badge-value {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .badge-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* Fast System Module Widget */
-        .system-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            position: relative;
-        }
-
-        .step-progress-bar {
-            height: 4px;
-            background: var(--border-color);
-            border-radius: 2px;
-            margin-bottom: 24px;
-            overflow: hidden;
-        }
-
-        .step-progress-fill {
-            height: 100%;
-            background: var(--brand-red);
-            width: 9%;
-            transition: var(--transition);
-        }
-
-        .step-header {
-            margin-bottom: 20px;
-        }
-
-        .step-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-
-        .step-desc {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .step-content {
-            min-height: 220px;
-        }
-
-        .step-panel {
-            display: none;
-        }
-
-        .step-panel.active {
-            display: block;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Form Controls */
-        .grid-options {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-            max-height: 220px;
-            overflow-y: auto;
-            padding-right: 4px;
-        }
-
-        .option-button {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            color: var(--text-main);
-            padding: 12px;
-            border-radius: var(--radius-md);
-            cursor: pointer;
-            text-align: left;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .option-button:hover {
-            border-color: var(--brand-red);
-            background: rgba(229, 9, 20, 0.03);
-        }
-
-        .option-button.selected {
-            border-color: var(--brand-red);
-            background: rgba(229, 9, 20, 0.1);
-            font-weight: 600;
-        }
-
-        .form-group {
-            margin-bottom: 16px;
-        }
-
-        .form-group label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-bottom: 6px;
-            color: var(--text-muted);
-        }
-
-        .form-input {
-            width: 100%;
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            color: white;
-            padding: 12px;
-            border-radius: var(--radius-md);
-            font-size: 0.95rem;
-            transition: var(--transition);
-        }
-
-        .form-input:focus {
-            outline: none;
-            border-color: var(--brand-red);
-            box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.2);
-        }
-
-        /* Calendar Widget Custom styling */
-        .calendar-wrapper {
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 16px;
-        }
-
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 6px;
-            text-align: center;
-        }
-
-        .calendar-day-header {
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            padding: 4px 0;
-        }
-
-        .calendar-day {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            padding: 8px 0;
-            border-radius: var(--radius-md);
-            font-size: 0.85rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .calendar-day:hover:not(.disabled) {
-            border-color: var(--brand-red);
-        }
-
-        .calendar-day.selected {
-            background: var(--brand-red);
-            border-color: var(--brand-red);
-            font-weight: 600;
-        }
-
-        .calendar-day.disabled {
-            opacity: 0.25;
-            cursor: not-allowed;
-        }
-
-        .time-slots {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 6px;
-            max-height: 180px;
-            overflow-y: auto;
-        }
-
-        .time-slot {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            padding: 8px;
-            border-radius: var(--radius-md);
-            font-size: 0.85rem;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .time-slot:hover:not(.disabled) {
-            border-color: var(--brand-red);
-        }
-
-        .time-slot.selected {
-            background: var(--brand-red);
-            border-color: var(--brand-red);
-        }
-
-        .time-slot.disabled {
-            opacity: 0.3;
-            text-decoration: line-through;
-            cursor: not-allowed;
-        }
-
-        /* Summary Step style */
-        .summary-box {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            padding: 16px;
-            font-size: 0.9rem;
-        }
-
-        .summary-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 6px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .summary-item:last-child {
-            border-bottom: none;
-        }
-
-        .summary-label {
-            color: var(--text-muted);
-        }
-
-        .summary-val {
-            font-weight: 500;
-            text-align: right;
-        }
-
-        /* Navigation Buttons */
-        .step-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 24px;
-            gap: 12px;
-        }
-
-        .btn {
-            padding: 12px 24px;
-            border-radius: var(--radius-md);
-            font-size: 0.95rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-
-        .btn-primary {
-            background: var(--brand-red);
-            color: white;
-            flex-grow: 1;
-        }
-
-        .btn-primary:hover {
-            background: var(--brand-red-hover);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-muted);
-        }
-
-        .btn-secondary:hover {
-            color: white;
-            border-color: var(--text-muted);
-        }
-
-        /* Services & Presentation Section */
-        .services {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-        }
-
-        .service-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 32px;
-            transition: var(--transition);
-        }
-
-        .service-card:hover {
-            transform: translateY(-4px);
-            border-color: var(--brand-red);
-        }
-
-        .service-icon {
-            color: var(--brand-red);
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-
-        .service-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* How it works */
-        .process {
-            padding: 100px 0;
-            background: var(--bg-primary);
-        }
-
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .process-step {
-            position: relative;
-            text-align: center;
-        }
-
-        .process-number {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: var(--bg-secondary);
-            border: 2px solid var(--border-color);
-            color: var(--brand-red);
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px auto;
-            font-size: 1.1rem;
-        }
-
-        .process-step h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .process-step p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        /* Reviews */
-        .reviews {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-
-        .review-card {
-            background: var(--bg-primary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-lg);
-            padding: 24px;
-        }
-
-        .stars {
-            color: #FFC107;
-            margin-bottom: 12px;
-        }
-
-        .review-text {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .review-author {
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        /* FAQ */
-        .faq {
-            padding: 100px 0;
-            background: var(--bg-primary);
-        }
-
-        .faq-max {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-
-        .faq-item {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: var(--radius-md);
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-
-        .faq-trigger {
-            width: 100%;
-            padding: 20px;
-            background: none;
-            border: none;
-            color: white;
-            text-align: left;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .faq-content {
-            padding: 0 20px 20px 20px;
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            display: none;
-        }
-
-        /* Contact & Map */
-        .contact {
-            padding: 100px 0;
-            background: var(--bg-secondary);
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-
-        .info-link {
-            display: block;
-            color: var(--text-main);
-            text-decoration: none;
-            margin-top: 8px;
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .info-link:hover {
-            color: var(--brand-red);
-        }
-
-        .map-container {
-            border-radius: var(--radius-lg);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            height: 100%;
-            min-height: 300px;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--bg-primary);
-            padding: 40px 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        /* Floating Elements */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 24px;
-            right: 24px;
-            background: #25D366;
-            color: white;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
-            z-index: 99;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.08);
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 992px) {
-            .hero-grid, .contact-grid {
-                grid-template-columns: 1fr;
-            }
-            .process-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero {
-                padding-top: 120px;
-                text-align: center;
-            }
-            .hero p {
-                margin: 0 auto 32px auto;
-            }
-            .hero-badges {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            .calendar-wrapper {
-                grid-template-columns: 1fr;
-            }
-            .grid-options {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cliente Web — Placas NFC para Avaliações no Google</title>
+  <meta name="description" content="Facilite o acesso dos seus clientes às avaliações do Google com a placa NFC da Cliente Web. Ideal para estabelecimentos e revendedores.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #ffffff;
+      --navy: #0f172a;
+      --navy-light: #1e293b;
+      --gold: #d97706;
+      --gold-light: #fef3c7;
+      --text-main: #334155;
+      --text-muted: #64748b;
+      --gray-bg: #f8fafc;
+      --border-color: #e2e8f0;
+      --whatsapp-green: #25d366;
+      --whatsapp-hover: #1da851;
+      --font: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font);
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Header / Logo */
+    header {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border-color);
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    /* Primary CTA Button */
+    .btn-wa {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--whatsapp-green);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      padding: 16px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+    }
+
+    .btn-wa:hover {
+      background-color: var(--whatsapp-hover);
+      transform: translateY(-1px);
+    }
+
+    .btn-wa svg {
+      width: 22px;
+      height: 22px;
+      fill: currentColor;
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 40px 0 50px 0;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      color: var(--navy);
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .hero p.subtitle {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 30px auto;
+    }
+
+    .hero-image-wrapper {
+      margin: 30px auto;
+      max-width: 320px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      border: 1px solid var(--border-color);
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .hero-notice {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-top: 16px;
+    }
+
+    /* Section Styling */
+    section {
+      padding: 50px 0;
+      border-top: 1px solid var(--border-color);
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--navy);
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 32px;
+    }
+
+    /* Business Section */
+    .benefit-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 700px;
+      margin: 0 auto 30px auto;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background-color: var(--gray-bg);
+      padding: 16px 20px;
+      border-radius: 8px;
+      border: 1px solid var(--border-color);
+    }
+
+    .benefit-item svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .use-cases {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin: 0 auto 24px auto;
+      background: #f1f5f9;
+      padding: 16px;
+      border-radius: 8px;
+    }
+
+    .disclaimer {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 600px;
+      margin: 20px auto 30px auto;
+      line-height: 1.4;
+    }
+
+    /* Reseller Section */
+    .reseller-box {
+      background-color: var(--navy);
+      color: #ffffff;
+      border-radius: 12px;
+      padding: 40px 24px;
+      margin-top: 20px;
+    }
+
+    .reseller-box .section-title {
+      color: #ffffff;
+    }
+
+    .reseller-box .section-subtitle {
+      color: #94a3b8;
+    }
+
+    .reseller-highlights {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .reseller-card {
+      background-color: var(--navy-light);
+      padding: 18px 20px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .reseller-card svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .price-highlight-badge {
+      background-color: var(--gold-light);
+      color: #78350f;
+      font-weight: 700;
+      padding: 16px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 24px 0;
+      font-size: 1.05rem;
+      border: 1px solid #fde68a;
+    }
+
+    .math-example {
+      background-color: var(--navy-light);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 24px 0;
+      border: 1px solid #334155;
+    }
+
+    .math-example h3 {
+      font-size: 1.2rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .math-example ul {
+      list-style: none;
+      margin-top: 12px;
+    }
+
+    .math-example li {
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+      color: #cbd5e1;
+    }
+
+    .math-highlight {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #ffffff;
+      text-align: center;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px dashed #475569;
+    }
+
+    /* Pricing Section */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .price-card {
+      background-color: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 28px 20px;
+      text-align: center;
+      position: relative;
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--gold);
+      box-shadow: 0 8px 20px -4px rgba(217, 119, 6, 0.15);
+    }
+
+    .badge-best-value {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: var(--gold);
+      color: #ffffff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .price-card h3 {
+      font-size: 1.4rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .price-unit {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .price-total {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+
+    /* Steps Section */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .step-card {
+      background-color: var(--gray-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .step-number {
+      background-color: var(--navy);
+      color: #ffffff;
+      font-weight: 700;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .step-content h3 {
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* FAQ Section */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .faq-item {
+      background-color: var(--gray-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .faq-item p {
+      font-size: 0.95rem;
+      color: var(--text-main);
+    }
+
+    /* Footer */
+    footer {
+      padding: 40px 0;
+      background-color: var(--navy);
+      color: #94a3b8;
+      text-align: center;
+      font-size: 0.9rem;
+      border-top: 1px solid var(--border-color);
+    }
+
+    footer p {
+      margin-bottom: 8px;
+    }
+
+    /* Media Queries */
+    @media (min-width: 640px) {
+      .hero h1 { font-size: 2.6rem; }
+      .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+      .reseller-highlights { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 900px) {
+      .pricing-grid { grid-template-columns: repeat(4, 1fr); }
+      .steps-grid { grid-template-columns: repeat(3, 1fr); }
+      .step-card { flex-direction: column; }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="#" class="logo">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 16h-2v-2h2v2zm0-4h-2V7h2v7z"/></svg>
-                TORQUE<span>ONE</span>
-            </a>
-            <nav>
-                <a href="#servicos">Serviços</a>
-                <a href="#como-funciona">Como Funciona</a>
-                <a href="#avaliacoes">Avaliações</a>
-                <a href="#faq">Dúvidas</a>
-                <a href="#contato">Contato</a>
-                <a href="#agendar" class="nav-btn">Agendar Agora</a>
-            </nav>
-            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
-        </div>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="container">
+      <div class="logo">Cliente<span>Web</span></div>
+    </div>
+  </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="agendar">
-        <div class="container hero-grid">
-            <div>
-                <span class="hero-tag">Mecânica de Alta Performance</span>
-                <h1>Manutenção inteligente para o seu <span>veículo</span>.</h1>
-                <p>Agende serviços preventivos ou solicite um orçamento detalhado em menos de 1 minuto na Torque One Osasco. Transparência técnica com garantia de fábrica.</p>
-                
-                <div class="hero-badges">
-                    <div class="badge-item">
-                        <span class="badge-value">18+ Anos</span>
-                        <span class="badge-label">De Experiência</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-value">100%</span>
-                        <span class="badge-label">Transparência</span>
-                    </div>
-                    <div class="badge-item">
-                        <span class="badge-value">Até 12x</span>
-                        <span class="badge-label">No Cartão</span>
-                    </div>
-                </div>
-            </div>
+  <!-- Dobra Principal -->
+  <main class="container">
+    <section class="hero">
+      <h1>Sua próxima avaliação pode começar com uma aproximação.</h1>
+      <p class="subtitle">Facilite o acesso dos seus clientes às avaliações do Google com uma placa NFC prática, moderna e personalizada para o seu negócio.</p>
 
-            <!-- Fast Intelligent System Widget -->
-            <div class="system-card">
-                <div class="step-progress-bar">
-                    <div class="step-progress-fill" id="progressFill"></div>
-                </div>
-                
-                <div class="step-header">
-                    <div class="step-title" id="stepTitle">Selecione o Serviço</div>
-                    <div class="step-desc" id="stepDesc">Escolha a manutenção principal para o seu veículo.</div>
-                </div>
+      <div class="hero-image-wrapper">
+        <img src="https://http2.mlstatic.com/D_NQ_NP_665392-MLB111402796630_052026-O.webp" alt="Placa NFC de acrílico preta sobre balcão de estabelecimento comercial">
+      </div>
 
-                <div class="step-content">
-                    <!-- Step 1: Servico -->
-                    <div class="step-panel active" id="step1">
-                        <div class="grid-options">
-                            <button class="option-button" onclick="selectService('Revisão Preventiva Completa')">Revisão Preventiva Completa</button>
-                            <button class="option-button" onclick="selectService('Troca de Óleo e Filtros')">Troca de Óleo e Filtros</button>
-                            <button class="option-button" onclick="selectService('Alinhamento e Balanceamento')">Alinhamento e Balanceamento</button>
-                            <button class="option-button" onclick="selectService('Freios e Componentes')">Freios e Componentes</button>
-                            <button class="option-button" onclick="selectService('Suspensão e Amortecedores')">Suspensão e Amortecedores</button>
-                            <button class="option-button" onclick="selectService('Diagnóstico via Scanner')">Diagnóstico via Scanner</button>
-                        </div>
-                    </div>
+      <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Conheci%20a%20Cliente%20Web%20pelo%20site%20e%20quero%20uma%20placa%20NFC%20para%20meu%20neg%C3%B3cio.%20Como%20funciona%3F" class="btn-wa" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24"><path d="M12.012 2c-5.508 0-9.989 4.478-9.99 9.984 0 1.763.459 3.486 1.332 5.002L2 22l5.127-1.342c1.465.8 3.119 1.222 4.881 1.222h.004c5.508 0 9.99-4.479 9.99-9.986 0-2.668-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/></svg>
+        QUERO MINHA PLACA
+      </a>
 
-                    <!-- Step 2: Veiculo -->
-                    <div class="step-panel" id="step2">
-                        <div class="form-group">
-                            <label>Marca do Veículo</label>
-                            <select class="form-input" id="carBrand" onchange="validateStep2()">
-                                <option value="">Selecione...</option>
-                                <option>Chevrolet</option><option>Volkswagen</option><option>Fiat</option>
-                                <option>Toyota</option><option>Honda</option><option>Hyundai</option>
-                                <option>Nissan</option><option>Renault</option><option>Jeep</option>
-                                <option>Outra Marca</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Modelo</label>
-                            <input type="text" class="form-input" id="carModel" placeholder="Ex: Onix 1.0" oninput="validateStep2()">
-                        </div>
-                        <div class="form-group">
-                            <label>Ano</label>
-                            <input type="number" class="form-input" id="carYear" placeholder="Ex: 2021" oninput="validateStep2()">
-                        </div>
-                    </div>
-
-                    <!-- Step 3: Sintomas -->
-                    <div class="step-panel" id="step3">
-                        <div class="form-group">
-                            <label>Descreva brevemente o problema ou observação (Opcional)</label>
-                            <textarea class="form-input" id="problemDesc" rows="4" placeholder="Ex: Barulho na suspensão dianteira ao passar por buracos..."></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label>Foto do Painel/Peça (Opcional)</label>
-                            <input type="file" class="form-input" id="carFile">
-                        </div>
-                    </div>
-
-                    <!-- Step 4: Data/Hora -->
-                    <div class="step-panel" id="step4">
-                        <div class="calendar-wrapper">
-                            <div>
-                                <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--text-muted);">Selecione o Dia</label>
-                                <div class="calendar-grid" id="calendarDays">
-                                    <!-- Populated dynamically via JS -->
-                                </div>
-                            </div>
-                            <div>
-                                <label style="display:block; font-size:0.85rem; margin-bottom:6px; color:var(--text-muted);">Horário</label>
-                                <div class="time-slots" id="timeSlots">
-                                    <!-- Populated dynamically via JS -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 5: Dados de Contato -->
-                    <div class="step-panel" id="step5">
-                        <div class="form-group">
-                            <label>Seu Nome Completo</label>
-                            <input type="text" class="form-input" id="userName" placeholder="Digite seu nome" oninput="validateStep5()">
-                        </div>
-                        <div class="form-group">
-                            <label>WhatsApp</label>
-                            <input type="tel" class="form-input" id="userPhone" placeholder="(11) 99999-9999" oninput="maskPhone(this); validateStep5();">
-                        </div>
-                        <div class="form-group">
-                            <label>E-mail (Para envio do orçamento/confirmação)</label>
-                            <input type="email" class="form-input" id="userEmail" placeholder="seuemail@provedor.com" oninput="validateStep5()">
-                        </div>
-                    </div>
-
-                    <!-- Step 6: Resumo & Envio -->
-                    <div class="step-panel" id="step6">
-                        <div class="summary-box">
-                            <div class="summary-item"><span class="summary-label">Serviço:</span><span class="summary-val" id="sumService">-</span></div>
-                            <div class="summary-item"><span class="summary-label">Veículo:</span><span class="summary-val" id="sumVehicle">-</span></div>
-                            <div class="summary-item"><span class="summary-label">Data/Hora:</span><span class="summary-val" id="sumDateTime">-</span></div>
-                            <div class="summary-item"><span class="summary-label">Cliente:</span><span class="summary-val" id="sumClient">-</span></div>
-                        </div>
-                        <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 12px; text-align: center;">
-                            Ao confirmar, sua solicitação será integrada ao nosso sistema e um analista entrará em contato via WhatsApp.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="step-footer">
-                    <button class="btn btn-secondary" id="btnPrev" onclick="prevStep()" style="display: none;">Voltar</button>
-                    <button class="btn btn-primary" id="btnNext" onclick="nextStep()" disabled>Avançar</button>
-                </div>
-            </div>
-        </div>
+      <p class="hero-notice">Para estabelecimentos comerciais e revendedores. Compre uma unidade ou aproveite os preços de atacado.</p>
     </section>
 
-    <!-- Presentation / Services Section -->
-    <section class="services" id="servicos">
-        <div class="container">
-            <h2 class="section-title">Serviços Automotivos Especializados</h2>
-            <p class="section-subtitle">Soluções integradas com diagnóstico computadorizado de última geração</p>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Revisão Geral</h3>
-                    <p>Análise completa de mais de 60 itens cruciais para a segurança do seu veículo seguindo normas de fábrica.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🛑</div>
-                    <h3>Sistema de Freios</h3>
-                    <p>Substituição de pastilhas, discos, fluidos hidráulicos certificados e calibração de sistemas ABS eletrônicos.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏎️</div>
-                    <h3>Suspensão Completa</h3>
-                    <p>Troca preventiva de amortecedores, bandejas e buchas com testes avançados de estabilidade.</p>
-                </div>
-            </div>
-        </div>
+    <!-- Seção para Donos de Negócios -->
+    <section>
+      <h2 class="section-title">Transforme a experiência do seu cliente em uma oportunidade de avaliação.</h2>
+      
+      <ul class="benefit-list">
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Facilite o acesso à página de avaliações do seu negócio.</span>
+        </li>
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Reduza a dificuldade de encontrar seu perfil no Google.</span>
+        </li>
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Deixe seu balcão mais profissional e moderno.</span>
+        </li>
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Incentive clientes satisfeitos a compartilharem suas experiências reais.</span>
+        </li>
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Ajude novos consumidores a conhecerem a reputação do seu estabelecimento.</span>
+        </li>
+        <li class="benefit-item">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+          <span>Tenha uma solução prática para utilizar no atendimento diário.</span>
+        </li>
+      </ul>
+
+      <div class="use-cases">
+        <strong>Ideal para:</strong> Salões de beleza, barbearias, restaurantes, lanchonetes, lojas, clínicas, oficinas mecânicas, estúdios de estética e outros estabelecimentos.
+      </div>
+
+      <div style="text-align: center;">
+        <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Conheci%20a%20Cliente%20Web%20pelo%20site%20e%20quero%20uma%20placa%20NFC%20para%20meu%20neg%C3%B3cio.%20Como%20funciona%3F" class="btn-wa" target="_blank" rel="noopener noreferrer">
+          QUERO MAIS FACILIDADE PARA RECEBER AVALIAÇÕES
+        </a>
+      </div>
+
+      <p class="disclaimer">Obs: O cliente precisa ter um celular compatível com tecnologia NFC, ou utilizar a opção de QR Code disponibilizada na placa.</p>
     </section>
 
-    <!-- How it Works -->
-    <section class="process" id="como-funciona">
-        <div class="container">
-            <h2 class="section-title">Processo de Agendamento Ágil</h2>
-            <p class="section-subtitle">Seu carro com manutenção em dia sem burocracias ou perda de tempo</p>
-            
-            <div class="process-grid">
-                <div class="process-step">
-                    <div class="process-number">1</div>
-                    <h3>Dados do Veículo</h3>
-                    <p>Informe o modelo e os sintomas apresentados na plataforma digital.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">2</div>
-                    <h3>Data e Horário</h3>
-                    <p>Selecione um horário livre integrado com nossa grade de mecânicos.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">3</div>
-                    <h3>Triagem Técnica</h3>
-                    <p>Nossa equipe avalia previamente as peças necessárias para o serviço.</p>
-                </div>
-                <div class="process-step">
-                    <div class="process-number">4</div>
-                    <h3>Execução Garantida</h3>
-                    <p>Deixe o veículo na oficina e acompanhe tudo de forma digital.</p>
-                </div>
-            </div>
+    <!-- Seção para Revendedores -->
+    <section>
+      <div class="reseller-box">
+        <h2 class="section-title">Revenda placas NFC e crie uma nova fonte de renda.</h2>
+        <p class="section-subtitle">Um produto compacto, fácil de transportar e que você pode apresentar diretamente a comerciantes da sua região.</p>
+
+        <div class="reseller-highlights">
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Compre em quantidade por um preço menor por unidade.</span>
+          </div>
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Venda para salões, barbearias, lojas, restaurantes, clínicas e oficinas.</span>
+          </div>
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Trabalhe de forma autônoma e organize seus próprios horários.</span>
+          </div>
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Comece apresentando o produto a comerciantes próximos de você.</span>
+          </div>
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Aproveite uma proposta comercial fácil de demonstrar pelo celular.</span>
+          </div>
+          <div class="reseller-card">
+            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Aumente sua margem de venda escolhendo seus próprios clientes e canais.</span>
+          </div>
         </div>
+
+        <div class="price-highlight-badge">
+          Compre no atacado a partir de R$ 23 por placa e revenda pelo preço que fizer sentido para o seu mercado.
+        </div>
+
+        <div class="math-example">
+          <h3>Veja como a conta pode funcionar</h3>
+          <p style="color: #cbd5e1; font-size: 0.95rem;">Se você comprar 20 placas por R$ 460, seu custo de aquisição será de R$ 23 por unidade.</p>
+          <p style="color: #cbd5e1; font-size: 0.95rem; margin-top: 8px;">Se conseguir vender cada placa por R$ 80:</p>
+          <ul>
+            <li>• Receita com a venda de 1 placa: R$ 80.</li>
+            <li>• Diferença bruta por placa: R$ 57.</li>
+            <li>• Receita com 3 placas vendidas no dia: R$ 240.</li>
+            <li>• Diferença bruta diária sobre o custo das 3 placas: R$ 171.</li>
+          </ul>
+          <div class="math-highlight">
+            Imagine vender 3 placas por dia para comerciantes da sua região.
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Quero%20conhecer%20as%20condi%C3%A7%C3%B5es%20para%20comprar%20placas%20NFC%20Cliente%20Web%20no%20atacado%20e%20revender." class="btn-wa" target="_blank" rel="noopener noreferrer">
+            QUERO COMPRAR NO ATACADO E REVENDER
+          </a>
+        </div>
+
+        <p class="disclaimer" style="color: #94a3b8; margin-bottom: 0;">
+          * Este é um cenário ilustrativo, não uma promessa de renda. Os resultados dependem da procura, da sua capacidade de vendas, do preço praticado e de eventuais despesas com deslocamento e divulgação. O valor de R$ 80 é apenas um exemplo de preço de revenda.
+        </p>
+      </div>
     </section>
 
-    <!-- Reviews Module -->
-    <section class="reviews" id="avaliacoes">
-        <div class="container">
-            <h2 class="section-title">O que Dizem Nossos Clientes</h2>
-            <p class="section-subtitle">Avaliações reais sobre nosso padrão de excelência</p>
-            
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Excelente atendimento, usei o sistema digital e marquei a revisão. Sem surpresas no valor final."</p>
-                    <div class="review-author">Marcos Roberto S.</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Troca de óleo rápida e diagnóstico por scanner preciso. Recomendo muito a Torque One em Osasco."</p>
-                    <div class="review-author">Aline Menezes</div>
-                </div>
-                <div class="review-card">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">"Profissionais muito qualificados e atenciosos. O orçamento prévio ajuda muito no planejamento."</p>
-                    <div class="review-author">Carlos Eduardo P.</div>
-                </div>
-            </div>
+    <!-- Tabela de Preços -->
+    <section>
+      <h2 class="section-title">Escolha seu kit Cliente Web</h2>
+      <p class="section-subtitle">Kits unitários e atacado para atender às suas necessidades.</p>
+
+      <div class="pricing-grid">
+        <!-- 1 Unidade -->
+        <div class="price-card">
+          <h3>1 unidade</h3>
+          <p class="price-unit">R$ 40,00 por unidade</p>
+          <div class="price-total">R$ 40</div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Quero%20comprar%201%20placa%20NFC%20Cliente%20Web%20por%20R%24%2040." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 1 UNIDADE</a>
         </div>
+
+        <!-- 5 Unidades -->
+        <div class="price-card">
+          <h3>5 unidades</h3>
+          <p class="price-unit">R$ 30,00 por unidade</p>
+          <div class="price-total">R$ 150</div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%205%20placas%20por%20R%24%20150." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 5 UNIDADES</a>
+        </div>
+
+        <!-- 10 Unidades -->
+        <div class="price-card">
+          <h3>10 unidades</h3>
+          <p class="price-unit">R$ 26,00 por unidade</p>
+          <div class="price-total">R$ 260</div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2010%20placas%20por%20R%24%20260." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 10 UNIDADES</a>
+        </div>
+
+        <!-- 20 Unidades -->
+        <div class="price-card featured">
+          <div class="badge-best-value">Menor preço por unidade</div>
+          <h3>20 unidades</h3>
+          <p class="price-unit">R$ 23,00 por unidade</p>
+          <div class="price-total">R$ 460</div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2020%20placas%20por%20R%24%20460." class="btn-wa" target="_blank" rel="noopener noreferrer">QUERO O KIT DE 20</a>
+        </div>
+      </div>
     </section>
 
-    <!-- FAQ Module -->
-    <section class="faq" id="faq">
-        <div class="container faq-max">
-            <h2 class="section-title">Dúvidas Frequentes</h2>
-            <p class="section-subtitle">Informações rápidas sobre nossos processos internos</p>
-            
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Vocês trabalham com peças originais? <span>+</span></button>
-                <div class="faq-content">Sim. Utilizamos apenas peças originais ou de marcas de primeira linha homologadas pelas montadoras, todas com garantia integral de fábrica.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Quanto tempo demora uma revisão preventiva completa? <span>+</span></button>
-                <div class="faq-content">A revisão preventiva padrão com análise computadorizada de scanner leva em média entre 2 e 3 horas de execução técnica.</div>
-            </div>
-            <div class="faq-item">
-                <button class="faq-trigger" onclick="toggleFaq(this)">Quais são as formas de pagamento aceitas? <span>+</span></button>
-                <div class="faq-content">Aceitamos cartões de débito, crédito com parcelamento facilitado em até 12x, pagamentos via Pix e faturamento corporativo sob consulta prévia.</div>
-            </div>
+    <!-- Como Funciona -->
+    <section>
+      <h2 class="section-title">Como funciona</h2>
+      <p class="section-subtitle">Simples, prático e sem burocracia.</p>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3>Escolha seu kit</h3>
+            <p>Selecione a opção de 1 unidade ou um de nossos kits de atacado com descontos progressivos.</p>
+          </div>
         </div>
+
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3>Confirme pelo WhatsApp</h3>
+            <p>Clique no botão e fale direto conosco para confirmar os detalhes do pedido e envio.</p>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3>Utilize ou revenda</h3>
+            <p>Posicione a placa no seu balcão para receber avaliações ou revenda para comerciantes da sua região.</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="disclaimer">A funcionalidade NFC depende da compatibilidade do celular do usuário e da configuração adequada do destino da aproximação.</p>
     </section>
 
-    <!-- Contact & Map -->
-    <section class="contact" id="contato">
-        <div class="container contact-grid">
-            <div>
-                <h2 class="section-title" style="text-align: left; margin-bottom: 24px;">Contatos da Oficina</h2>
-                <p style="color: var(--text-muted); margin-bottom: 24px;">Fale diretamente com nossa central de atendimento ou venha nos visitar.</p>
-                
-                <p><strong>Endereço:</strong><br>Avenida dos Autonomistas, 5248 - Osasco/SP</p><br>
-                <p><strong>Funcionamento:</strong><br>Segunda a Sexta: 08h às 18h<br>Sábado: 08h às 13h</p><br>
-                <p><strong>Telefone Comercial:</strong><br><a href="tel:1141752863" class="info-link">(11) 4175-2863</a></p>
-                <p><strong>E-mail Técnico:</strong><br><a href="mailto:contato@torqueoneauto.com.br" class="info-link">contato@torqueoneauto.com.br</a></p>
-            </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.8868846153026!2d-46.7972097!3d-23.5374465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5f76903f0b4d%3A0x6a0a09e0ddcfeb3a!2sAv.%20dos%20Autonomistas%2C%205248%20-%20Vila%20Yara%2C%20Osasco%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1710000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
+    <!-- Pergunts Frequentes -->
+    <section>
+      <h2 class="section-title">Perguntas Frequentes</h2>
+      
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>A placa serve para qualquer negócio?</h3>
+          <p>Ela pode ser utilizada em diferentes tipos de estabelecimentos. A configuração deve ser adequada ao destino desejado.</p>
         </div>
+
+        <div class="faq-item">
+          <h3>Preciso comprar várias unidades?</h3>
+          <p>Não. Você pode comprar uma unidade por R$ 40 ou escolher os kits com preços especiais por quantidade.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Posso comprar para revender?</h3>
+          <p>Sim. Há opções de 5, 10 e 20 unidades para quem deseja apresentar o produto a comerciantes.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>Como faço para comprar?</h3>
+          <p>Clique em qualquer botão de compra e fale diretamente com a Cliente Web pelo WhatsApp para confirmar o pedido.</p>
+        </div>
+
+        <div class="faq-item">
+          <h3>A placa garante novas avaliações?</h3>
+          <p>Não. Ela facilita o acesso à página de avaliações, mas cada avaliação depende da decisão espontânea de um cliente real.</p>
+        </div>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-container">
-            <p>&copy; 2026 Torque One Centro Automotivo. Todos os direitos reservados.</p>
-            <p>Desenvolvido exclusivamente para alta performance comercial.</p>
-        </div>
-    </footer>
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p><strong>Cliente Web</strong> — Placas NFC para negócios e revendedores.</p>
+      <p>Atendimento pelo WhatsApp: (11) 96288-3599</p>
+    </div>
+  </footer>
 
-    <!-- WhatsApp Floating Action Button -->
-    <a href="https://wa.me/551196702-4809?text=Ol%C3%A1%2C+gostaria+de+solicitar+informa%C3%A7%C3%B5es+sobre+servi%C3%A7os+automotivos." class="whatsapp-float" target="_blank" aria-label="Contato direto WhatsApp">
-        <svg style="width:30px; height:30px; fill:white;" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.165.001 6.14 1.233 8.377 3.469 2.237 2.235 3.467 5.21 3.466 8.377-.003 6.582-5.338 11.93-11.87 11.93h-.006c-2.005-.001-3.973-.509-5.731-1.472L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.725 1.451 5.405.002 9.801-4.394 9.803-9.799.001-2.618-1.016-5.08-2.863-6.929C16.463 1.983 14.002 1.002 11.385 1c-5.412 0-9.81 4.397-9.813 9.803-.001 1.62.43 3.204 1.247 4.618L1.87 21.053l5.777-1.514zm11.455-6.852c-.301-.15-1.78-.878-2.056-.978-.275-.1-.476-.15-.676.15-.2.3-.777.978-.952 1.178-.176.2-.351.225-.651.075-.3-.15-1.267-.467-2.414-1.492-.893-.797-1.496-1.781-1.671-2.08-.176-.3-.019-.462.13-.611.135-.134.301-.35.452-.525.15-.175.2-.3.3-.5.1-.2.05-.375-.025-.525-.075-.15-.676-1.629-.926-2.229-.244-.589-.493-.51-.676-.51-.175-.003-.376-.004-.576-.004-.2 0-.526.075-.802.375-.276.3-1.052 1.028-1.052 2.508 0 1.48 1.078 2.91 1.227 3.11.15.2 2.122 3.24 5.142 4.544.718.311 1.277.496 1.711.635.722.23 1.38.197 1.9.119.579-.087 1.78-.727 2.03-1.429.25-.701.25-1.302.175-1.429-.075-.127-.275-.201-.576-.351z"/></svg>
-    </a>
-
-    <!-- Application Script Logic -->
-    <script>
-        let currentStep = 1;
-        const totalSteps = 6;
-        
-        // System Data State
-        let selectedServiceStr = '';
-        let appointmentDate = '';
-        let appointmentTime = '';
-
-        const stepsConfig = {
-            1: { title: "Selecione o Serviço", desc: "Escolha a manutenção principal para o seu veículo." },
-            2: { title: "Dados do Veículo", desc: "Informe o fabricante, modelo e ano do carro." },
-            3: { title: "Sintomas e Arquivos", desc: "Detalhe o que está acontecendo com o automóvel." },
-            4: { title: "Data & Horário", desc: "Selecione o dia e horário mais adequados para a inspeção." },
-            5: { title: "Informações de Contato", desc: "Digite seus dados para validação e alertas de status." },
-            6: { title: "Concluir Agendamento", desc: "Confirme os dados antes do envio seguro." }
-        };
-
-        function updateStepHeader() {
-            document.getElementById('stepTitle').innerText = stepsConfig[currentStep].title;
-            document.getElementById('stepDesc').innerText = stepsConfig[currentStep].desc;
-            document.getElementById('progressFill').style.width = `${(currentStep / totalSteps) * 100}%`;
-            
-            // Toggle view of Prev Button
-            document.getElementById('btnPrev').style.display = currentStep === 1 ? 'none' : 'inline-flex';
-            
-            // Control label text for Next/Submit button
-            const nextBtn = document.getElementById('btnNext');
-            if (currentStep === totalSteps) {
-                nextBtn.innerText = "Enviar Solicitação";
-            } else {
-                nextBtn.innerText = "Avançar";
-            }
-
-            validateCurrentStep();
-        }
-
-        function selectService(serviceName) {
-            selectedServiceStr = serviceName;
-            // Visual feedback
-            const buttons = document.querySelectorAll('#step1 .option-button');
-            buttons.forEach(btn => {
-                btn.classList.remove('selected');
-                if (btn.innerText === serviceName) btn.classList.add('selected');
-            });
-            validateCurrentStep();
-            nextStep(); // auto advanced for superior speed workflow
-        }
-
-        function validateCurrentStep() {
-            let isValid = false;
-
-            if (currentStep === 1) {
-                isValid = selectedServiceStr !== '';
-            } else if (currentStep === 2) {
-                const brand = document.getElementById('carBrand').value;
-                const model = document.getElementById('carModel').value.trim();
-                const year = document.getElementById('carYear').value.trim();
-                isValid = brand !== '' && model !== '' && year !== '';
-            } else if (currentStep === 3) {
-                isValid = true; // Optional step
-            } else if (currentStep === 4) {
-                isValid = appointmentDate !== '' && appointmentTime !== '';
-            } else if (currentStep === 5) {
-                const name = document.getElementById('userName').value.trim();
-                const phone = document.getElementById('userPhone').value.trim();
-                const email = document.getElementById('userEmail').value.trim();
-                isValid = name.length > 2 && phone.length >= 14 && email.includes('@');
-            } else if (currentStep === 6) {
-                isValid = true;
-            }
-
-            document.getElementById('btnNext').disabled = !isValid;
-        }
-
-        function validateStep2() { validateCurrentStep(); }
-        function validateStep5() { validateCurrentStep(); }
-
-        function nextStep() {
-            if (currentStep === totalSteps) {
-                submitForm();
-                return;
-            }
-
-            if (currentStep === 5) {
-                buildSummary();
-            }
-
-            document.getElementById(`step${currentStep}`).classList.remove('active');
-            currentStep++;
-            document.getElementById(`step${currentStep}`).classList.add('active');
-            updateStepHeader();
-        }
-
-        function prevStep() {
-            if (currentStep === 1) return;
-            document.getElementById(`step${currentStep}`).classList.remove('active');
-            currentStep--;
-            document.getElementById(`step${currentStep}`).classList.add('active');
-            updateStepHeader();
-        }
-
-        function maskPhone(input) {
-            let v = input.value.replace(/\D/g, "");
-            v = v.replace(/^(\d{2})(\d)/g, "($1) $2");
-            v = v.replace(/(\d{5})(\d)/, "$1-$2");
-            input.value = v.substring(0, 15);
-        }
-
-        function buildSummary() {
-            document.getElementById('sumService').innerText = selectedServiceStr;
-            const brand = document.getElementById('carBrand').value;
-            const model = document.getElementById('carModel').value;
-            const year = document.getElementById('carYear').value;
-            document.getElementById('sumVehicle').innerText = `${brand} ${model} (${year})`;
-            document.getElementById('sumDateTime').innerText = `${appointmentDate} às ${appointmentTime}`;
-            document.getElementById('sumClient').innerText = document.getElementById('userName').value;
-        }
-
-        // Generate dynamic mock calendar dates (100% pure JS UI logic)
-        function initCalendar() {
-            const daysContainer = document.getElementById('calendarDays');
-            const slotsContainer = document.getElementById('timeSlots');
-            daysContainer.innerHTML = '';
-            slotsContainer.innerHTML = '';
-
-            const today = new Date();
-            // Create next 7 working days list
-            let generatedDays = 0;
-            let currentCheck = new Date(today);
-
-            while(generatedDays < 7) {
-                currentCheck.setDate(currentCheck.getDate() + 1);
-                // Skip sundays (0)
-                if(currentCheck.getDay() === 0) continue;
-
-                const dayNum = currentCheck.getDate();
-                const dayString = currentCheck.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });
-                
-                const btn = document.createElement('button');
-                btn.className = 'calendar-day';
-                btn.innerText = dayNum;
-                btn.type = 'button';
-                btn.setAttribute('data-date', dayString);
-                
-                btn.onclick = function() {
-                    document.querySelectorAll('.calendar-day').forEach(d => d.classList.remove('selected'));
-                    this.classList.add('selected');
-                    appointmentDate = this.getAttribute('data-date');
-                    validateCurrentStep();
-                };
-                
-                daysContainer.appendChild(btn);
-                generatedDays++;
-            }
-
-            // Standard mock production working slots
-            const periods = ["08:30", "10:00", "11:30", "14:00", "15:30", "17:00"];
-            periods.forEach(t => {
-                const slotBtn = document.createElement('button');
-                slotBtn.className = 'time-slot';
-                slotBtn.innerText = t;
-                slotBtn.type = 'button';
-                slotBtn.onclick = function() {
-                    document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
-                    this.classList.add('selected');
-                    appointmentTime = this.innerText;
-                    validateCurrentStep();
-                };
-                slotsContainer.appendChild(slotBtn);
-            });
-        }
-
-        function submitForm() {
-            const name = document.getElementById('userName').value;
-            const phone = document.getElementById('userPhone').value;
-            const brand = document.getElementById('carBrand').value;
-            const model = document.getElementById('carModel').value;
-            const note = document.getElementById('problemDesc').value;
-
-            // Generate clean URL message template matching strict parameters
-            const text = `Olá Torque One! Gostaria de confirmar meu agendamento:\n\n*Serviço:* ${selectedServiceStr}\n*Veículo:* ${brand} ${model}\n*Data/Hora:* ${appointmentDate} às ${appointmentTime}\n*Cliente:* ${name}\n*Contato:* ${phone}\n*Obs:* ${note}`;
-            const encoded = encodeURIComponent(text);
-            
-            window.open(`https://wa.me/5511967024809?text=${encoded}`, '_blank');
-        }
-
-        // FAQ Toggle
-        function toggleFaq(button) {
-            const content = button.nextElementSibling;
-            const indicator = button.querySelector('span');
-            if (content.style.display === "block") {
-                content.style.display = "none";
-                indicator.innerText = "+";
-            } else {
-                content.style.display = "block";
-                indicator.innerText = "-";
-            }
-        }
-
-        function toggleMobileMenu() {
-            const nav = document.querySelector('nav');
-            if (nav.style.display === 'flex') {
-                nav.style.display = 'none';
-            } else {
-                nav.style.display = 'flex';
-                nav.style.flexDirection = 'column';
-                nav.style.position = 'absolute';
-                nav.style.top = '72px';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.background = 'var(--bg-secondary)';
-                nav.style.padding = '20px';
-                nav.style.borderBottom = '1px solid var(--border-color)';
-            }
-        }
-
-        // Initialization lifecycle execution
-        window.onload = function() {
-            initCalendar();
-            updateStepHeader();
-        };
-    </script>
 </body>
 </html>
