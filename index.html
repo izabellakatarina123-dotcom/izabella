@@ -1,27 +1,36 @@
+Entendido! Você quer um site de alto impacto visual, com design moderno, dinâmico, moderno e com cara de startup de tecnologia premium — mantendo a paleta azul-marinho, branco e dourado, mas com elementos visuais marcantes (como efeito de acrílico glassmorphism, brilhos dourados, animações interativas e cartões destacados).
+
+Abaixo está o código HTML/CSS/JS completo do novo site da Cliente Web, totalmente redesenhado para impressionar e converter no link da bio do Instagram.
+
+📄 Código Completo (index.html)
+Copie todo o código abaixo e salve no seu arquivo index.html:
+
+HTML
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cliente Web — Placas NFC para Avaliações no Google</title>
-  <meta name="description" content="Facilite o acesso dos seus clientes às avaliações do Google com a placa NFC da Cliente Web. Ideal para estabelecimentos e revendedores.">
+  <title>Cliente Web — Tecnologia NFC para Avaliações no Google</title>
+  <meta name="description" content="Aproxime e receba avaliações no Google. Tecnologia NFC premium para estabelecimentos e revendedores.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
     :root {
-      --bg-primary: #ffffff;
-      --navy: #0f172a;
+      --navy-dark: #030712;
+      --navy-card: #0f172a;
       --navy-light: #1e293b;
-      --gold: #d97706;
-      --gold-light: #fef3c7;
-      --text-main: #334155;
-      --text-muted: #64748b;
-      --gray-bg: #f8fafc;
-      --border-color: #e2e8f0;
+      --gold-primary: #f59e0b;
+      --gold-glow: #d97706;
+      --gold-gradient: linear-gradient(135deg, #fef3c7 0%, #f59e0b 50%, #b45309 100%);
+      --text-white: #ffffff;
+      --text-muted: #94a3b8;
+      --border-dark: rgba(255, 255, 255, 0.1);
       --whatsapp-green: #25d366;
-      --whatsapp-hover: #1da851;
-      --font: 'Inter', system-ui, -apple-system, sans-serif;
+      --whatsapp-glow: rgba(37, 211, 102, 0.4);
+      --font: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
     }
 
     * {
@@ -32,170 +41,288 @@
 
     body {
       font-family: var(--font);
-      background-color: var(--bg-primary);
-      color: var(--text-main);
+      background-color: var(--navy-dark);
+      color: var(--text-white);
       line-height: 1.6;
+      overflow-x: hidden;
       -webkit-font-smoothing: antialiased;
     }
+
+    /* Ambient Glow Backgrounds */
+    .glow-bg {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .glow-1 { top: -100px; left: 50%; transform: translateX(-50%); width: 350px; height: 350px; background: rgba(217, 119, 6, 0.25); }
+    .glow-2 { top: 600px; right: -100px; width: 300px; height: 300px; background: rgba(30, 58, 138, 0.4); }
+    .glow-3 { top: 1400px; left: -100px; width: 300px; height: 300px; background: rgba(217, 119, 6, 0.2); }
 
     .container {
       max-width: 1000px;
       margin: 0 auto;
       padding: 0 20px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Header / Logo */
+    /* Header */
     header {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border-color);
-      text-align: center;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-dark);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(3, 7, 18, 0.8);
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
     }
 
     .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: var(--navy);
+      font-size: 1.6rem;
+      font-weight: 800;
       letter-spacing: -0.5px;
+      color: var(--text-white);
     }
 
     .logo span {
-      color: var(--gold);
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    /* Primary CTA Button */
+    /* Pulsing Badge */
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold-primary);
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: var(--gold-primary);
+      border-radius: 50%;
+      box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(245, 158, 11, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+
+    /* Buttons */
     .btn-wa {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      background-color: var(--whatsapp-green);
+      gap: 12px;
+      background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
       color: #ffffff;
       font-weight: 700;
-      font-size: 1.05rem;
-      padding: 16px 28px;
-      border-radius: 8px;
+      font-size: 1.1rem;
+      padding: 18px 32px;
+      border-radius: 14px;
       text-decoration: none;
-      transition: background-color 0.2s ease, transform 0.1s ease;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       width: 100%;
-      max-width: 420px;
+      max-width: 440px;
       text-align: center;
       border: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2);
+      box-shadow: 0 10px 25px -5px var(--whatsapp-glow);
     }
 
     .btn-wa:hover {
-      background-color: var(--whatsapp-hover);
-      transform: translateY(-1px);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px -5px rgba(37, 211, 102, 0.6);
     }
 
     .btn-wa svg {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       fill: currentColor;
     }
 
     /* Hero Section */
     .hero {
-      padding: 40px 0 50px 0;
+      padding: 50px 0 60px 0;
       text-align: center;
     }
 
     .hero h1 {
-      font-size: 2.2rem;
-      color: var(--navy);
-      font-weight: 700;
-      line-height: 1.25;
-      margin-bottom: 16px;
+      font-size: 2.3rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .hero h1 .highlight {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
     .hero p.subtitle {
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--text-muted);
       max-width: 680px;
-      margin: 0 auto 30px auto;
+      margin: 0 auto 36px auto;
     }
 
-    .hero-image-wrapper {
-      margin: 30px auto;
-      max-width: 320px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-      border: 1px solid var(--border-color);
+    /* Tech Visual Component (Futuristic NFC Sphere) */
+    .tech-visual-container {
+      margin: 36px auto 40px auto;
+      width: 240px;
+      height: 240px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-image-wrapper img {
-      width: 100%;
-      height: auto;
-      display: block;
+    .nfc-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      border-top-color: var(--gold-primary);
+      border-bottom-color: rgba(245, 158, 11, 0.2);
+      animation: spinRing 8s linear infinite;
+    }
+
+    .ring-1 { width: 100%; height: 100%; border-width: 2px; }
+    .ring-2 { width: 80%; height: 80%; animation-direction: reverse; animation-duration: 6s; border-left-color: var(--gold-primary); }
+    .ring-3 { width: 60%; height: 60%; animation-duration: 4s; }
+
+    .nfc-core {
+      width: 110px;
+      height: 110px;
+      background: linear-gradient(135deg, var(--navy-card), var(--navy-light));
+      border: 2px solid var(--gold-primary);
+      border-radius: 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 30px rgba(245, 158, 11, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .nfc-core svg {
+      width: 44px;
+      height: 44px;
+      fill: var(--gold-primary);
+      filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.6));
+    }
+
+    @keyframes spinRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
     .hero-notice {
       font-size: 0.9rem;
       color: var(--text-muted);
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
     /* Section Styling */
     section {
-      padding: 50px 0;
-      border-top: 1px solid var(--border-color);
+      padding: 60px 0;
+      border-top: 1px solid var(--border-dark);
     }
 
     .section-title {
-      font-size: 1.8rem;
-      color: var(--navy);
-      font-weight: 700;
+      font-size: 1.9rem;
+      font-weight: 800;
       text-align: center;
       margin-bottom: 12px;
-      line-height: 1.3;
+      letter-spacing: -0.5px;
     }
 
     .section-subtitle {
       text-align: center;
       color: var(--text-muted);
       font-size: 1.05rem;
-      margin-bottom: 32px;
+      margin-bottom: 40px;
     }
 
-    /* Business Section */
-    .benefit-list {
-      list-style: none;
+    /* Benefits Grid (Glassmorphism Cards) */
+    .benefits-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
-      max-width: 700px;
-      margin: 0 auto 30px auto;
+      max-width: 800px;
+      margin: 0 auto 36px auto;
     }
 
-    .benefit-item {
+    .benefit-card {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-dark);
+      padding: 20px 24px;
+      border-radius: 16px;
+      backdrop-filter: blur(12px);
       display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      background-color: var(--gray-bg);
-      padding: 16px 20px;
-      border-radius: 8px;
-      border: 1px solid var(--border-color);
+      align-items: center;
+      gap: 16px;
+      transition: all 0.3s ease;
     }
 
-    .benefit-item svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--gold);
+    .benefit-card:hover {
+      border-color: rgba(245, 158, 11, 0.4);
+      transform: translateX(4px);
+      background: rgba(30, 41, 59, 0.8);
+    }
+
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(245, 158, 11, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      margin-top: 2px;
     }
 
-    .use-cases {
+    .icon-box svg {
+      width: 22px;
+      height: 22px;
+      fill: var(--gold-primary);
+    }
+
+    .use-cases-tag {
       text-align: center;
       font-size: 0.95rem;
       color: var(--text-muted);
-      max-width: 700px;
-      margin: 0 auto 24px auto;
-      background: #f1f5f9;
-      padding: 16px;
-      border-radius: 8px;
+      max-width: 750px;
+      margin: 0 auto 30px auto;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
+      padding: 18px;
+      border-radius: 12px;
     }
 
     .disclaimer {
@@ -203,96 +330,87 @@
       color: var(--text-muted);
       text-align: center;
       max-width: 600px;
-      margin: 20px auto 30px auto;
-      line-height: 1.4;
+      margin: 20px auto 0 auto;
+      line-height: 1.5;
     }
 
-    /* Reseller Section */
-    .reseller-box {
-      background-color: var(--navy);
-      color: #ffffff;
-      border-radius: 12px;
+    /* Reseller Special Container */
+    .reseller-container {
+      background: linear-gradient(180deg, rgba(15, 23, 42, 0.9) 0%, rgba(3, 7, 18, 0.95) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      border-radius: 24px;
       padding: 40px 24px;
-      margin-top: 20px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
     }
 
-    .reseller-box .section-title {
-      color: #ffffff;
-    }
-
-    .reseller-box .section-subtitle {
-      color: #94a3b8;
-    }
-
-    .reseller-highlights {
+    .reseller-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 16px;
-      margin: 30px 0;
+      margin: 32px 0;
     }
 
-    .reseller-card {
-      background-color: var(--navy-light);
+    .reseller-item {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-dark);
       padding: 18px 20px;
-      border-radius: 8px;
-      border: 1px solid #334155;
+      border-radius: 14px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
 
-    .reseller-card svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--gold);
-      flex-shrink: 0;
-    }
-
-    .price-highlight-badge {
-      background-color: var(--gold-light);
-      color: #78350f;
+    .gold-badge {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2) 0%, rgba(180, 83, 9, 0.2) 100%);
+      border: 1px solid var(--gold-primary);
+      color: var(--gold-primary);
       font-weight: 700;
-      padding: 16px;
-      border-radius: 8px;
+      padding: 18px;
+      border-radius: 14px;
       text-align: center;
-      margin: 24px 0;
-      font-size: 1.05rem;
-      border: 1px solid #fde68a;
+      margin: 28px 0;
+      font-size: 1.1rem;
     }
 
-    .math-example {
-      background-color: var(--navy-light);
-      border-radius: 8px;
+    .math-card {
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
       padding: 24px;
-      margin: 24px 0;
-      border: 1px solid #334155;
+      margin: 28px 0;
     }
 
-    .math-example h3 {
-      font-size: 1.2rem;
-      color: var(--gold);
-      margin-bottom: 12px;
+    .math-card h3 {
+      font-size: 1.25rem;
+      color: var(--gold-primary);
+      margin-bottom: 14px;
+      font-weight: 700;
     }
 
-    .math-example ul {
+    .math-card ul {
       list-style: none;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
-    .math-example li {
-      margin-bottom: 8px;
+    .math-card li {
+      margin-bottom: 10px;
       font-size: 0.95rem;
-      color: #cbd5e1;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed rgba(255,255,255,0.1);
+      padding-bottom: 6px;
     }
 
     .math-highlight {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: #ffffff;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--text-white);
       text-align: center;
-      margin-top: 16px;
+      margin-top: 20px;
       padding-top: 16px;
-      border-top: 1px dashed #475569;
     }
 
     /* Pricing Section */
@@ -300,56 +418,63 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto;
     }
 
     .price-card {
-      background-color: #ffffff;
-      border: 1px solid var(--border-color);
-      border-radius: 12px;
-      padding: 28px 20px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--border-dark);
+      border-radius: 20px;
+      padding: 32px 24px;
       text-align: center;
       position: relative;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
 
     .price-card.featured {
-      border: 2px solid var(--gold);
-      box-shadow: 0 8px 20px -4px rgba(217, 119, 6, 0.15);
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.9) 0%, rgba(15, 23, 42, 0.95) 100%);
+      border: 2px solid var(--gold-primary);
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.2);
     }
 
     .badge-best-value {
       position: absolute;
-      top: -12px;
+      top: -14px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: var(--gold);
-      color: #ffffff;
+      background: var(--gold-gradient);
+      color: var(--navy-dark);
       font-size: 0.75rem;
-      font-weight: 700;
+      font-weight: 800;
       text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 20px;
+      padding: 6px 16px;
+      border-radius: 30px;
       letter-spacing: 0.5px;
+      white-space: nowrap;
     }
 
     .price-card h3 {
       font-size: 1.4rem;
-      color: var(--navy);
+      font-weight: 700;
       margin-bottom: 8px;
     }
 
     .price-unit {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--text-muted);
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
 
     .price-total {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 20px;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text-white);
+      margin-bottom: 24px;
+      letter-spacing: -1px;
     }
 
     /* Steps Section */
@@ -357,47 +482,37 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 20px;
-      max-width: 800px;
+      max-width: 850px;
       margin: 0 auto;
     }
 
     .step-card {
-      background-color: var(--gray-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
       padding: 24px;
       display: flex;
       align-items: flex-start;
-      gap: 16px;
+      gap: 20px;
     }
 
     .step-number {
-      background-color: var(--navy);
-      color: #ffffff;
-      font-weight: 700;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
+      background: var(--gold-gradient);
+      color: var(--navy-dark);
+      font-weight: 800;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-    }
-
-    .step-content h3 {
       font-size: 1.1rem;
-      color: var(--navy);
-      margin-bottom: 4px;
     }
 
-    .step-content p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-    }
-
-    /* FAQ Section */
+    /* FAQ */
     .faq-list {
-      max-width: 700px;
+      max-width: 750px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
@@ -405,45 +520,43 @@
     }
 
     .faq-item {
-      background-color: var(--gray-bg);
-      border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 20px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 20px 24px;
     }
 
     .faq-item h3 {
-      font-size: 1.05rem;
-      color: var(--navy);
+      font-size: 1.1rem;
+      color: var(--gold-primary);
       margin-bottom: 8px;
+      font-weight: 700;
     }
 
     .faq-item p {
       font-size: 0.95rem;
-      color: var(--text-main);
+      color: var(--text-muted);
     }
 
     /* Footer */
     footer {
       padding: 40px 0;
-      background-color: var(--navy);
-      color: #94a3b8;
+      background: var(--navy-dark);
+      color: var(--text-muted);
       text-align: center;
       font-size: 0.9rem;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid var(--border-dark);
     }
 
-    footer p {
-      margin-bottom: 8px;
-    }
-
-    /* Media Queries */
+    /* Responsive Queries */
     @media (min-width: 640px) {
-      .hero h1 { font-size: 2.6rem; }
+      .hero h1 { font-size: 2.8rem; }
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
-      .reseller-highlights { grid-template-columns: repeat(2, 1fr); }
+      .reseller-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 900px) {
+      .hero h1 { font-size: 3.2rem; }
       .pricing-grid { grid-template-columns: repeat(4, 1fr); }
       .steps-grid { grid-template-columns: repeat(3, 1fr); }
       .step-card { flex-direction: column; }
@@ -452,21 +565,40 @@
 </head>
 <body>
 
+  <!-- Ambient Glow Effects -->
+  <div class="glow-bg glow-1"></div>
+  <div class="glow-bg glow-2"></div>
+  <div class="glow-bg glow-3"></div>
+
   <!-- Header -->
   <header>
     <div class="container">
-      <div class="logo">Cliente<span>Web</span></div>
+      <div class="logo-box">
+        <div class="logo">Cliente<span>Web</span></div>
+      </div>
     </div>
   </header>
 
-  <!-- Dobra Principal -->
   <main class="container">
+    <!-- Hero / Dobra Principal -->
     <section class="hero">
-      <h1>Sua próxima avaliação pode começar com uma aproximação.</h1>
-      <p class="subtitle">Facilite o acesso dos seus clientes às avaliações do Google com uma placa NFC prática, moderna e personalizada para o seu negócio.</p>
+      <div class="tech-badge">
+        <div class="pulse-dot"></div>
+        Tecnologia NFC Aproximação
+      </div>
 
-      <div class="hero-image-wrapper">
-        <img src="https://http2.mlstatic.com/D_NQ_NP_665392-MLB111402796630_052026-O.webp" alt="Placa NFC de acrílico preta sobre balcão de estabelecimento comercial">
+      <h1>Sua próxima avaliação pode começar com uma <span class="highlight">aproximação.</span></h1>
+      <p class="subtitle">Facilite o acesso dos seus clientes às avaliações do Google com uma solução prática, moderna e de alta conversão para o seu negócio.</p>
+
+      <!-- Visual Futurista Tecnológico NFC (Animação) -->
+      <div class="tech-visual-container">
+        <div class="nfc-ring ring-1"></div>
+        <div class="nfc-ring ring-2"></div>
+        <div class="nfc-ring ring-3"></div>
+        <div class="nfc-core">
+          <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 18H4V4h16v16zM18 6h-2.5c-2.49 0-4.5 2.01-4.5 4.5v3c0 1.38-1.12 2.5-2.5 2.5H6v2h2.5c2.49 0 4.5-2.01 4.5-4.5v-3c0-1.38 1.12-2.5 2.5-2.5H18V6z"/></svg>
+          <span style="font-size: 0.7rem; font-weight: 800; color: #fff; margin-top: 6px; letter-spacing: 1px;">NFC + QR</span>
+        </div>
       </div>
 
       <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Conheci%20a%20Cliente%20Web%20pelo%20site%20e%20quero%20uma%20placa%20NFC%20para%20meu%20neg%C3%B3cio.%20Como%20funciona%3F" class="btn-wa" target="_blank" rel="noopener noreferrer">
@@ -477,38 +609,39 @@
       <p class="hero-notice">Para estabelecimentos comerciais e revendedores. Compre uma unidade ou aproveite os preços de atacado.</p>
     </section>
 
-    <!-- Seção para Donos de Negócios -->
+    <!-- Seção Estabelecimentos -->
     <section>
       <h2 class="section-title">Transforme a experiência do seu cliente em uma oportunidade de avaliação.</h2>
+      <p class="section-subtitle">Elimine barreiras na hora de pedir avaliações no balcão.</p>
       
-      <ul class="benefit-list">
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
           <span>Facilite o acesso à página de avaliações do seu negócio.</span>
-        </li>
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></div>
           <span>Reduza a dificuldade de encontrar seu perfil no Google.</span>
-        </li>
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
           <span>Deixe seu balcão mais profissional e moderno.</span>
-        </li>
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
           <span>Incentive clientes satisfeitos a compartilharem suas experiências reais.</span>
-        </li>
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg></div>
           <span>Ajude novos consumidores a conhecerem a reputação do seu estabelecimento.</span>
-        </li>
-        <li class="benefit-item">
-          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
+        <div class="benefit-card">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 10h-4v4h-2v-4H7v-2h4V7h2v4h4v2z"/></svg></div>
           <span>Tenha uma solução prática para utilizar no atendimento diário.</span>
-        </li>
-      </ul>
+        </div>
+      </div>
 
-      <div class="use-cases">
+      <div class="use-cases-tag">
         <strong>Ideal para:</strong> Salões de beleza, barbearias, restaurantes, lanchonetes, lojas, clínicas, oficinas mecânicas, estúdios de estética e outros estabelecimentos.
       </div>
 
@@ -521,53 +654,55 @@
       <p class="disclaimer">Obs: O cliente precisa ter um celular compatível com tecnologia NFC, ou utilizar a opção de QR Code disponibilizada na placa.</p>
     </section>
 
-    <!-- Seção para Revendedores -->
+    <!-- Seção Revendedores -->
     <section>
-      <div class="reseller-box">
+      <div class="reseller-container">
         <h2 class="section-title">Revenda placas NFC e crie uma nova fonte de renda.</h2>
-        <p class="section-subtitle">Um produto compacto, fácil de transportar e que você pode apresentar diretamente a comerciantes da sua região.</p>
+        <p class="section-subtitle" style="color: #cbd5e1;">Um produto compacto, fácil de transportar e que você pode apresentar diretamente a comerciantes da sua região.</p>
 
-        <div class="reseller-highlights">
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        <div class="reseller-grid">
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Compre em quantidade por um preço menor por unidade.</span>
           </div>
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Venda para salões, barbearias, lojas, restaurantes, clínicas e oficinas.</span>
           </div>
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Trabalhe de forma autônoma e organize seus próprios horários.</span>
           </div>
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Comece apresentando o produto a comerciantes próximos de você.</span>
           </div>
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Aproveite uma proposta comercial fácil de demonstrar pelo celular.</span>
           </div>
-          <div class="reseller-card">
-            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <div class="reseller-item">
+            <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
             <span>Aumente sua margem de venda escolhendo seus próprios clientes e canais.</span>
           </div>
         </div>
 
-        <div class="price-highlight-badge">
+        <div class="gold-badge">
           Compre no atacado a partir de R$ 23 por placa e revenda pelo preço que fizer sentido para o seu mercado.
         </div>
 
-        <div class="math-example">
+        <div class="math-card">
           <h3>Veja como a conta pode funcionar</h3>
-          <p style="color: #cbd5e1; font-size: 0.95rem;">Se você comprar 20 placas por R$ 460, seu custo de aquisição será de R$ 23 por unidade.</p>
-          <p style="color: #cbd5e1; font-size: 0.95rem; margin-top: 8px;">Se conseguir vender cada placa por R$ 80:</p>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 12px;">Se você comprar 20 placas por R$ 460, seu custo de aquisição será de R$ 23 por unidade.</p>
+          <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 16px;">Se conseguir vender cada placa por R$ 80:</p>
+          
           <ul>
-            <li>• Receita com a venda de 1 placa: R$ 80.</li>
-            <li>• Diferença bruta por placa: R$ 57.</li>
-            <li>• Receita com 3 placas vendidas no dia: R$ 240.</li>
-            <li>• Diferença bruta diária sobre o custo das 3 placas: R$ 171.</li>
+            <li><span>Receita com a venda de 1 placa:</span> <strong>R$ 80</strong></li>
+            <li><span>Diferença bruta por placa:</span> <strong style="color: var(--gold-primary);">R$ 57</strong></li>
+            <li><span>Receita com 3 placas vendidas no dia:</span> <strong>R$ 240</strong></li>
+            <li><span>Diferença bruta diária sobre o custo:</span> <strong style="color: var(--gold-primary);">R$ 171</strong></li>
           </ul>
+
           <div class="math-highlight">
             Imagine vender 3 placas por dia para comerciantes da sua região.
           </div>
@@ -579,7 +714,7 @@
           </a>
         </div>
 
-        <p class="disclaimer" style="color: #94a3b8; margin-bottom: 0;">
+        <p class="disclaimer">
           * Este é um cenário ilustrativo, não uma promessa de renda. Os resultados dependem da procura, da sua capacidade de vendas, do preço praticado e de eventuais despesas com deslocamento e divulgação. O valor de R$ 80 é apenas um exemplo de preço de revenda.
         </p>
       </div>
@@ -593,35 +728,43 @@
       <div class="pricing-grid">
         <!-- 1 Unidade -->
         <div class="price-card">
-          <h3>1 unidade</h3>
-          <p class="price-unit">R$ 40,00 por unidade</p>
-          <div class="price-total">R$ 40</div>
-          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Quero%20comprar%201%20placa%20NFC%20Cliente%20Web%20por%20R%24%2040." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 1 UNIDADE</a>
+          <div>
+            <h3>1 unidade</h3>
+            <p class="price-unit">R$ 40,00 por unidade</p>
+            <div class="price-total">R$ 40</div>
+          </div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Quero%20comprar%201%20placa%20NFC%20Cliente%20Web%20por%20R%24%2040." class="btn-wa" style="font-size: 0.95rem; padding: 14px;" target="_blank" rel="noopener noreferrer">COMPRAR 1 UNIDADE</a>
         </div>
 
         <!-- 5 Unidades -->
         <div class="price-card">
-          <h3>5 unidades</h3>
-          <p class="price-unit">R$ 30,00 por unidade</p>
-          <div class="price-total">R$ 150</div>
-          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%205%20placas%20por%20R%24%20150." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 5 UNIDADES</a>
+          <div>
+            <h3>5 unidades</h3>
+            <p class="price-unit">R$ 30,00 por unidade</p>
+            <div class="price-total">R$ 150</div>
+          </div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%205%20placas%20por%20R%24%20150." class="btn-wa" style="font-size: 0.95rem; padding: 14px;" target="_blank" rel="noopener noreferrer">COMPRAR 5 UNIDADES</a>
         </div>
 
         <!-- 10 Unidades -->
         <div class="price-card">
-          <h3>10 unidades</h3>
-          <p class="price-unit">R$ 26,00 por unidade</p>
-          <div class="price-total">R$ 260</div>
-          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2010%20placas%20por%20R%24%20260." class="btn-wa" target="_blank" rel="noopener noreferrer">COMPRAR 10 UNIDADES</a>
+          <div>
+            <h3>10 unidades</h3>
+            <p class="price-unit">R$ 26,00 por unidade</p>
+            <div class="price-total">R$ 260</div>
+          </div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2010%20placas%20por%20R%24%20260." class="btn-wa" style="font-size: 0.95rem; padding: 14px;" target="_blank" rel="noopener noreferrer">COMPRAR 10 UNIDADES</a>
         </div>
 
         <!-- 20 Unidades -->
         <div class="price-card featured">
           <div class="badge-best-value">Menor preço por unidade</div>
-          <h3>20 unidades</h3>
-          <p class="price-unit">R$ 23,00 por unidade</p>
-          <div class="price-total">R$ 460</div>
-          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2020%20placas%20por%20R%24%20460." class="btn-wa" target="_blank" rel="noopener noreferrer">QUERO O KIT DE 20</a>
+          <div>
+            <h3>20 unidades</h3>
+            <p class="price-unit">R$ 23,00 por unidade</p>
+            <div class="price-total" style="color: var(--gold-primary);">R$ 460</div>
+          </div>
+          <a href="https://wa.me/5511962883599?text=Ol%C3%A1!%20Tenho%20interesse%20no%20kit%20de%2020%20placas%20por%20R%24%20460." class="btn-wa" style="font-size: 0.95rem; padding: 14px; background: var(--gold-gradient); color: #000;" target="_blank" rel="noopener noreferrer">QUERO O KIT DE 20</a>
         </div>
       </div>
     </section>
@@ -634,25 +777,25 @@
       <div class="steps-grid">
         <div class="step-card">
           <div class="step-number">1</div>
-          <div class="step-content">
-            <h3>Escolha seu kit</h3>
-            <p>Selecione a opção de 1 unidade ou um de nossos kits de atacado com descontos progressivos.</p>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Escolha seu kit</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Selecione a opção de 1 unidade ou um de nossos kits de atacado com descontos progressivos.</p>
           </div>
         </div>
 
         <div class="step-card">
           <div class="step-number">2</div>
-          <div class="step-content">
-            <h3>Confirme pelo WhatsApp</h3>
-            <p>Clique no botão e fale direto conosco para confirmar os detalhes do pedido e envio.</p>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Confirme pelo WhatsApp</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Clique no botão e fale direto conosco para confirmar os detalhes do pedido e envio.</p>
           </div>
         </div>
 
         <div class="step-card">
           <div class="step-number">3</div>
-          <div class="step-content">
-            <h3>Utilize ou revenda</h3>
-            <p>Posicione a placa no seu balcão para receber avaliações ou revenda para comerciantes da sua região.</p>
+          <div>
+            <h3 style="font-size: 1.1rem; margin-bottom: 4px;">Utilize ou revenda</h3>
+            <p style="font-size: 0.95rem; color: var(--text-muted);">Posicione a placa no seu balcão para receber avaliações ou revenda para comerciantes da sua região.</p>
           </div>
         </div>
       </div>
@@ -660,7 +803,7 @@
       <p class="disclaimer">A funcionalidade NFC depende da compatibilidade do celular do usuário e da configuração adequada do destino da aproximação.</p>
     </section>
 
-    <!-- Pergunts Frequentes -->
+    <!-- Perguntas Frequentes -->
     <section>
       <h2 class="section-title">Perguntas Frequentes</h2>
       
